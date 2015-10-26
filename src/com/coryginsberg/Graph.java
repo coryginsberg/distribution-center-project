@@ -4,160 +4,204 @@ package com.coryginsberg;
  * Created by Cory Ginsberg on 10/26/2015.
  * Created for Logistics Application.
  */
+import com.sun.istack.internal.Nullable;
+
 import java.util.*; // For HashMap, HashSet
 
-public final class Graph<T> extends GraphManager implements Iterable<T> {
-    /* A map from nodes in the graph to sets of outgoing edges.  Each
-     * set of edges is represented by a map from edges to doubles.
-     */
-    private final Map<T, Set<T>> mGraph = new HashMap<>();
+public class Graph<T> {
+
+    private final Map<T, Node<T>> adjacencyList;
+
+    public Graph() {
+        adjacencyList = new HashMap<>();
+    }
 
     /**
-     * Adds a new node to the graph.  If the node already exists, this
-     * function is a no-op.
-     *
-     * @param The node The node to add.
-     * @return Whether or not the node was added.
+     * Adds a vertex to the graph.
+     * @param vertex        vertex to add
      */
-    public boolean addNode(T node) {
-        /* If the node already exists, don't do anything. */
-        if (mGraph.containsKey(node))
+    public boolean addVertex(T vertex) {
+        if (adjacencyList.containsKey(vertex)) {
             return false;
-
-        /* Otherwise, add the node with an empty set of outgoing edges. */
-        mGraph.put(node, new HashSet<>());
+        }
+        adjacencyList.put(vertex, new Node<>(vertex));
         return true;
     }
 
     /**
-     * Given a node, returns whether that node exists in the graph.
-     *
-     * @param node in question.
-     * @return Whether that node eixsts in the graph.
+     * Adds a directed edge between two vertices in the graph.
+     * @param vertex1       vertex where the (directed) edge begins
+     * @param vertex2       vertex where the (directed) edge ends
      */
-    public boolean nodeExists(T node) {
-        return mGraph.containsKey(node);
+    public boolean addEdge(T vertex1, T vertex2) {
+        return addEdge(vertex1, vertex2, 0);
     }
 
     /**
-     * Given two nodes, adds an arc of that length between those nodes.  If
-     * either endpoint does not exist in the graph, throws a
-     * NoSuchElementException.
-     *
-     * @param one The first node.
-     * @param two The second node.
-     * @throws NoSuchElementException If either the start or destination nodes
-     *                                do not exist.
+     * Adds a weighted directed edge between two vertices in the graph.
+     * @param vertex1       vertex where the (directed) edge begins
+     * @param vertex2       vertex where the (directed) edge ends
+     * @param weight        weight of the edge
      */
-    public void addEdge(T one, T two) {
-        /* Confirm both endpoints exist. */
-        if (!mGraph.containsKey(one) || !mGraph.containsKey(two))
-            throw new NoSuchElementException("Both nodes must be in the graph.");
+    public boolean addEdge(T vertex1, T vertex2, int weight) {
+        if (!containsVertex(vertex1) || !containsVertex(vertex2)) {
+            throw new RuntimeException("Vertex does not exist");
+        }
 
-        /* Add the edge in both directions. */
-        mGraph.get(one).add(two);
-        mGraph.get(two).add(one);
+        // add the edge
+        Node<T> node1 = getNode(vertex1);
+        Node<T> node2 = getNode(vertex2);
+        return node1.addEdge(node2, weight);
     }
 
     /**
-     * Removes the edge between the indicated endpoints from the graph.  If the
-     * edge does not exist, this operation is a no-op.  If either endpoint does
-     * not exist, this throws a NoSuchElementException.
-     *
-     * @param one The start node.
-     * @param two The destination node.
-     * @throws NoSuchElementException If either node is not in the graph.
+     * Remove a vertex from the graph.
+     * @param vertex        vertex to be removed
+     * @return      true if the vertex was removed, false if no such vertex was found.
      */
-    public void removeEdge(T one, T two) {
-        /* Confirm both endpoints exist. */
-        if (!mGraph.containsKey(one) || !mGraph.containsKey(two))
-            throw new NoSuchElementException("Both nodes must be in the graph.");
+    public boolean removeVertex(T vertex) {
+        if (!adjacencyList.containsKey(vertex)) {
+            return false;
+        }
 
-        /* Remove the edges from both adjacency lists. */
-        mGraph.get(one).remove(two);
-        mGraph.get(two).remove(one);
+        // get node to be removed
+        final Node<T> toRemove = getNode(vertex);
+
+        // remove all incoming edges to node
+        adjacencyList.values().forEach(node -> node.removeEdge(toRemove));
+
+        // remove the node
+        adjacencyList.remove(vertex);
+        return true;
     }
 
     /**
-     * Given two endpoints, returns whether an edge exists between them.  If
-     * either endpoint does not exist in the graph, throws a
-     * NoSuchElementException.
-     *
-     * @param one The first endpoint.
-     * @param two The second endpoint.
-     * @return Whether an edge exists between the endpoints.
-     * @throws NoSuchElementException If the endpoints are not nodes in the
-     *                                graph.
+     * Method to remove a directed edge between two vertices in the graph.
+     * @param vertex1       vertex where the (directed) edge begins
+     * @param vertex2       vertex where the (directed) edge ends
+     * @return  true if the edge was removed, false if no such edge was found.
      */
-    public boolean edgeExists(T one, T two) {
-        /* Confirm both endpoints exist. */
-        if (!mGraph.containsKey(one) || !mGraph.containsKey(two))
-            throw new NoSuchElementException("Both nodes must be in the graph.");
-
-        /* Graph is symmetric, so we can just check either endpoint. */
-        return mGraph.get(one).contains(two);
+    public boolean removeEdge(T vertex1, T vertex2) {
+        if (!containsVertex(vertex1) || !containsVertex(vertex2)) {
+            return false;
+        }
+        return getNode(vertex1).removeEdge(getNode(vertex2));
     }
 
     /**
-     * Given a node in the graph, returns an immutable view of the edges
-     * leaving that node.
-     *
-     * @param node The node whose edges should be queried.
-     * @return An immutable view of the edges leaving that node.
-     * @throws NoSuchElementException If the node does not exist.
+     * Method to get the number of vertices in the graph.
+     * @return      count of vertices
      */
-    public Set<T> edgesFrom(T node) {
-        /* Check that the node exists. */
-        Set<T> arcs = mGraph.get(node);
-        if (arcs == null)
-            throw new NoSuchElementException("Source node does not exist.");
-
-        return Collections.unmodifiableSet(arcs);
+    public int vertexCount() {
+        return adjacencyList.keySet().size();
     }
 
     /**
-     * Returns whether a given node is contained in the graph.
-     *
-     * @param The node to test for inclusion.
-     * @return Whether that node is contained in the graph.
+     * Method to get the number of edges in the graph.
+     * @return      count of edges
      */
-    public boolean containsNode(T node) {
-        return mGraph.containsKey(node);
+    public int edgeCount() {
+        return adjacencyList.values()
+                .stream()
+                .mapToInt(Node::getEdgeCount)
+                .sum();
     }
 
     /**
-     * Returns an iterator that can traverse the nodes in the graph.
-     *
-     * @return An iterator that traverses the nodes in the graph.
+     * Method to check if a vertex exists in the graph.
+     * @param vertex    vertex which is to be checked
+     * @return  returns true if the graph contains the vertex, false otherwise
      */
-    public Iterator<T> iterator() {
-        return mGraph.keySet().iterator();
+    public boolean containsVertex(T vertex) {
+        return adjacencyList.containsKey(vertex);
     }
 
     /**
-     * Returns the number of nodes in the graph.
-     *
-     * @return The number of nodes in the graph.
+     * Method to check if an edge exists in the graph.
+     * @param vertex1       vertex where the (directed) edge begins
+     * @param vertex2       vertex where the (directed) edge ends
+     * @return   returns true if the graph contains the edge, false otherwise
      */
-    public int size() {
-        return mGraph.size();
+    public boolean containsEdge(T vertex1, T vertex2) {
+        if (!containsVertex(vertex1) || !containsVertex(vertex2)) {
+            return false;
+        }
+        return getNode(vertex1).hasEdge(getNode(vertex2));
     }
 
-    /**
-     * Returns whether the graph is empty.
-     *
-     * @return Whether the graph is empty.
-     */
-    public boolean isEmpty() {
-        return mGraph.isEmpty();
-    }
-
-    /**
-     * Returns a human-readable representation of the graph.
-     *
-     * @return A human-readable representation of the graph.
-     */
+    @Override
     public String toString() {
-        return mGraph.toString();
+        return adjacencyList.toString();
+    }
+
+    /**
+     * Method to get the shortest path from startVertex to endVertex.
+     * @param startVertex   vertex where the path begins
+     * @param endVertex     vertex where the path ends
+     * @return  list of vertices in the shortest path from startVertex to endVertex,
+     *          null if no such path exists.
+     */
+    @Nullable
+    public List<T> shortestPath(T startVertex, T endVertex) {
+        // if nodes not found, return empty path
+        if (!containsVertex(startVertex) || !containsVertex(endVertex)) {
+            return null;
+        }
+        // run bfs on the graph
+        runBFS(startVertex);
+
+        List<T> path = new ArrayList<>();
+        // trace path back from end vertex to start
+        Node<T> end = getNode(endVertex);
+        while (end != null && end != getNode(startVertex)) {
+            path.add(end.vertex());
+            end = end.parent();
+        }
+        // if end is null, node not found
+        if (end == null) {
+            return null;
+        }
+
+        Collections.reverse(path);
+        return path;
+    }
+
+    private void runBFS(T startVertex) {
+        if (!containsVertex(startVertex)) {
+            throw new RuntimeException("Vertex does not exist.");
+        }
+
+        // reset the graph
+        resetGraph();
+
+        // init the queue
+        Queue<Node<T>> queue = new LinkedList<>();
+        Node<T> start = getNode(startVertex);
+        queue.add(start);
+
+        // explore the graph
+        /*while (!queue.isEmpty()) {
+            Node<T> first = queue.remove();
+            first.setVisited(true);
+            first.edges().foreach(edge -> {
+                Node<T> neighbor = edge.toNode();
+                if (!neighbor.isVisited()) {
+                    neighbor.setParent(first);
+                    queue.add(neighbor);
+                }
+            });
+        }*/
+    }
+
+    private Node<T> getNode(T value) {
+        return adjacencyList.get(value);
+    }
+
+    private void resetGraph() {
+        adjacencyList.keySet().forEach(key -> {
+            Node<T> node = getNode(key);
+            node.setParent(null);
+            node.setVisited(false);
+        });
     }
 }
