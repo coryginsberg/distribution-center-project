@@ -1,4 +1,4 @@
-package com.coryginsberg;
+package com.coryginsberg.Graph;
 
 import com.coryginsberg.Managers.Facility;
 import com.coryginsberg.Managers.FacilityManager;

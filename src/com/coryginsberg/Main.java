@@ -1,8 +1,8 @@
 package com.coryginsberg;
 
 
+import com.coryginsberg.Graph.GraphManager;
 import com.coryginsberg.ImportXML.ImportFacilityNetwork;
-import com.coryginsberg.Managers.FacilityManager;
 
 public class Main {
 

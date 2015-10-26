@@ -1,12 +1,13 @@
-package com.coryginsberg;
+package com.coryginsberg.Graph;
 
 /**
  * Created by Cory Ginsberg on 10/26/2015.
  * Created for Logistics Application.
  */
+
 import com.sun.istack.internal.Nullable;
 
-import java.util.*; // For HashMap, HashSet
+import java.util.*;
 
 public class Graph<T> {
 
@@ -16,33 +17,22 @@ public class Graph<T> {
         adjacencyList = new HashMap<>();
     }
 
-    /**
-     * Adds a vertex to the graph.
-     * @param vertex        vertex to add
-     */
+    public Map<T, Node<T>> getAdjacencyList() {
+        return adjacencyList;
+    }
+
     public boolean addVertex(T vertex) {
-        if (adjacencyList.containsKey(vertex)) {
+        if (getAdjacencyList().containsKey(vertex)) {
             return false;
         }
-        adjacencyList.put(vertex, new Node<>(vertex));
+        getAdjacencyList().put(vertex, new Node<>(vertex));
         return true;
     }
 
-    /**
-     * Adds a directed edge between two vertices in the graph.
-     * @param vertex1       vertex where the (directed) edge begins
-     * @param vertex2       vertex where the (directed) edge ends
-     */
     public boolean addEdge(T vertex1, T vertex2) {
         return addEdge(vertex1, vertex2, 0);
     }
 
-    /**
-     * Adds a weighted directed edge between two vertices in the graph.
-     * @param vertex1       vertex where the (directed) edge begins
-     * @param vertex2       vertex where the (directed) edge ends
-     * @param weight        weight of the edge
-     */
     public boolean addEdge(T vertex1, T vertex2, int weight) {
         if (!containsVertex(vertex1) || !containsVertex(vertex2)) {
             throw new RuntimeException("Vertex does not exist");
@@ -54,13 +44,8 @@ public class Graph<T> {
         return node1.addEdge(node2, weight);
     }
 
-    /**
-     * Remove a vertex from the graph.
-     * @param vertex        vertex to be removed
-     * @return      true if the vertex was removed, false if no such vertex was found.
-     */
     public boolean removeVertex(T vertex) {
-        if (!adjacencyList.containsKey(vertex)) {
+        if (!getAdjacencyList().containsKey(vertex)) {
             return false;
         }
 
@@ -68,79 +53,41 @@ public class Graph<T> {
         final Node<T> toRemove = getNode(vertex);
 
         // remove all incoming edges to node
-        adjacencyList.values().forEach(node -> node.removeEdge(toRemove));
+        getAdjacencyList().values().forEach(node -> node.removeEdge(toRemove));
 
         // remove the node
-        adjacencyList.remove(vertex);
+        getAdjacencyList().remove(vertex);
         return true;
     }
 
-    /**
-     * Method to remove a directed edge between two vertices in the graph.
-     * @param vertex1       vertex where the (directed) edge begins
-     * @param vertex2       vertex where the (directed) edge ends
-     * @return  true if the edge was removed, false if no such edge was found.
-     */
     public boolean removeEdge(T vertex1, T vertex2) {
-        if (!containsVertex(vertex1) || !containsVertex(vertex2)) {
-            return false;
-        }
-        return getNode(vertex1).removeEdge(getNode(vertex2));
+        return !(!containsVertex(vertex1) || !containsVertex(vertex2)) && getNode(vertex1).removeEdge(getNode(vertex2));
     }
 
-    /**
-     * Method to get the number of vertices in the graph.
-     * @return      count of vertices
-     */
     public int vertexCount() {
-        return adjacencyList.keySet().size();
+        return getAdjacencyList().keySet().size();
     }
 
-    /**
-     * Method to get the number of edges in the graph.
-     * @return      count of edges
-     */
     public int edgeCount() {
-        return adjacencyList.values()
+        return getAdjacencyList().values()
                 .stream()
                 .mapToInt(Node::getEdgeCount)
                 .sum();
     }
 
-    /**
-     * Method to check if a vertex exists in the graph.
-     * @param vertex    vertex which is to be checked
-     * @return  returns true if the graph contains the vertex, false otherwise
-     */
     public boolean containsVertex(T vertex) {
-        return adjacencyList.containsKey(vertex);
+        return getAdjacencyList().containsKey(vertex);
     }
 
-    /**
-     * Method to check if an edge exists in the graph.
-     * @param vertex1       vertex where the (directed) edge begins
-     * @param vertex2       vertex where the (directed) edge ends
-     * @return   returns true if the graph contains the edge, false otherwise
-     */
     public boolean containsEdge(T vertex1, T vertex2) {
-        if (!containsVertex(vertex1) || !containsVertex(vertex2)) {
-            return false;
-        }
-        return getNode(vertex1).hasEdge(getNode(vertex2));
+        return !(!containsVertex(vertex1) || !containsVertex(vertex2)) && getNode(vertex1).hasEdge(getNode(vertex2));
     }
 
     @Override
     public String toString() {
-        return adjacencyList.toString();
+        return getAdjacencyList().toString();
     }
 
-    /**
-     * Method to get the shortest path from startVertex to endVertex.
-     * @param startVertex   vertex where the path begins
-     * @param endVertex     vertex where the path ends
-     * @return  list of vertices in the shortest path from startVertex to endVertex,
-     *          null if no such path exists.
-     */
     @Nullable
     public List<T> shortestPath(T startVertex, T endVertex) {
         // if nodes not found, return empty path
@@ -194,11 +141,11 @@ public class Graph<T> {
     }
 
     private Node<T> getNode(T value) {
-        return adjacencyList.get(value);
+        return getAdjacencyList().get(value);
     }
 
     private void resetGraph() {
-        adjacencyList.keySet().forEach(key -> {
+        getAdjacencyList().keySet().forEach(key -> {
             Node<T> node = getNode(key);
             node.setParent(null);
             node.setVisited(false);

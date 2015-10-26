@@ -1,6 +1,8 @@
-package com.coryginsberg;
+package com.coryginsberg.Graph;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Cory Ginsberg on 10/26/2015.
@@ -35,10 +37,7 @@ public class Node<T> {
 
     public boolean removeEdge(Node<T> node) {
         Optional<Edge<T>> optional = findEdge(node);
-        if (optional.isPresent()) {
-            return edges.remove(optional.get());
-        }
-        return false;
+        return optional.isPresent() && edges.remove(optional.get());
     }
 
     public boolean hasEdge(Node<T> node) {

@@ -18,7 +18,11 @@ import java.util.HashMap;
  */
 public class ImportFacilityNetwork {
 
-    public void importNetwork() throws Exception {
+    private static String name = null;
+    private static int rate = 0;
+    private static int cost = 0;
+
+    public void importNetwork() {
         try {
             File file = new File("src/com/coryginsberg/FacilityNetwork.xml");
 
@@ -35,13 +39,9 @@ public class ImportFacilityNetwork {
         }
     }
 
-    private static String name = null;
-    private static int rate = 0;
-    private static int cost = 0;
-
     private void createFacility(NodeList nodeList) {
 
-        ArrayList<HashMap<Integer, String>> connectedCities = new ArrayList<HashMap<Integer, String>>();
+        ArrayList<HashMap<Integer, String>> connectedCities = new ArrayList<>();
 
         for (int i = 0; i < nodeList.getLength(); i++) {
             final Node tempNode = nodeList.item(i);
