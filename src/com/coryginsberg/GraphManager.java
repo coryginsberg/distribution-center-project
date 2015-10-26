@@ -19,10 +19,11 @@ public class GraphManager {
             System.out.println(i);
             Facility currentFacility = facilityManager.facilities().get(i);
             ArrayList<HashMap<Integer, String>> connectedCities = currentFacility.getConnectingCities();
-
+            graph.addNode(currentFacility.getCity());
             for (HashMap<Integer, String> city: connectedCities) {
                 for (Integer distance: city.keySet()) {
                     graph.addNode(city.get(distance));
+                    graph.addEdge(currentFacility.getCity(), city.get(distance));
                 }
             }
         }
