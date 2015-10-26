@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<facilities>
+    <!-- Seattle, WA -->
+    <facility city="Seattle, WA">
+        <rate atcost="300">8</rate>
+        <links>
+            <city dist="1426">Fargo, ND</city>
+            <city dist="808">San Francisco, CA</city>
+        </links>
+    </facility>
+    <!-- San Francisco, CA -->
+    <facility city="San Francisco, CA">
+        <rate atcost="300">12</rate>
+        <links>
+            <city dist="808">Seattle, WA</city>
+            <city dist="1249">Denver, CO</city>
+            <city dist="382">Los Angeles, CA</city>
+        </links>
+    </facility>
+    <!-- Los Angeles, CA -->
+    <facility city="Los Angeles, CA">
+        <rate atcost="300">10</rate>
+        <links>
+            <city dist="382">San Francisco, CA</city>
+            <city dist="372">Phoenix, AZ</city>
+        </links>
+    </facility>
+    <facility city="Phoenix, AZ">
+        <rate atcost="300">8</rate>
+        <links>
+            <city dist="372">Los Angeles, CA</city>
+            <city dist="480">Santa Fe, NM</city>
+        </links>
+    </facility>
+    <facility city="Denver, CO">
+        <rate atcost="300">10</rate>
+        <links>
+            <city dist="1249">San Francisco, CA</city>
+            <city dist="392">Santa Fe, NM</city>
+            <city dist="889">Fargo, ND</city>
+            <city dist="851">St. Louis, MO</city>
+        </links>
+    </facility>
+    <facility city="Santa Fe, NM">
+        <rate atcost="300">8</rate>
+        <links>
+            <city dist="480">Phoenix, AZ</city>
+            <city dist="392">Denver, CO</city>
+            <city dist="1032">St. Louis, MO</city>
+            <city dist="688">Austin, TX</city>
+        </links>
+    </facility>
+    <facility city="Fargo, ND">
+        <rate atcost="300">8</rate>
+        <links>
+            <city dist="1426">Seattle, WA</city>
+            <city dist="889">Denver, CO</city>
+            <city dist="643">Chicago, IL</city>
+        </links>
+    </facility>
+    <facility city="Austin, TX">
+        <rate atcost="300">10</rate>
+        <links>
+            <city dist="688">Santa Fe, NM</city>
+            <city dist="825">St. Louis, MO</city>
+            <city dist="512">New Orleans, LA</city>
+        </links>
+    </facility>
+    <facility city="St. Louis, MO">
+        <rate atcost="300">12</rate>
+        <links>
+            <city dist="297">Chicago, IL</city>
+            <city dist="309">Nashville, TN</city>
+            <city dist="825">Austin, TX</city>
+            <city dist="1032">Santa Fe, NM</city>
+            <city dist="851">Denver, CO</city>
+        </links>
+    </facility>
+    <facility city="Chicago, IL">
+        <rate atcost="300">10</rate>
+        <links>
+            <city dist="642">Fargo, ND</city>
+            <city dist="297">St. Louis, MO</city>
+            <city dist="790">New York City, NY</city>
+            <city dist="282">Detroit, MI</city>
+        </links>
+    </facility>
+    <facility city="New Orleans, LA">
+        <rate atcost="300">10</rate>
+        <links>
+            <city dist="512">Austin, TX</city>
+            <city dist="532">Nashville, TN</city>
+            <city dist="469">Atlanta, GA</city>
+            <city dist="864">Miami, FL</city>
+        </links>
+    </facility>
+    <facility city="Nashville, TN">
+        <rate atcost="300">8</rate>
+        <links>
+            <city dist="309">St. Louise, MO</city>
+            <city dist="532">New Orleans, LA</city>
+            <city dist="706">Norfolk, VA</city>
+        </links>
+    </facility>
+    <facility city="Detroit, MI">
+        <rate atcost="300">10</rate>
+        <links>
+            <city dist="282">Chicago, IL</city>
+            <city dist="614">New York City, NY</city>
+            <city dist="719">Boston, MA</city>
+        </links>
+    </facility>
+    <facility city="Boston, MA">
+        <rate atcost="300">10</rate>
+        <links>
+            <city dist="719">Detroit, MI</city>
+            <city dist="215">New York City, NY</city>
+        </links>
+    </facility>
+    <facility city="New York City, NY">
+        <rate atcost="300">14</rate>
+        <links>
+            <city dist="215">Boston, MA</city>
+            <city dist="614">Detroit, MI</city>
+            <city dist="790">Chicago, IL</city>
+            <city dist="363">Norfolk, VA</city>
+        </links>
+    </facility>
+    <facility city="Norfolk, VA">
+        <rate atcost="300">10</rate>
+        <links>
+            <city dist="363">New York City, NY</city>
+            <city dist="706">Nashville, TN</city>
+            <city dist="566">Atlanta, GA</city>
+        </links>
+    </facility>
+    <facility city="Atlanta, GA">
+        <rate atcost="300">10</rate>
+        <links>
+            <city dist="566">Norfolk, VA</city>
+            <city dist="469">New Orleans, LA</city>
+            <city dist="663">Miami, FL</city>
+        </links>
+    </facility>
+    <facility city="Miami, FL">
+        <rate atcost="300">12</rate>
+        <links>
+            <city dist="663">Atlanta, GA</city>
+            <city dist="864">New Orleans, LA</city>
+        </links>
+    </facility>
+</facilities>

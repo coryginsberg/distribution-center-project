@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<facilities>
+    <facility city="Seattle, WA">
+        <item quantity="45">ABC123</item>
+        <item quantity="52">JBL3100</item>
+        <item quantity="4">PL132-C</item>
+        <item quantity="60">PU238</item>
+    </facility>
+
+    <facility city="San Francisco, CA">
+        <item quantity="40">RL123A</item>
+        <item quantity="8">XLK200B</item>
+        <item quantity="81">SR71-D</item>
+        <item quantity="46">CT1928</item>
+    </facility>
+
+    <facility city="Los Angeles, CA">
+        <item quantity="57">RX100-3</item>
+        <item quantity="60">JBL3100</item>
+        <item quantity="44">E241i</item>
+        <item quantity="32">XTP202</item>
+    </facility>
+
+    <facility city="Phoenix, AZ">
+        <item quantity="18">RX100-3</item>
+        <item quantity="55">SR71-D</item>
+        <item quantity="22">SN-241-L</item>
+        <item quantity="54">ZTF109</item>
+    </facility>
+
+    <facility city="Denver, CO">
+        <item quantity="80">ABC123</item>
+        <item quantity="110">RL123A</item>
+        <item quantity="100">RTF110</item>
+    </facility>
+
+    <facility city="Santa Fe, NM">
+        <item quantity="144">RX100-3</item>
+        <item quantity="280">CR2032</item>
+    </facility>
+
+    <facility city="Fargo, ND">
+        <item quantity="25">ABC123</item>
+        <item quantity="32">JBL3100</item>
+        <item quantity="82">XLK200B</item>
+    </facility>
+
+    <facility city="Austin, TX">
+        <item quantity="66">RL123A</item>
+        <item quantity="35">RX100-3</item>
+        <item quantity="35">SN-241-L</item>
+    </facility>
+
+    <facility city="St. Louis, MO">
+        <item quantity="70">ABC123</item>
+        <item quantity="45">SR71-D</item>
+        <item quantity="82">PU238</item>
+    </facility>
+
+    <facility city="Chicago, IL">
+        <item quantity="60">ABC123</item>
+        <item quantity="64">E241i</item>
+        <item quantity="20">CT1928</item>
+        <item quantity="110">RTF110</item>
+        <item quantity="20">XTP202</item>
+    </facility>
+
+    <facility city="New Orleans, LA">
+        <item quantity="100">MM35P</item>
+        <item quantity="49">PU238</item>
+        <item quantity="120">ZTF109</item>
+    </facility>
+
+    <facility city="Nashville, TN">
+        <item quantity="78">RX100-3</item>
+        <item quantity="28">XLK200B</item>
+        <item quantity="366">CR2032</item>
+        <item quantity="16">SN-241-L</item>
+    </facility>
+
+    <facility city="Detroit, MI">
+        <item quantity="117">JBL3100</item>
+        <item quantity="8">SR71-D</item>
+        <item quantity="72">CT1928</item>
+    </facility>
+
+    <facility city="Boston, MA">
+        <item quantity="47">MM35P</item>
+        <item quantity="3">PL132-C</item>
+        <item quantity="65">CT1928</item>
+    </facility>
+
+    <facility city="New York City, NY">
+        <item quantity="12">RL123A</item>
+        <item quantity="132">CR2032</item>
+        <item quantity="72">E241i</item>
+        <item quantity="28">ZTF109</item>
+    </facility>
+
+    <facility city="Norfolk, VA">
+        <item quantity="66">MM35P</item>
+        <item quantity="50">RL123A</item>
+        <item quantity="14">XLK200B</item>
+    </facility>
+
+    <facility city="Atlanta, GA">
+        <item quantity="90">RX100-3</item>
+        <item quantity="32">E241i</item>
+        <item quantity="120">PU238</item>
+    </facility>
+
+    <facility city="Miami, FL">
+        <item quantity="16">MM35P</item>
+        <item quantity="44">JBL3100</item>
+        <item quantity="15">SR71-D</item>
+        <item quantity="28">SN-241-L</item>
+        <item quantity="88">XTP202</item>
+    </facility>
+</facilities>
