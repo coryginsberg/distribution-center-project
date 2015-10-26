@@ -80,7 +80,7 @@ public class ImportFacilityNetwork {
         }
 
         if (!connectedCities.isEmpty()) {
-            new FacilityManager(name, rate, cost, connectedCities);
+            FacilityManager.facilityManager.addFacility(name, rate, cost, connectedCities);
         }
     }
 }

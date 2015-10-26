@@ -97,7 +97,7 @@
     <facility city="Nashville, TN">
         <rate atcost="300">8</rate>
         <links>
-            <city dist="309">St. Louise, MO</city>
+            <city dist="309">St. Louis, MO</city>
             <city dist="532">New Orleans, LA</city>
             <city dist="706">Norfolk, VA</city>
         </links>
