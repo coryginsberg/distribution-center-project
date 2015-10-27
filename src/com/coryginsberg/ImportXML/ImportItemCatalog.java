@@ -16,7 +16,6 @@ import java.io.File;
  */
 public class ImportItemCatalog {
     private static String id = null;
-    private static String city = null;
     private static int price = 0;
 
     public void importInventory() {
@@ -52,7 +51,6 @@ public class ImportItemCatalog {
                             price = Integer.parseInt(node.getNodeValue());
                             id = tempNode.getTextContent();
                         }
-
                     }
                 }
 
@@ -64,6 +62,5 @@ public class ImportItemCatalog {
         }
 
         ItemManager.itemManager.addItem(id, price);
-        System.out.println("Item: " + id + " | Price: $" + price);
     }
 }

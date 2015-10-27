@@ -16,7 +16,6 @@ public class FacilityManager {
 
     public void addFacility(String name, int rate, int cost, ArrayList<HashMap<Integer, String>> linkedCities) {
         Facility facility = new Facility(name, rate, cost, linkedCities);
-//        System.out.println(facility.toString());
         facilities.add(facility);
     }
 

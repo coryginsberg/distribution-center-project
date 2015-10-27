@@ -25,6 +25,6 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item ID: " + getId() + "Price: $" + getPrice();
+        return "Item ID: " + getId() + " | Price: $" + getPrice();
     }
 }

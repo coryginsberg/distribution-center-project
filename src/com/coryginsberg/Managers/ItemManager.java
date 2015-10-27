@@ -15,7 +15,6 @@ public class ItemManager {
 
     public void addItem(String id, int price) {
         Item item = new Item(id, price);
-        //System.out.println(item.toString());
         items.add(item);
     }
 
@@ -23,7 +22,7 @@ public class ItemManager {
         return items.size();
     }
 
-    public ArrayList<Item> items() {
+    public ArrayList<Item> getItems() {
         return items;
     }
 
