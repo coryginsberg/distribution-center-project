@@ -17,7 +17,7 @@ public class Graph<T> {
         adjacencyList = new HashMap<>();
     }
 
-    public Map<T, Node<T>> getAdjacencyList() {
+    private Map<T, Node<T>> getAdjacencyList() {
         return adjacencyList;
     }
 
@@ -127,17 +127,17 @@ public class Graph<T> {
         queue.add(start);
 
         // explore the graph
-        /*while (!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             Node<T> first = queue.remove();
             first.setVisited(true);
-            first.edges().foreach(edge -> {
+            for (Edge<T> edge : first.edges()) {
                 Node<T> neighbor = edge.toNode();
                 if (!neighbor.isVisited()) {
                     neighbor.setParent(first);
                     queue.add(neighbor);
                 }
-            });
-        }*/
+            }
+        }
     }
 
     private Node<T> getNode(T value) {

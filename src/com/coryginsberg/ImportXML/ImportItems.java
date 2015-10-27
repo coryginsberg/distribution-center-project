@@ -18,10 +18,8 @@ public class ImportItems {
     private static String id = null;
     private static int price = 0;
 
-    public void importItems() {
+    public void importItems(File file) {
         try {
-            File file = new File("src/com/coryginsberg/Items.xml");
-
             DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document doc = dBuilder.parse(file);
 

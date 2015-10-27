@@ -27,10 +27,8 @@ public class ImportFacilityInventory {
     private static String city = null;
     private static int quantity = 0;
 
-    public void importInventory() {
+    public void importInventory(File file) {
         try {
-            File file = new File("src/com/coryginsberg/FacilityInventory.xml");
-
             DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document doc = dBuilder.parse(file);
 

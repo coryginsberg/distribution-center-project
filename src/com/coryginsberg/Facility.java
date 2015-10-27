@@ -36,6 +36,7 @@ public class Facility {
         return this.network;
     }
 
+
     @Override
     public String toString() {
         return "City: " + getCity() + ", Rate: " + getRate() + ", Cost:" + getCost() + ", Connected Cities: " + getConnectingCities() + ".";

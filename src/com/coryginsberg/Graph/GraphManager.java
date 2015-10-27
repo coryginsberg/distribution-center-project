@@ -11,12 +11,14 @@ import java.util.HashMap;
  * Created for Logistics Application.
  */
 public class GraphManager {
-    FacilityManager facilityManager = FacilityManager.facilityManager;
+
+    public static GraphManager graphManager = new GraphManager();
+    Graph<String> graph = new Graph<>();
+    private FacilityManager facilityManager = FacilityManager.facilityManager;
+
     public void createGraph() {
 
-        Graph<String> graph = new Graph<>();
         for (int i = 0; i < facilityManager.getNumFacilities(); i++) {
-//            System.out.println(i);
             Facility currentFacility = facilityManager.facilities().get(i);
             ArrayList<HashMap<Integer, String>> connectedCities = currentFacility.getConnectingCities();
             graph.addVertex(currentFacility.getCity());
@@ -28,7 +30,15 @@ public class GraphManager {
             }
         }
 
-//        System.out.println(); System.out.println(); System.out.println(graph.toString());
-//        System.out.println(); System.out.println(); System.out.println(facilityManager.facilities());
+        System.out.println();
+        System.out.println();
+        System.out.println(graph.toString());
     }
+
+    public void getShortestPath(String cityStart, String cityEnd) {
+        System.out.println("City Start: " + cityStart + " | City End: " + cityEnd);
+        System.out.println(graph.shortestPath(cityStart, cityEnd).toString());
+    }
+
+
 }

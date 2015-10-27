@@ -22,10 +22,8 @@ public class ImportFacilityNetwork {
     private static int rate = 0;
     private static int cost = 0;
 
-    public void importNetwork() {
+    public void importNetwork(File file) {
         try {
-            File file = new File("src/com/coryginsberg/FacilityNetwork.xml");
-
             DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document doc = dBuilder.parse(file);
 
