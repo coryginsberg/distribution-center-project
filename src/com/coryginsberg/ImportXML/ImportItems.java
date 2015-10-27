@@ -20,7 +20,7 @@ public class ImportItems {
 
     public void importItems() {
         try {
-            File file = new File("src/com/coryginsberg/ItemCatalog.xml");
+            File file = new File("src/com/coryginsberg/Items.xml");
 
             DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document doc = dBuilder.parse(file);

@@ -1,6 +1,6 @@
 package com.coryginsberg.Managers;
 
-import com.coryginsberg.Facility;
+import com.coryginsberg.Inventory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,18 +13,18 @@ public class InventoryManager {
 
     public static InventoryManager inventoryManager = new InventoryManager();
 
-    private static ArrayList<Facility> inventories = new ArrayList<>();
+    private static ArrayList<Inventory> inventories = new ArrayList<>();
 
-    public void addFacility(String name, int rate, int cost, ArrayList<HashMap<Integer, String>> linkedCities) {
-        Facility facility = new Facility(name, rate, cost, linkedCities);
-        inventories.add(facility);
+    public void addInventory(String city, ArrayList<HashMap<Integer, String>> items) {
+        Inventory inventory = new Inventory(city, items);
+        inventories.add(inventory);
     }
 
     public int getNumInventories() {
         return inventories.size();
     }
 
-    public ArrayList<Facility> inventories() {
+    public ArrayList<Inventory> inventories() {
         return inventories;
     }
 

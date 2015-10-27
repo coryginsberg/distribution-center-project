@@ -5,6 +5,7 @@ package com.coryginsberg.ImportXML;
  * Created for Object Oriented Programming.
  */
 
+import com.coryginsberg.Managers.InventoryManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -44,7 +45,7 @@ public class ImportFacilityInventory {
 
     private void createInventory(NodeList nodeList) {
 
-        ArrayList<HashMap<Integer, String>> facilityInventory = new ArrayList<>();
+        ArrayList<HashMap<Integer, String>> facilityInventories = new ArrayList<>();
 
         for (int i = 0; i < nodeList.getLength(); i++) {
             final Node tempNode = nodeList.item(i);
@@ -65,8 +66,10 @@ public class ImportFacilityInventory {
                         if (node.getNodeName().equals("quantity")) {
                             quantity = Integer.parseInt(node.getNodeValue());
                             id = tempNode.getTextContent();
+                            HashMap<Integer, String> facilityInventory = new HashMap<>();
+                            facilityInventory.put(quantity, id);
+                            facilityInventories.add(facilityInventory);
                         }
-                        System.out.println(" Location: " + city + " | ID: " + id + " | Quantity: " + quantity);
                     }
                 }
 
@@ -76,9 +79,9 @@ public class ImportFacilityInventory {
                 }
             }
         }
-    }
 
-    public void setFacilityInventory() {
-
+        if (!facilityInventories.isEmpty()) {
+            InventoryManager.inventoryManager.addInventory(city, facilityInventories);
+        }
     }
 }
