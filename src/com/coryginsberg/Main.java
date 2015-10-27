@@ -4,7 +4,7 @@ package com.coryginsberg;
 import com.coryginsberg.Graph.GraphManager;
 import com.coryginsberg.ImportXML.ImportFacilityInventory;
 import com.coryginsberg.ImportXML.ImportFacilityNetwork;
-import com.coryginsberg.ImportXML.ImportItemCatalog;
+import com.coryginsberg.ImportXML.ImportItems;
 
 public class Main {
 
@@ -15,7 +15,7 @@ public class Main {
         graphManager.createGraph();
         ImportFacilityInventory importFacilityInventory = new ImportFacilityInventory();
         importFacilityInventory.importInventory();
-        ImportItemCatalog importItemCatalog = new ImportItemCatalog();
-        importItemCatalog.importInventory();
+        ImportItems importItems = new ImportItems();
+        importItems.importItems();
     }
 }

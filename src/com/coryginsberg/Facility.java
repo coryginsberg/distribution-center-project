@@ -12,21 +12,12 @@ public class Facility {
     private int rate;
     private int cost; // While cost is the same for all facilities currently, it is possible for cost to change in the future.
     private ArrayList<HashMap<Integer, String>> network;
-    private ArrayList<HashMap<Integer, String>> inventory;
 
     public Facility(String name, int rate, int cost, ArrayList<HashMap<Integer, String>> connectingCities) {
         this.name = name;
         this.rate = rate;
         this.cost = cost;
         this.network = connectingCities;
-    }
-
-    public ArrayList<HashMap<Integer, String>> getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(ArrayList<HashMap<Integer, String>> inventory) {
-        this.inventory = inventory;
     }
 
     public String getCity() {

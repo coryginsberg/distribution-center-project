@@ -14,11 +14,11 @@ import java.io.File;
  * Created by Cory Ginsberg on 10/25/2015.
  * Created for Object Oriented Programming.
  */
-public class ImportItemCatalog {
+public class ImportItems {
     private static String id = null;
     private static int price = 0;
 
-    public void importInventory() {
+    public void importItems() {
         try {
             File file = new File("src/com/coryginsberg/ItemCatalog.xml");
 
@@ -27,14 +27,14 @@ public class ImportItemCatalog {
 
             if (doc.hasChildNodes()) {
                 /* Comment out when done testing */
-                createInventory(doc.getChildNodes());
+                createItems(doc.getChildNodes());
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    private void createInventory(NodeList nodeList) {
+    private void createItems(NodeList nodeList) {
 
         for (int i = 0; i < nodeList.getLength(); i++) {
             final Node tempNode = nodeList.item(i);
@@ -56,7 +56,7 @@ public class ImportItemCatalog {
 
                 if (tempNode.hasChildNodes()) {
                     // loop again if has child nodes
-                    createInventory(tempNode.getChildNodes());
+                    createItems(tempNode.getChildNodes());
                 }
             }
         }
