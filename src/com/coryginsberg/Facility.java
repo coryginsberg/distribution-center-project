@@ -9,11 +9,11 @@ import java.util.HashMap;
  */
 public class Facility {
     private String name;
-    private int rate;
+    private float rate;
     private int cost; // While cost is the same for all facilities currently, it is possible for cost to change in the future.
-    private ArrayList<HashMap<Integer, String>> network;
+    private ArrayList<HashMap<Float, String>> network;
 
-    public Facility(String name, int rate, int cost, ArrayList<HashMap<Integer, String>> connectingCities) {
+    public Facility(String name, float rate, int cost, ArrayList<HashMap<Float, String>> connectingCities) {
         this.name = name;
         this.rate = rate;
         this.cost = cost;
@@ -24,7 +24,7 @@ public class Facility {
         return this.name;
     }
 
-    public int getRate() {
+    public float getRate() {
         return this.rate;
     }
 
@@ -32,10 +32,18 @@ public class Facility {
         return this.cost;
     }
 
-    public ArrayList<HashMap<Integer, String>> getConnectingCities() {
+    public ArrayList<HashMap<Float, String>> getConnectingCities() {
         return this.network;
     }
 
+    public String getConnectingCitiesToString() {
+
+        String cities = "";
+        for (HashMap<Float, String> city : network) {
+            cities += city.values().toString().substring(1, city.values().toString().length() - 1) + " (" + city.keySet().toString().substring(1, city.keySet().toString().length() - 1) + " days), ";
+        }
+        return cities;
+    }
 
     @Override
     public String toString() {

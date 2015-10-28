@@ -13,6 +13,8 @@ public class Graph<T> {
 
     private final Map<T, Node<T>> adjacencyList;
 
+    private float totalWeight = 0;
+
     public Graph() {
         adjacencyList = new HashMap<>();
     }
@@ -29,11 +31,7 @@ public class Graph<T> {
         return true;
     }
 
-    public boolean addEdge(T vertex1, T vertex2) {
-        return addEdge(vertex1, vertex2, 0);
-    }
-
-    public boolean addEdge(T vertex1, T vertex2, int weight) {
+    public boolean addEdge(T vertex1, T vertex2, float weight) {
         if (!containsVertex(vertex1) || !containsVertex(vertex2)) {
             throw new RuntimeException("Vertex does not exist");
         }
@@ -44,43 +42,8 @@ public class Graph<T> {
         return node1.addEdge(node2, weight);
     }
 
-    public boolean removeVertex(T vertex) {
-        if (!getAdjacencyList().containsKey(vertex)) {
-            return false;
-        }
-
-        // get node to be removed
-        final Node<T> toRemove = getNode(vertex);
-
-        // remove all incoming edges to node
-        getAdjacencyList().values().forEach(node -> node.removeEdge(toRemove));
-
-        // remove the node
-        getAdjacencyList().remove(vertex);
-        return true;
-    }
-
-    public boolean removeEdge(T vertex1, T vertex2) {
-        return !(!containsVertex(vertex1) || !containsVertex(vertex2)) && getNode(vertex1).removeEdge(getNode(vertex2));
-    }
-
-    public int vertexCount() {
-        return getAdjacencyList().keySet().size();
-    }
-
-    public int edgeCount() {
-        return getAdjacencyList().values()
-                .stream()
-                .mapToInt(Node::getEdgeCount)
-                .sum();
-    }
-
     public boolean containsVertex(T vertex) {
         return getAdjacencyList().containsKey(vertex);
-    }
-
-    public boolean containsEdge(T vertex1, T vertex2) {
-        return !(!containsVertex(vertex1) || !containsVertex(vertex2)) && getNode(vertex1).hasEdge(getNode(vertex2));
     }
 
     @Override
@@ -118,15 +81,12 @@ public class Graph<T> {
             throw new RuntimeException("Vertex does not exist.");
         }
 
-        // reset the graph
         resetGraph();
 
-        // init the queue
         Queue<Node<T>> queue = new LinkedList<>();
         Node<T> start = getNode(startVertex);
         queue.add(start);
 
-        // explore the graph
         while (!queue.isEmpty()) {
             Node<T> first = queue.remove();
             first.setVisited(true);
@@ -136,6 +96,7 @@ public class Graph<T> {
                     neighbor.setParent(first);
                     queue.add(neighbor);
                 }
+                totalWeight += edge.getWeight();
             }
         }
     }
@@ -150,5 +111,10 @@ public class Graph<T> {
             node.setParent(null);
             node.setVisited(false);
         });
+        totalWeight = 0.0f;
+    }
+
+    public float getTotalWeight() {
+        return totalWeight;
     }
 }

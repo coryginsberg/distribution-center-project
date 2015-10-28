@@ -12,7 +12,6 @@ import java.util.HashMap;
  */
 public class GraphManager {
 
-    public static GraphManager graphManager = new GraphManager();
     Graph<String> graph = new Graph<>();
     private FacilityManager facilityManager = FacilityManager.facilityManager;
 
@@ -20,25 +19,27 @@ public class GraphManager {
 
         for (int i = 0; i < facilityManager.getNumFacilities(); i++) {
             Facility currentFacility = facilityManager.facilities().get(i);
-            ArrayList<HashMap<Integer, String>> connectedCities = currentFacility.getConnectingCities();
+            ArrayList<HashMap<Float, String>> connectedCities = currentFacility.getConnectingCities();
             graph.addVertex(currentFacility.getCity());
-            for (HashMap<Integer, String> city: connectedCities) {
-                for (Integer distance: city.keySet()) {
+            for (HashMap<Float, String> city : connectedCities) {
+                for (Float distance : city.keySet()) {
                     graph.addVertex(city.get(distance));
                     graph.addEdge(currentFacility.getCity(), city.get(distance), distance);
                 }
             }
         }
-
-        System.out.println();
-        System.out.println();
-        System.out.println(graph.toString());
     }
 
     public void getShortestPath(String cityStart, String cityEnd) {
-        System.out.println("City Start: " + cityStart + " | City End: " + cityEnd);
-        System.out.println(graph.shortestPath(cityStart, cityEnd).toString());
+        System.out.println("City Start: " + cityStart + " -> City End: " + cityEnd);
+        System.out.println(cityStart + ", " + graph.shortestPath(cityStart, cityEnd).toString().substring(1, graph.shortestPath(cityStart, cityEnd).toString().length() - 1));
     }
 
+    public float getTotalTime(float hoursDriving, float avgMph) {
+        float totalTime = graph.getTotalWeight();
+        System.out.println(totalTime);
+
+        return totalTime / (hoursDriving * avgMph);
+    }
 
 }

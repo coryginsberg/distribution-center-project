@@ -11,9 +11,9 @@ public class Edge<T> {
 
     private Node<T> node2;
 
-    private int weight;
+    private float weight;
 
-    public Edge(Node<T> node1, Node<T> node2, int weight) {
+    public Edge(Node<T> node1, Node<T> node2, float weight) {
         this.node1 = node1;
         this.node2 = node2;
         this.weight = weight;
@@ -29,6 +29,10 @@ public class Edge<T> {
 
     public boolean isBetween(Node<T> node1, Node<T> node2) {
         return (this.node1 == node1 && this.node2 == node2);
+    }
+
+    public float getWeight() {
+        return weight;
     }
 
     @Override

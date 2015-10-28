@@ -27,7 +27,7 @@ public class Node<T> {
         return vertex;
     }
 
-    public boolean addEdge(Node<T> node, int weight) {
+    public boolean addEdge(Node<T> node, float weight) {
         if (hasEdge(node)) {
             return false;
         }
@@ -54,7 +54,7 @@ public class Node<T> {
         return edges;
     }
 
-    public int getEdgeCount() {
+    public float getEdgeCount() {
         return edges.size();
     }
 

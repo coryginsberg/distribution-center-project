@@ -28,9 +28,7 @@ public class ImportFacilityNetwork {
             Document doc = dBuilder.parse(file);
 
             if (doc.hasChildNodes()) {
-                /* Comment out when done testing */
                 createFacility(doc.getChildNodes());
-                //createFacilities(doc.getChildNodes());
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -39,7 +37,7 @@ public class ImportFacilityNetwork {
 
     private void createFacility(NodeList nodeList) {
 
-        ArrayList<HashMap<Integer, String>> connectedCities = new ArrayList<>();
+        ArrayList<HashMap<Float, String>> connectedCities = new ArrayList<>();
 
         for (int i = 0; i < nodeList.getLength(); i++) {
             final Node tempNode = nodeList.item(i);
@@ -63,8 +61,8 @@ public class ImportFacilityNetwork {
                             cost = Integer.parseInt(node.getNodeValue());
                         }
                         if (tempNode.getNodeName().equals("city") && tempNode.getParentNode().getNodeName().equals("links")) {
-                            HashMap<Integer, String> connectedCity = new HashMap<>();
-                            connectedCity.put(Integer.parseInt(node.getNodeValue()), tempNode.getTextContent());
+                            HashMap<Float, String> connectedCity = new HashMap<>();
+                            connectedCity.put(Float.parseFloat(node.getNodeValue()), tempNode.getTextContent());
                             connectedCities.add(connectedCity);
                         }
                     }

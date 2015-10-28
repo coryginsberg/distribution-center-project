@@ -14,7 +14,7 @@ public class FacilityManager {
 
     private static ArrayList<Facility> facilities = new ArrayList<>();
 
-    public void addFacility(String name, int rate, int cost, ArrayList<HashMap<Integer, String>> linkedCities) {
+    public void addFacility(String name, int rate, int cost, ArrayList<HashMap<Float, String>> linkedCities) {
         Facility facility = new Facility(name, rate, cost, linkedCities);
         facilities.add(facility);
     }
@@ -26,4 +26,5 @@ public class FacilityManager {
     public ArrayList<Facility> facilities() {
         return facilities;
     }
+
 }
