@@ -1,7 +1,7 @@
-package com.coryginsberg.Graph;
+package com.coryginsberg.Managers;
 
 import com.coryginsberg.Facility;
-import com.coryginsberg.Managers.FacilityManager;
+import com.coryginsberg.Graph.Graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,14 +30,12 @@ public class GraphManager {
         }
     }
 
-    public void getShortestPath(String cityStart, String cityEnd) {
-        System.out.println("City Start: " + cityStart + " -> City End: " + cityEnd);
-        System.out.println(cityStart + ", " + graph.shortestPath(cityStart, cityEnd).toString().substring(1, graph.shortestPath(cityStart, cityEnd).toString().length() - 1));
+    public String getShortestPath(String cityStart, String cityEnd) {
+        return cityStart + ", " + graph.shortestPath(cityStart, cityEnd).toString().substring(1, graph.shortestPath(cityStart, cityEnd).toString().length() - 1);
     }
 
     public float getTotalTime(float hoursDriving, float avgMph) {
         float totalTime = graph.getTotalWeight();
-        System.out.println(totalTime);
 
         return totalTime / (hoursDriving * avgMph);
     }

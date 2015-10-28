@@ -40,7 +40,7 @@ public class Facility {
 
         String cities = "";
         for (HashMap<Float, String> city : network) {
-            cities += city.values().toString().substring(1, city.values().toString().length() - 1) + " (" + city.keySet().toString().substring(1, city.keySet().toString().length() - 1) + " days), ";
+            cities += city.values().toString().substring(1, city.values().toString().length() - 1);
         }
         return cities;
     }

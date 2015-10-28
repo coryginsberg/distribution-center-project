@@ -35,16 +35,11 @@ public class Node<T> {
         return edges.add(newEdge);
     }
 
-    public boolean removeEdge(Node<T> node) {
-        Optional<Edge<T>> optional = findEdge(node);
-        return optional.isPresent() && edges.remove(optional.get());
-    }
-
     public boolean hasEdge(Node<T> node) {
         return findEdge(node).isPresent();
     }
 
-    private Optional<Edge<T>> findEdge(Node<T> node) {
+    public Optional<Edge<T>> findEdge(Node<T> node) {
         return edges.stream()
                 .filter(edge -> edge.isBetween(this, node))
                 .findFirst();
@@ -52,10 +47,6 @@ public class Node<T> {
 
     public List<Edge<T>> edges() {
         return edges;
-    }
-
-    public float getEdgeCount() {
-        return edges.size();
     }
 
     public Node<T> parent() {

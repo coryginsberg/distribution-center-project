@@ -65,7 +65,9 @@ public class Graph<T> {
         Node<T> end = getNode(endVertex);
         while (end != null && end != getNode(startVertex)) {
             path.add(end.vertex());
+            totalWeight += end.findEdge(end.parent()).get().getWeight();
             end = end.parent();
+
         }
         // if end is null, node not found
         if (end == null) {
@@ -73,6 +75,7 @@ public class Graph<T> {
         }
 
         Collections.reverse(path);
+
         return path;
     }
 
@@ -95,8 +98,8 @@ public class Graph<T> {
                 if (!neighbor.isVisited()) {
                     neighbor.setParent(first);
                     queue.add(neighbor);
+
                 }
-                totalWeight += edge.getWeight();
             }
         }
     }

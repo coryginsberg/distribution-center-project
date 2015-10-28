@@ -1,10 +1,10 @@
 package com.coryginsberg;
 
-import com.coryginsberg.Graph.GraphManager;
 import com.coryginsberg.ImportXML.ImportFacilityInventory;
 import com.coryginsberg.ImportXML.ImportFacilityNetwork;
 import com.coryginsberg.ImportXML.ImportItems;
 import com.coryginsberg.Managers.FacilityManager;
+import com.coryginsberg.Managers.GraphManager;
 import com.coryginsberg.Managers.InventoryManager;
 import com.coryginsberg.Managers.ItemManager;
 
@@ -58,7 +58,13 @@ public class GenerateFacilityStatusOutput {
     public void printStatusOutputForCity(Facility facility) {
         System.out.println("============================================================================================");
         System.out.println(facility.getCity().toUpperCase());
-        System.out.println("Direct Links: " + facility.getConnectingCitiesToString());
+        System.out.print("Direct Links: ");
+        for (HashMap<Float, String> connectedFacility : facility.getConnectingCities()) {
+            System.out.print(connectedFacility.values().toString().substring(1, connectedFacility.values().toString().length() - 1));
+            graphManager.getShortestPath(facility.getCity(), connectedFacility.values().toString().substring(1, connectedFacility.values().toString().length() - 1));
+            System.out.print(" (" + graphManager.getTotalTime(hoursDriving, avgMph) + " Days) ");
+        }
+        System.out.println();
         System.out.println();
         System.out.println("Active Inventory");
 
@@ -92,19 +98,32 @@ public class GenerateFacilityStatusOutput {
         System.out.println();
         System.out.println("Shortest Path results: ");
         System.out.println("----------------------");
-        graphManager.getShortestPath("Seattle, WA", "Nashville, TN");
+
+        String startCity = "Seattle, WA";
+        String endCity = "Nashville, TN";
+        System.out.println("City Start: " + startCity + " -> City End: " + endCity);
+        System.out.println(graphManager.getShortestPath(startCity, endCity));
         System.out.println(graphManager.getTotalTime(hoursDriving, avgMph) + " Days");
         System.out.println();
-        graphManager.getShortestPath("New York City, NY", "Phoenix, AZ");
+
+        startCity = "New York City, NY";
+        endCity = "Phoenix, AZ";
+        System.out.println("City Start: " + startCity + " -> City End: " + endCity);
+        System.out.println(graphManager.getShortestPath(startCity, endCity));
         System.out.println(graphManager.getTotalTime(hoursDriving, avgMph) + " Days");
         System.out.println();
-        graphManager.getShortestPath("Fargo, ND", "Austin, TX");
+
+        startCity = "Fargo, ND";
+        endCity = "Austin, TX";
+        System.out.println("City Start: " + startCity + " -> City End: " + endCity);
+        System.out.println(graphManager.getShortestPath(startCity, endCity));
         System.out.println(graphManager.getTotalTime(hoursDriving, avgMph) + " Days");
         System.out.println();
-        graphManager.getShortestPath("Denver, CO", "Miami, FL");
-        System.out.println(graphManager.getTotalTime(hoursDriving, avgMph) + " Days");
-        System.out.println();
-        graphManager.getShortestPath("Chicago, IL", "Denver, CO");
+
+        startCity = "Denver, CO";
+        endCity = "Miami, FL";
+        System.out.println("City Start: " + startCity + " -> City End: " + endCity);
+        System.out.println(graphManager.getShortestPath(startCity, endCity));
         System.out.println(graphManager.getTotalTime(hoursDriving, avgMph) + " Days");
         System.out.println();
 
