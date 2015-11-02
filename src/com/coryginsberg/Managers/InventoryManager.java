@@ -1,4 +1,4 @@
-package com.coryginsberg.Managers;
+package com.coryginsberg.managers;
 
 import com.coryginsberg.Inventory;
 

@@ -1,4 +1,4 @@
-package com.coryginsberg.Graph;
+package com.coryginsberg.graph;
 
 import java.util.ArrayList;
 import java.util.List;

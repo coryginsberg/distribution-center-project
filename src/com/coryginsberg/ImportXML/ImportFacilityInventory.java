@@ -1,11 +1,11 @@
-package com.coryginsberg.ImportXML;
+package com.coryginsberg.importxml;
 
 /**
  * Created by Cory Ginsberg on 10/25/2015.
  * Created for Object Oriented Programming.
  */
 
-import com.coryginsberg.Managers.InventoryManager;
+import com.coryginsberg.managers.InventoryManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;

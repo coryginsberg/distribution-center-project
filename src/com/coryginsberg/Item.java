@@ -10,9 +10,15 @@ public class Item {
     private int price;
 
     public Item(String id, int price) {
-        this.id = id;
-        this.price = price;
+        if (id == null)
+            throw new RuntimeException("Item ID does not exist.");
+        else
+            this.id = id;
 
+        if (price == 0)
+            throw new RuntimeException("Item " + id + "does not have a price");
+        else
+            this.price = price;
     }
 
     public String getId() {

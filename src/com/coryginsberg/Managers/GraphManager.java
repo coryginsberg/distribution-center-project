@@ -1,7 +1,7 @@
-package com.coryginsberg.Managers;
+package com.coryginsberg.managers;
 
 import com.coryginsberg.Facility;
-import com.coryginsberg.Graph.Graph;
+import com.coryginsberg.graph.Graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;

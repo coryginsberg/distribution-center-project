@@ -1,6 +1,6 @@
-package com.coryginsberg.ImportXML;
+package com.coryginsberg.importxml;
 
-import com.coryginsberg.Managers.FacilityManager;
+import com.coryginsberg.managers.FacilityManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;

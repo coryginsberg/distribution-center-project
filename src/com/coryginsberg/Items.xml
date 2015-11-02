@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <items>
-    <item price="550">ABC123</item>
+    <item price="550"></item>
     <item price="240">CR2032</item>
     <item price="910">CT1928</item>
     <item price="10400">E241i</item>

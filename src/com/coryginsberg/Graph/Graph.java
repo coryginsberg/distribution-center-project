@@ -1,4 +1,4 @@
-package com.coryginsberg.Graph;
+package com.coryginsberg.graph;
 
 /**
  * Created by Cory Ginsberg on 10/26/2015.

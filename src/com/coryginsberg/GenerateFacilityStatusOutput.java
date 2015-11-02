@@ -1,17 +1,16 @@
 package com.coryginsberg;
 
-import com.coryginsberg.ImportXML.ImportFacilityInventory;
-import com.coryginsberg.ImportXML.ImportFacilityNetwork;
-import com.coryginsberg.ImportXML.ImportItems;
-import com.coryginsberg.Managers.FacilityManager;
-import com.coryginsberg.Managers.GraphManager;
-import com.coryginsberg.Managers.InventoryManager;
-import com.coryginsberg.Managers.ItemManager;
+import com.coryginsberg.importxml.ImportFacilityInventory;
+import com.coryginsberg.importxml.ImportFacilityNetwork;
+import com.coryginsberg.importxml.ImportItems;
+import com.coryginsberg.managers.FacilityManager;
+import com.coryginsberg.managers.GraphManager;
+import com.coryginsberg.managers.InventoryManager;
+import com.coryginsberg.managers.ItemManager;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Scanner;
 
 /**
  * Created by Cory Ginsberg on 10/27/2015.
@@ -37,15 +36,11 @@ public class GenerateFacilityStatusOutput {
 
         graphManager.createGraph();
 
-        System.out.println("Please enter City:");
-        Scanner scan = new Scanner(System.in);
-        String s = scan.nextLine();
-        System.out.println("Please enter driving hours per day:");
-        scan = new Scanner(System.in);
-        hoursDriving = scan.nextFloat();
-        System.out.println("Please enter average miles per hour:");
-        scan = new Scanner(System.in);
-        avgMph = scan.nextFloat();
+        String s = "Chicago, IL";
+        hoursDriving = 8;
+        avgMph = 50;
+
+        System.out.println("All times are calculated for driving 8 hours a day at 50 MPH");
 
         facilityManager.facilities().forEach(facility -> {
             if (facility.getCity().equals(s)) {

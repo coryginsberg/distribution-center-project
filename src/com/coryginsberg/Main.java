@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        new GenerateFacilityStatusOutput();
+        GenerateFacilityStatusOutput generateFacilityStatusOutput = new GenerateFacilityStatusOutput();
 
     }
 }
