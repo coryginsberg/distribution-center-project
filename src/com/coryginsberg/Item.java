@@ -2,6 +2,7 @@ package com.coryginsberg;
 
 /**
  * @author Cory Ginsberg
+ * @version 1.0
  * @since 10/26/2015
  */
 
@@ -22,14 +23,27 @@ public class Item {
             this.price = price;
     }
 
+    /**
+     * Returns the id of the item requested.
+     *
+     * @return The id of the item requested.
+     */
     public String getId() {
         return id;
     }
 
+    /**
+     * Returns the price of Item requested.
+     * @return The Price of the item.
+     */
     public int getPrice() {
         return price;
     }
 
+    /**
+     * Returns the ID of the item as a String.
+     * @return The ID of the item as a String.
+     */
     @Override
     public String toString() {
         return getId();

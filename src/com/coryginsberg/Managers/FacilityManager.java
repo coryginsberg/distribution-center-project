@@ -6,8 +6,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by Cory Ginsberg on 10/25/2015.
- * Created for Object Oriented Programming.
+ * The Manager of the Facility class.
+ *
+ * @author Cory Ginsberg
+ * @version 1.0
+ * @since 10/25/2015
  */
 public class FacilityManager {
     public static FacilityManager facilityManager = new FacilityManager();

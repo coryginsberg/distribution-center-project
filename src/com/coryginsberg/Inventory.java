@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 /**
  * @author Cory Ginsberg
+ * @version 1.0
  * @since 10/27/2015
  */
 
@@ -20,15 +21,27 @@ public class Inventory {
         this.inventory = inventory;
     }
 
+    /**
+     * Returns the current inventory of the facility
+     *
+     * @return Current facility inventory.
+     */
     public ArrayList<HashMap<Integer, String>> getInventory() {
         return inventory;
     }
 
-
+    /**
+     * Returns the city requested.
+     * @return The city that was requested.
+     */
     public String getCity() {
         return this.city;
     }
 
+    /**
+     * Returns the Facility and its inventory as a string.
+     * @return The Facility and its inventory as a string.
+     */
     @Override
     public String toString() {
         return "City: " + getCity() + " | Inventory: " + getInventory().toString();

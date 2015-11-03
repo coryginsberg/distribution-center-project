@@ -10,6 +10,7 @@ import java.util.HashMap;
 
 /**
  * @author Cory Ginsberg
+ * @version 1.0
  * @since 10/25/2015
  */
 public class ImportFacilityInventory implements ImportInterface {

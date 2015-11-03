@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <items>
-    <item price="550"></item>
-    <item price="240">CR2032</item>
-    <item price="910">CT1928</item>
-    <item price="10400">E241i</item>
-    <item price="180">JBL3100</item>
-    <item price="1950">MM35P</item>
-    <item price="440">PL132-C</item>
-    <item price="2200">PU238</item>
-    <item price="360">RL123A</item>
-    <item price="715">RTF110</item>
-    <item price="642">RX100-3</item>
-    <item price="620">SN-241-L</item>
-    <item price="1600">SR71-D</item>
-    <item price="820">XLK200B</item>
-    <item price="345">XTP202</item>
-    <item price="1100">ZTF109</item>
+    <Item price="550"></Item>
+    <Item price="240">CR2032</Item>
+    <Item price="910">CT1928</Item>
+    <Item price="10400">E241i</Item>
+    <Item price="180">JBL3100</Item>
+    <Item price="1950">MM35P</Item>
+    <Item price="440">PL132-C</Item>
+    <Item price="2200">PU238</Item>
+    <Item price="360">RL123A</Item>
+    <Item price="715">RTF110</Item>
+    <Item price="642">RX100-3</Item>
+    <Item price="620">SN-241-L</Item>
+    <Item price="1600">SR71-D</Item>
+    <Item price="820">XLK200B</Item>
+    <Item price="345">XTP202</Item>
+    <Item price="1100">ZTF109</Item>
 </items>

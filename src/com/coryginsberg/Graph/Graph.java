@@ -2,6 +2,7 @@ package com.coryginsberg.graph;
 
 /**
  * @author Cory Ginsberg
+ * @version 1.0
  * @since 10/26/2015
  */
 

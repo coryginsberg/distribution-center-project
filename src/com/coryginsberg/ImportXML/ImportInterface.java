@@ -8,7 +8,11 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 
 /**
+ * The Interface file of the Import Classes.
+ * Implements the importFile() and createList() methods.
+ *
  * @author Cory Ginsberg
+ * @version 1.0
  * @since 11/3/2015
  */
 public interface ImportInterface {

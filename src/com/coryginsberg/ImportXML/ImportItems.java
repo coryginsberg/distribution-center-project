@@ -7,6 +7,7 @@ import org.w3c.dom.NodeList;
 
 /**
  * @author Cory Ginsberg
+ * @version 1.0
  * @since 10/25/2015
  */
 

@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by Cory Ginsberg on 10/27/2015.
- * Created for Logistics Application.
+ * @author Cory Ginsberg
+ * @version 1.0
+ * @since 10/27/2015
  */
 public class InventoryManager {
 

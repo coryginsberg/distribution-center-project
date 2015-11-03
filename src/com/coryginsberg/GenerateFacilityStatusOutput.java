@@ -2,6 +2,7 @@ package com.coryginsberg;
 
 import com.coryginsberg.importxml.ImportFacilityInventory;
 import com.coryginsberg.importxml.ImportFacilityNetwork;
+import com.coryginsberg.importxml.ImportFile;
 import com.coryginsberg.importxml.ImportItems;
 import com.coryginsberg.managers.FacilityManager;
 import com.coryginsberg.managers.GraphManager;
@@ -14,10 +15,12 @@ import java.util.HashMap;
 
 /**
  * @author Cory Ginsberg
+ * @version 1.0
  * @since 10/25/2015
  */
 
 public class GenerateFacilityStatusOutput implements OutputInterface {
+    private static ImportFile importFile = new ImportFile();
     private static FacilityManager facilityManager = new FacilityManager();
     private static InventoryManager inventoryManager = new InventoryManager();
     private static ItemManager itemManager = new ItemManager();
@@ -30,6 +33,9 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
         File itemsFile = new File("src/com/coryginsberg/Items.xml");
         File inventoryFile = new File("src/com/coryginsberg/FacilityInventory.xml");
         File facilityFile = new File("src/com/coryginsberg/FacilityNetwork.xml");
+        //importFile.importFile("src/com/coryginsberg/Items.xml");
+        //importFile.importFile("src/com/coryginsberg/FacilityInventory.xml");
+        importFile.importFile("src/com/coryginsberg/FacilityNetwork.xml");
 
         new ImportFacilityNetwork().importFile(facilityFile);
         new ImportFacilityInventory().importFile(inventoryFile);
