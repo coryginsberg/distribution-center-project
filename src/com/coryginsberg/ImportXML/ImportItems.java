@@ -1,38 +1,19 @@
 package com.coryginsberg.importxml;
 
 import com.coryginsberg.managers.ItemManager;
-import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.File;
 
 /**
  * Created by Cory Ginsberg on 10/25/2015.
  * Created for Object Oriented Programming.
  */
-public class ImportItems {
+public class ImportItems implements ImportInterface {
     private static String id = null;
     private static int price = 0;
 
-    public void importItems(File file) {
-        try {
-            DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            Document doc = dBuilder.parse(file);
-
-            if (doc.hasChildNodes()) {
-                /* Comment out when done testing */
-                createItems(doc.getChildNodes());
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    private void createItems(NodeList nodeList) {
+    public void createList(NodeList nodeList) {
 
         for (int i = 0; i < nodeList.getLength(); i++) {
             final Node tempNode = nodeList.item(i);
@@ -54,7 +35,7 @@ public class ImportItems {
 
                 if (tempNode.hasChildNodes()) {
                     // loop again if has child nodes
-                    createItems(tempNode.getChildNodes());
+                    createList(tempNode.getChildNodes());
                 }
             }
         }

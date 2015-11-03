@@ -1,14 +1,10 @@
 package com.coryginsberg.importxml;
 
 import com.coryginsberg.managers.FacilityManager;
-import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -16,26 +12,13 @@ import java.util.HashMap;
  * Created by Cory Ginsberg on 10/25/2015.
  * Created for Object Oriented Programming.
  */
-public class ImportFacilityNetwork {
+public class ImportFacilityNetwork implements ImportInterface {
 
     private static String name = null;
     private static int rate = 0;
     private static int cost = 0;
 
-    public void importNetwork(File file) {
-        try {
-            DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            Document doc = dBuilder.parse(file);
-
-            if (doc.hasChildNodes()) {
-                createFacility(doc.getChildNodes());
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    private void createFacility(NodeList nodeList) {
+    public void createList(NodeList nodeList) {
 
         ArrayList<HashMap<Float, String>> connectedCities = new ArrayList<>();
 
@@ -70,7 +53,7 @@ public class ImportFacilityNetwork {
                 }
                 if (tempNode.hasChildNodes()) {
                     // loop again if has child nodes
-                    createFacility(tempNode.getChildNodes());
+                    createList(tempNode.getChildNodes());
                 }
             }
         }
