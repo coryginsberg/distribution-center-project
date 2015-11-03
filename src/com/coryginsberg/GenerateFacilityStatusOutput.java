@@ -13,10 +13,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by Cory Ginsberg on 10/27/2015.
- * Created for Logistics Application.
+ * @author Cory Ginsberg
+ * @since 10/25/2015
  */
-public class GenerateFacilityStatusOutput {
+
+public class GenerateFacilityStatusOutput implements OutputInterface {
     private static FacilityManager facilityManager = new FacilityManager();
     private static InventoryManager inventoryManager = new InventoryManager();
     private static ItemManager itemManager = new ItemManager();
@@ -122,9 +123,5 @@ public class GenerateFacilityStatusOutput {
         System.out.println(graphManager.getTotalTime(hoursDriving, avgMph) + " Days");
         System.out.println();
 
-    }
-
-    private String stringRemoveBrackets(String str) {
-        return str.substring(1, str.length() - 1);
     }
 }

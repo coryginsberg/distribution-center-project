@@ -58,7 +58,7 @@
     </facility>
 
     <facility city="Chicago, IL">
-        <item quantity="60">ABC123</item>
+        <item quantity="60"></item>
         <item quantity="64">E241i</item>
         <item quantity="20">CT1928</item>
         <item quantity="110">RTF110</item>

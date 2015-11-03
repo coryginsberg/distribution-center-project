@@ -1,10 +1,5 @@
 package com.coryginsberg.importxml;
 
-/**
- * Created by Cory Ginsberg on 10/25/2015.
- * Created for Object Oriented Programming.
- */
-
 import com.coryginsberg.managers.InventoryManager;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -14,15 +9,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by Cory Ginsberg on 10/25/2015.
- * Created for Object Oriented Programming.
+ * @author Cory Ginsberg
+ * @since 10/25/2015
  */
 public class ImportFacilityInventory implements ImportInterface {
 
-    private static String id = null;
     private static String city = null;
-    private static int quantity = 0;
 
+    /**
+     * Creates a computer-readable list for the items imported from the XML file
+     *
+     * @param nodeList The list of nodes that were received from the file imported.
+     * @see ImportInterface
+     */
     public void createList(NodeList nodeList) {
 
         ArrayList<HashMap<Integer, String>> facilityInventories = new ArrayList<>();
@@ -44,8 +43,8 @@ public class ImportFacilityInventory implements ImportInterface {
                             }
                         }
                         if (node.getNodeName().equals("quantity")) {
-                            quantity = Integer.parseInt(node.getNodeValue());
-                            id = tempNode.getTextContent();
+                            int quantity = Integer.parseInt(node.getNodeValue());
+                            String id = tempNode.getTextContent();
                             HashMap<Integer, String> facilityInventory = new HashMap<>();
                             facilityInventory.put(quantity, id);
                             facilityInventories.add(facilityInventory);

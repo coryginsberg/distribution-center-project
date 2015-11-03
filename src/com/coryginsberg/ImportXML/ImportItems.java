@@ -6,13 +6,20 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Created by Cory Ginsberg on 10/25/2015.
- * Created for Object Oriented Programming.
+ * @author Cory Ginsberg
+ * @since 10/25/2015
  */
+
 public class ImportItems implements ImportInterface {
     private static String id = null;
     private static int price = 0;
 
+    /**
+     * Creates a computer-readable list for the items imported from the XML file
+     *
+     * @param nodeList The list of nodes that were received from the file imported.
+     * @see ImportInterface
+     */
     public void createList(NodeList nodeList) {
 
         for (int i = 0; i < nodeList.getLength(); i++) {

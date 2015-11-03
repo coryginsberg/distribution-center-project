@@ -1,8 +1,8 @@
 package com.coryginsberg.graph;
 
 /**
- * Created by Cory Ginsberg on 10/26/2015.
- * Created for Logistics Application.
+ * @author Cory Ginsberg
+ * @since 10/26/2015
  */
 
 public class Edge<T> {

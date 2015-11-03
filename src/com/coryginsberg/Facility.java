@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by Cory Ginsberg on 10/25/2015.
- * Created for Object Oriented Programming.
+ * @author Cory Ginsberg
+ * @since 10/25/2015
  */
+
 public class Facility {
     private String name;
     private float rate;

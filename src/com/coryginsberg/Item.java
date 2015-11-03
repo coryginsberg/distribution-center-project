@@ -1,7 +1,8 @@
 package com.coryginsberg;
 
 /**
- * Created by coryginsberg on 10/26/15.
+ * @author Cory Ginsberg
+ * @since 10/26/2015
  */
 
 public class Item {

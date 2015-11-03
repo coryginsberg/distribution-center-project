@@ -8,11 +8,16 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 
 /**
- * Created by Cory Ginsberg on 11/3/15.
- * Logistics Application is copyrighted Cory Ginsberg 2015.
+ * @author Cory Ginsberg
+ * @since 11/3/2015
  */
 public interface ImportInterface {
 
+    /**
+     * Imports an XML file
+     *
+     * @param file the XML file to be imported
+     */
     default void importFile(File file) {
         try {
             DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
@@ -26,6 +31,10 @@ public interface ImportInterface {
         }
     }
 
+    /**
+     * Create Java-formatted lists of items imported from XML file.
+     * @param nodeList List of child nodes that will be stored in Java-formatted lists.
+     */
     void createList(NodeList nodeList);
 
 }
