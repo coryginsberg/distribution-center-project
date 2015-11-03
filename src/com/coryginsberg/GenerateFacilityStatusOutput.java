@@ -30,9 +30,9 @@ public class GenerateFacilityStatusOutput {
         File inventoryFile = new File("src/com/coryginsberg/FacilityInventory.xml");
         File facilityFile = new File("src/com/coryginsberg/FacilityNetwork.xml");
 
-        new ImportFacilityNetwork().importNetwork(facilityFile);
-        new ImportFacilityInventory().importInventory(inventoryFile);
-        new ImportItems().importItems(itemsFile);
+        new ImportFacilityNetwork().importFile(facilityFile);
+        new ImportFacilityInventory().importFile(inventoryFile);
+        new ImportItems().importFile(itemsFile);
 
         graphManager.createGraph();
 
