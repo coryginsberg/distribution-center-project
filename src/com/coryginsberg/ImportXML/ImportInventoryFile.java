@@ -1,5 +1,7 @@
 package com.coryginsberg.importxml;
 
+import com.coryginsberg.Inventory;
+import com.coryginsberg.factories.InventoryFactory;
 import com.coryginsberg.managers.InventoryManager;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
@@ -52,9 +54,9 @@ public class ImportInventoryFile implements Import {
                 // Get a named nodes
                 Element elem = (Element) facilityEntries.item(i);
 
-                // TODO: Create a Facility object using the data loaded from the XML File
-                InventoryManager.inventoryManager.addInventory(facilityCity, ImportNodes.importSubNodes(elem, "Item"));
-
+                // Create a Facility object using the data loaded from the XML File
+                Inventory inventory = InventoryFactory.addInventory(facilityCity, ImportNodes.importSubNodes(elem, "Item"));
+                InventoryManager.addInventory(inventory);
             }
 
         } catch (ParserConfigurationException | SAXException | IOException | DOMException e) {

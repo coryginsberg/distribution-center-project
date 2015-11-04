@@ -1,10 +1,7 @@
 package com.coryginsberg.managers;
 
-import com.coryginsberg.Facility;
+import com.coryginsberg.factories.GraphFactory;
 import com.coryginsberg.graph.Graph;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * @author Cory Ginsberg
@@ -13,22 +10,10 @@ import java.util.HashMap;
  */
 public class GraphManager {
 
-    Graph<String> graph = new Graph<>();
-    private FacilityManager facilityManager = FacilityManager.facilityManager;
+    private static Graph<String> graph = new Graph<>();
 
-    public void createGraph() {
-
-        for (int i = 0; i < facilityManager.getNumFacilities(); i++) {
-            Facility currentFacility = facilityManager.facilities().get(i);
-            ArrayList<HashMap<Integer, String>> connectedCities = currentFacility.getConnectingCities();
-            graph.addVertex(currentFacility.getCity());
-            for (HashMap<Integer, String> city : connectedCities) {
-                for (Integer distance : city.keySet()) {
-                    graph.addVertex(city.get(distance));
-                    graph.addEdge(currentFacility.getCity(), city.get(distance), distance);
-                }
-            }
-        }
+    public static void createGraph() {
+        graph = GraphFactory.createGraph();
     }
 
     public String getShortestPath(String cityStart, String cityEnd) {
