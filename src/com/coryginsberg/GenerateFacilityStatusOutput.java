@@ -1,5 +1,6 @@
 package com.coryginsberg;
 
+import com.coryginsberg.importxml.Import;
 import com.coryginsberg.importxml.ImportInventoryFile;
 import com.coryginsberg.importxml.ImportItemFile;
 import com.coryginsberg.importxml.ImportNetworkFile;
@@ -19,9 +20,9 @@ import java.util.HashMap;
  */
 
 public class GenerateFacilityStatusOutput implements OutputInterface {
-    private static ImportNetworkFile importNetworkFile = new ImportNetworkFile();
-    private static ImportItemFile importItemFile = new ImportItemFile();
-    private static ImportInventoryFile importInventoryFile = new ImportInventoryFile();
+    private static Import importNetworkFile = new ImportNetworkFile();
+    private static Import importItemFile = new ImportItemFile();
+    private static Import importInventoryFile = new ImportInventoryFile();
 
     private static FacilityManager facilityManager = new FacilityManager();
     private static InventoryManager inventoryManager = new InventoryManager();

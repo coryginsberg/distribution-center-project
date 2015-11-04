@@ -8,10 +8,11 @@ package com.coryginsberg.importxml;
  * @version 1.0
  * @since 11/3/2015
  */
-public interface ImportInterface {
+public interface Import {
 
     /**
      * Imports an XML file
+     *
      * @param fileName the XML file to be imported
      */
     void importFile(String fileName);
