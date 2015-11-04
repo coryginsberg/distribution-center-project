@@ -11,11 +11,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
+ * Imports the requested XML file into the program.
+ *
  * @author Cory Ginsberg
  * @version 1.0
- * @since 10/25/2015
+ * @since 11/3/2015
  */
-public class ImportInventoryFile implements Import {
+
+public class ImportNetworkFile implements Import {
 
     /**
      * Imports the requested XML file into the program as a Facility.
@@ -56,36 +59,36 @@ public class ImportInventoryFile implements Import {
 
                 // Get a named nodes
                 Element elem = (Element) facilityEntries.item(i);
-                Node rateNode = elem.getElementsByTagName("Item").item(0);
-                String itemID1 = rateNode.getTextContent();
-                String itemQuantity1 = rateNode.getAttributes().item(0).getTextContent();
+                Node rateNode = elem.getElementsByTagName("Rate").item(0);
+                String facilityRate = rateNode.getTextContent();
+                String facilityCost = rateNode.getAttributes().item(0).getTextContent();
 
                 // Get all nodes named "Link" - there can be 0 or more
-                ArrayList<String> stockedItems = new ArrayList<>();
-                NodeList linkedItemsList = elem.getElementsByTagName("Item");
-                for (int j = 0; j < linkedItemsList.getLength(); j++) {
-                    if (linkedItemsList.item(j).getNodeType() == Node.TEXT_NODE) {
+                ArrayList<String> linkedCities = new ArrayList<>();
+                NodeList linkedCityList = elem.getElementsByTagName("LinkedCity");
+                for (int j = 0; j < linkedCityList.getLength(); j++) {
+                    if (linkedCityList.item(j).getNodeType() == Node.TEXT_NODE) {
                         continue;
                     }
 
-                    entryName = linkedItemsList.item(j).getNodeName();
-                    if (!entryName.equals("Item")) {
+                    entryName = linkedCityList.item(j).getNodeName();
+                    if (!entryName.equals("LinkedCity")) {
                         System.err.println("Unexpected node found: " + entryName);
                         return;
                     }
 
                     // Get some named nodes
-                    elem = (Element) linkedItemsList.item(j);
-                    String itemID = elem.getTextContent();
-                    String itemQuantity = elem.getAttributes().item(0).getTextContent();
+                    elem = (Element) linkedCityList.item(j);
+                    String linkedCity = elem.getTextContent();
+                    String linkedDistance = elem.getAttributes().item(0).getTextContent();
 
-                    // Create a string summary of the Items
-                    stockedItems.add("Item ID: " + itemID + " | Quantity: " + itemQuantity);
+                    // Create a string summary of the book
+                    linkedCities.add("City: " + linkedCity + " @ Distance: " + linkedDistance + " Miles");
                 }
 
                 // TODO: Create a Facility object using the data loaded from the XML File
 
-                System.out.println("Facility: " + facilityCity + "\n" + stockedItems + "\n");
+                System.out.println("Facility: " + facilityCity + " | Rate: " + facilityRate + "\nAt Cost: $" + facilityCost + "\n" + linkedCities + "\n");
 
             }
 

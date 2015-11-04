@@ -15,9 +15,7 @@ import java.io.IOException;
  * @since 10/25/2015
  */
 
-public class ImportItemFile {
-    private String itemID;
-    private String itemPrice;
+public class ImportItemFile implements Import {
 
     /**
      * Imports the requested XML file into the program as a Facility.
@@ -54,8 +52,8 @@ public class ImportItemFile {
 
                 // Get a named nodes
                 NamedNodeMap aMap = facilityEntries.item(i).getAttributes();
-                itemID = facilityEntries.item(i).getTextContent();
-                itemPrice = aMap.getNamedItem("Price").getNodeValue();
+                String itemID = facilityEntries.item(i).getTextContent();
+                String itemPrice = aMap.getNamedItem("Price").getNodeValue();
 
                 // TODO: Create a Item object using the data loaded from the XML File
 
