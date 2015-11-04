@@ -38,15 +38,6 @@ public class Facility {
         return this.network;
     }
 
-    public String getConnectingCitiesToString() {
-
-        String cities = "";
-        for (HashMap<Integer, String> city : network) {
-            cities += city.values().toString().substring(1, city.values().toString().length() - 1);
-        }
-        return cities;
-    }
-
     @Override
     public String toString() {
         return "City: " + getCity() + ", Rate: " + getRate() + ", Cost:" + getCost() + ", Connected Cities: " + getConnectingCities() + ".";

@@ -21,9 +21,6 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
     private static Import importItemFile = new ImportItemFile();
     private static Import importInventoryFile = new ImportInventoryFile();
 
-    private static FacilityManager facilityManager = new FacilityManager();
-    private static InventoryManager inventoryManager = new InventoryManager();
-    private static ItemManager itemManager = new ItemManager();
     private static GraphManager graphManager = new GraphManager();
 
     private static float hoursDriving;
@@ -33,7 +30,7 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
         importNetworkFile.importFile("src/com/coryginsberg/FacilityNetwork.xml");
         importInventoryFile.importFile("src/com/coryginsberg/FacilityInventory.xml");
         importItemFile.importFile("src/com/coryginsberg/Items.xml");
-        graphManager.createGraph();
+        GraphManager.createGraph();
 
         String s = "Chicago, IL";
         hoursDriving = 8;
@@ -41,12 +38,11 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
 
         System.out.println("All times are calculated for driving 8 hours a day at 50 MPH");
 
-        facilityManager.facilities().forEach(facility -> {
+        FacilityManager.facilities().forEach(facility -> {
             if (facility.getCity().equals(s)) {
                 printStatusOutputForCity(facility);
             }
         });
-
     }
 
     public void printStatusOutputForCity(Facility facility) {
@@ -63,9 +59,9 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
         System.out.println("Active Inventory");
 
         ArrayList<Item> depletedItems = new ArrayList<>();
-        itemManager.getItems().forEach(depletedItems::add);
+        ItemManager.getItems().forEach(depletedItems::add);
 
-        inventoryManager.inventories().forEach(currentInventory -> {
+        InventoryManager.inventories().forEach(currentInventory -> {
             if (currentInventory.getCity().equals(facility.getCity())) {
                 System.out.format("%-15s%-5s", "Item ID: ", "Quantity: ");
                 System.out.println();

@@ -11,7 +11,7 @@ import java.util.HashMap;
  * Created by Cory Ginsberg on 11/4/2015.
  * Created for Logistics Application.
  */
-public class ImportNodes {
+public abstract class ImportNodes {
 
     public static ArrayList<HashMap<Integer, String>> importSubNodes(Element elem, String elementTagName) throws UnexpectedNodeException {
         // Get all nodes named "Link" - there can be 0 or more
