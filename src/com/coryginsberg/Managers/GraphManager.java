@@ -20,10 +20,10 @@ public class GraphManager {
 
         for (int i = 0; i < facilityManager.getNumFacilities(); i++) {
             Facility currentFacility = facilityManager.facilities().get(i);
-            ArrayList<HashMap<Float, String>> connectedCities = currentFacility.getConnectingCities();
+            ArrayList<HashMap<Integer, String>> connectedCities = currentFacility.getConnectingCities();
             graph.addVertex(currentFacility.getCity());
-            for (HashMap<Float, String> city : connectedCities) {
-                for (Float distance : city.keySet()) {
+            for (HashMap<Integer, String> city : connectedCities) {
+                for (Integer distance : city.keySet()) {
                     graph.addVertex(city.get(distance));
                     graph.addEdge(currentFacility.getCity(), city.get(distance), distance);
                 }

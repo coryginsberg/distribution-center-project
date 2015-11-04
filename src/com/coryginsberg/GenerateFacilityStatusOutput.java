@@ -1,9 +1,6 @@
 package com.coryginsberg;
 
-import com.coryginsberg.importxml.Import;
-import com.coryginsberg.importxml.ImportInventoryFile;
-import com.coryginsberg.importxml.ImportItemFile;
-import com.coryginsberg.importxml.ImportNetworkFile;
+import com.coryginsberg.importxml.*;
 import com.coryginsberg.managers.FacilityManager;
 import com.coryginsberg.managers.GraphManager;
 import com.coryginsberg.managers.InventoryManager;
@@ -32,7 +29,7 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
     private static float hoursDriving;
     private static float avgMph;
 
-    public GenerateFacilityStatusOutput() throws FileAlreadyExistsException {
+    public GenerateFacilityStatusOutput() throws FileAlreadyExistsException, UnexpectedNodeException {
         importNetworkFile.importFile("src/com/coryginsberg/FacilityNetwork.xml");
         importInventoryFile.importFile("src/com/coryginsberg/FacilityInventory.xml");
         importItemFile.importFile("src/com/coryginsberg/Items.xml");
@@ -56,7 +53,7 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
         System.out.println("============================================================================================");
         System.out.println(facility.getCity().toUpperCase());
         System.out.print("Direct Links: ");
-        for (HashMap<Float, String> connectedFacility : facility.getConnectingCities()) {
+        for (HashMap<Integer, String> connectedFacility : facility.getConnectingCities()) {
             System.out.print(connectedFacility.values().toString().substring(1, connectedFacility.values().toString().length() - 1));
             graphManager.getShortestPath(facility.getCity(), connectedFacility.values().toString().substring(1, connectedFacility.values().toString().length() - 1));
             System.out.print(" (" + graphManager.getTotalTime(hoursDriving, avgMph) + " Days) ");

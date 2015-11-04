@@ -10,12 +10,6 @@ package com.coryginsberg.importxml;
  */
 public interface Import {
 
-    /**
-     * Imports an XML file
-     *
-     * @param fileName the XML file to be imported
-     */
-
-    void importFile(String fileName);
+    void importFile(String fileName) throws UnexpectedNodeException;
 
 }

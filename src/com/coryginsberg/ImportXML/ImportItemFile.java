@@ -1,5 +1,6 @@
 package com.coryginsberg.importxml;
 
+import com.coryginsberg.managers.ItemManager;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -17,12 +18,7 @@ import java.io.IOException;
 
 public class ImportItemFile implements Import {
 
-    /**
-     * Imports the requested XML file into the program as a Facility.
-     *
-     * @param fileName The Facility XML File to import into the program.
-     */
-    public void importFile(String fileName) {
+    public void importFile(String fileName) throws UnexpectedNodeException {
 
         try {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -46,18 +42,16 @@ public class ImportItemFile implements Import {
 
                 String entryName = facilityEntries.item(i).getNodeName();
                 if (!entryName.equals("Item")) {
-                    System.err.println("Unexpected node found: " + entryName);
-                    return;
+                    throw new UnexpectedNodeException("Unexpected node found: " + entryName);
                 }
 
                 // Get a named nodes
                 NamedNodeMap aMap = facilityEntries.item(i).getAttributes();
                 String itemID = facilityEntries.item(i).getTextContent();
-                String itemPrice = aMap.getNamedItem("Price").getNodeValue();
+                int itemPrice = Integer.parseInt(aMap.getNamedItem("Price").getNodeValue());
 
-                // TODO: Create a Item object using the data loaded from the XML File
-
-                System.out.println("Item ID: " + itemID + "| Price: $" + itemPrice);
+                // Create a Item object using the data loaded from the XML File
+                ItemManager.itemManager.addItem(itemID, itemPrice);
 
             }
 

@@ -1,5 +1,6 @@
 package com.coryginsberg.importxml;
 
+import com.coryginsberg.managers.InventoryManager;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -8,7 +9,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * @author Cory Ginsberg
@@ -17,12 +17,7 @@ import java.util.ArrayList;
  */
 public class ImportInventoryFile implements Import {
 
-    /**
-     * Imports the requested XML file into the program as a Facility.
-     *
-     * @param fileName The Facility XML File to import into the program.
-     */
-    public void importFile(String fileName) {
+    public void importFile(String fileName) throws UnexpectedNodeException {
 
         try {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -56,36 +51,9 @@ public class ImportInventoryFile implements Import {
 
                 // Get a named nodes
                 Element elem = (Element) facilityEntries.item(i);
-                Node rateNode = elem.getElementsByTagName("Item").item(0);
-                String itemID1 = rateNode.getTextContent();
-                String itemQuantity1 = rateNode.getAttributes().item(0).getTextContent();
-
-                // Get all nodes named "Link" - there can be 0 or more
-                ArrayList<String> stockedItems = new ArrayList<>();
-                NodeList linkedItemsList = elem.getElementsByTagName("Item");
-                for (int j = 0; j < linkedItemsList.getLength(); j++) {
-                    if (linkedItemsList.item(j).getNodeType() == Node.TEXT_NODE) {
-                        continue;
-                    }
-
-                    entryName = linkedItemsList.item(j).getNodeName();
-                    if (!entryName.equals("Item")) {
-                        System.err.println("Unexpected node found: " + entryName);
-                        return;
-                    }
-
-                    // Get some named nodes
-                    elem = (Element) linkedItemsList.item(j);
-                    String itemID = elem.getTextContent();
-                    String itemQuantity = elem.getAttributes().item(0).getTextContent();
-
-                    // Create a string summary of the Items
-                    stockedItems.add("Item ID: " + itemID + " | Quantity: " + itemQuantity);
-                }
 
                 // TODO: Create a Facility object using the data loaded from the XML File
-
-                System.out.println("Facility: " + facilityCity + "\n" + stockedItems + "\n");
+                InventoryManager.inventoryManager.addInventory(facilityCity, ImportNodes.importSubNodes(elem, "Item"));
 
             }
 

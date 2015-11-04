@@ -9,8 +9,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Imports the requested XML file into the program.
@@ -22,12 +20,7 @@ import java.util.HashMap;
 
 public class ImportNetworkFile implements Import {
 
-    /**
-     * Imports the requested XML file into the program as a Facility.
-     *
-     * @param fileName The Facility XML File to import into the program.
-     */
-    public void importFile(String fileName) {
+    public void importFile(String fileName) throws UnexpectedNodeException {
 
         try {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -65,32 +58,8 @@ public class ImportNetworkFile implements Import {
                 int facilityRate = Integer.parseInt(rateNode.getTextContent());
                 int facilityCost = Integer.parseInt(rateNode.getAttributes().item(0).getTextContent());
 
-                // Get all nodes named "Link" - there can be 0 or more
-                ArrayList<HashMap<Float, String>> linkedCities = new ArrayList<>();
-                NodeList linkedCityList = elem.getElementsByTagName("LinkedCity");
-                for (int j = 0; j < linkedCityList.getLength(); j++) {
-                    if (linkedCityList.item(j).getNodeType() == Node.TEXT_NODE) {
-                        continue;
-                    }
-
-                    entryName = linkedCityList.item(j).getNodeName();
-                    if (!entryName.equals("LinkedCity")) {
-                        System.err.println("Unexpected node found: " + entryName);
-                        return;
-                    }
-
-                    // Get some named nodes
-                    elem = (Element) linkedCityList.item(j);
-                    String linkedCity = elem.getTextContent();
-                    int linkedDistance = Integer.parseInt(elem.getAttributes().item(0).getTextContent());
-
-                    // Create a string summary of the book
-                }
-
-                // TODO: Create a Facility object using the data loaded from the XML File
-                FacilityManager.facilityManager.addFacility(facilityCity, facilityRate, facilityCost, linkedCities);
-                //System.out.println("Facility: " + facilityCity + " | Rate: " + facilityRate + "\nAt Cost: $" + facilityCost + "\n" + linkedCities + "\n");
-
+                // Create a Facility object using the data loaded from the XML File
+                FacilityManager.facilityManager.addFacility(facilityCity, facilityRate, facilityCost, ImportNodes.importSubNodes(elem, "LinkedCity"));
             }
 
         } catch (ParserConfigurationException | SAXException | IOException | DOMException e) {

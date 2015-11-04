@@ -13,9 +13,9 @@ public class Facility {
     private String name;
     private float rate;
     private int cost; // While cost is the same for all facilities currently, it is possible for cost to change in the future.
-    private ArrayList<HashMap<Float, String>> network;
+    private ArrayList<HashMap<Integer, String>> network;
 
-    public Facility(String name, float rate, int cost, ArrayList<HashMap<Float, String>> connectingCities) {
+    public Facility(String name, float rate, int cost, ArrayList<HashMap<Integer, String>> connectingCities) {
         this.name = name;
         this.rate = rate;
         this.cost = cost;
@@ -34,14 +34,14 @@ public class Facility {
         return this.cost;
     }
 
-    public ArrayList<HashMap<Float, String>> getConnectingCities() {
+    public ArrayList<HashMap<Integer, String>> getConnectingCities() {
         return this.network;
     }
 
     public String getConnectingCitiesToString() {
 
         String cities = "";
-        for (HashMap<Float, String> city : network) {
+        for (HashMap<Integer, String> city : network) {
             cities += city.values().toString().substring(1, city.values().toString().length() - 1);
         }
         return cities;
