@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <FacilityInventory>
-    
+
     <Facility City="Seattle, WA">
         <Item Quantity="45">ABC123</Item>
         <Item Quantity="52">JBL3100</Item>
@@ -118,5 +118,5 @@
         <Item Quantity="28">SN-241-L</Item>
         <Item Quantity="88">XTP202</Item>
     </Facility>
-    
+
 </FacilityInventory>

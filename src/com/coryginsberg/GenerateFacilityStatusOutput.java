@@ -1,15 +1,14 @@
 package com.coryginsberg;
 
-import com.coryginsberg.importxml.ImportFacilityInventory;
-import com.coryginsberg.importxml.ImportFacilityNetwork;
-import com.coryginsberg.importxml.ImportFile;
-import com.coryginsberg.importxml.ImportItems;
+import com.coryginsberg.importxml.ImportInventoryFile;
+import com.coryginsberg.importxml.ImportItemFile;
+import com.coryginsberg.importxml.ImportNetworkFile;
 import com.coryginsberg.managers.FacilityManager;
 import com.coryginsberg.managers.GraphManager;
 import com.coryginsberg.managers.InventoryManager;
 import com.coryginsberg.managers.ItemManager;
 
-import java.io.File;
+import java.nio.file.FileAlreadyExistsException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -20,7 +19,10 @@ import java.util.HashMap;
  */
 
 public class GenerateFacilityStatusOutput implements OutputInterface {
-    private static ImportFile importFile = new ImportFile();
+    private static ImportNetworkFile importNetworkFile = new ImportNetworkFile();
+    private static ImportItemFile importItemFile = new ImportItemFile();
+    private static ImportInventoryFile importInventoryFile = new ImportInventoryFile();
+
     private static FacilityManager facilityManager = new FacilityManager();
     private static InventoryManager inventoryManager = new InventoryManager();
     private static ItemManager itemManager = new ItemManager();
@@ -29,18 +31,10 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
     private static float hoursDriving;
     private static float avgMph;
 
-    public GenerateFacilityStatusOutput() {
-        File itemsFile = new File("src/com/coryginsberg/Items.xml");
-        File inventoryFile = new File("src/com/coryginsberg/FacilityInventory.xml");
-        File facilityFile = new File("src/com/coryginsberg/FacilityNetwork.xml");
-        //importFile.importFile("src/com/coryginsberg/Items.xml");
-        //importFile.importFile("src/com/coryginsberg/FacilityInventory.xml");
-        importFile.importFile("src/com/coryginsberg/FacilityNetwork.xml");
-
-        new ImportFacilityNetwork().importFile(facilityFile);
-        new ImportFacilityInventory().importFile(inventoryFile);
-        new ImportItems().importFile(itemsFile);
-
+    public GenerateFacilityStatusOutput() throws FileAlreadyExistsException {
+        importNetworkFile.importFile("src/com/coryginsberg/FacilityNetwork.xml");
+        importInventoryFile.importFile("src/com/coryginsberg/FacilityInventory.xml");
+        importItemFile.importFile("src/com/coryginsberg/Items.xml");
         graphManager.createGraph();
 
         String s = "Chicago, IL";
