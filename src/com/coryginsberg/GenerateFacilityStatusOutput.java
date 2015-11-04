@@ -1,40 +1,36 @@
 package com.coryginsberg;
 
-import com.coryginsberg.importxml.ImportFacilityInventory;
-import com.coryginsberg.importxml.ImportFacilityNetwork;
-import com.coryginsberg.importxml.ImportItems;
+import com.coryginsberg.importxml.*;
 import com.coryginsberg.managers.FacilityManager;
 import com.coryginsberg.managers.GraphManager;
 import com.coryginsberg.managers.InventoryManager;
 import com.coryginsberg.managers.ItemManager;
 
-import java.io.File;
+import java.nio.file.FileAlreadyExistsException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by Cory Ginsberg on 10/27/2015.
- * Created for Logistics Application.
+ * @author Cory Ginsberg
+ * @version 1.0
+ * @since 10/25/2015
  */
-public class GenerateFacilityStatusOutput {
-    private static FacilityManager facilityManager = new FacilityManager();
-    private static InventoryManager inventoryManager = new InventoryManager();
-    private static ItemManager itemManager = new ItemManager();
+
+public class GenerateFacilityStatusOutput implements OutputInterface {
+    private static Import importNetworkFile = new ImportNetworkFile();
+    private static Import importItemFile = new ImportItemFile();
+    private static Import importInventoryFile = new ImportInventoryFile();
+
     private static GraphManager graphManager = new GraphManager();
 
     private static float hoursDriving;
     private static float avgMph;
 
-    public GenerateFacilityStatusOutput() {
-        File itemsFile = new File("src/com/coryginsberg/Items.xml");
-        File inventoryFile = new File("src/com/coryginsberg/FacilityInventory.xml");
-        File facilityFile = new File("src/com/coryginsberg/FacilityNetwork.xml");
-
-        new ImportFacilityNetwork().importFile(facilityFile);
-        new ImportFacilityInventory().importFile(inventoryFile);
-        new ImportItems().importFile(itemsFile);
-
-        graphManager.createGraph();
+    public GenerateFacilityStatusOutput() throws FileAlreadyExistsException, UnexpectedNodeException {
+        importNetworkFile.importFile("src/com/coryginsberg/FacilityNetwork.xml");
+        importInventoryFile.importFile("src/com/coryginsberg/FacilityInventory.xml");
+        importItemFile.importFile("src/com/coryginsberg/Items.xml");
+        GraphManager.createGraph();
 
         String s = "Chicago, IL";
         hoursDriving = 8;
@@ -42,19 +38,18 @@ public class GenerateFacilityStatusOutput {
 
         System.out.println("All times are calculated for driving 8 hours a day at 50 MPH");
 
-        facilityManager.facilities().forEach(facility -> {
+        FacilityManager.facilities().forEach(facility -> {
             if (facility.getCity().equals(s)) {
                 printStatusOutputForCity(facility);
             }
         });
-
     }
 
     public void printStatusOutputForCity(Facility facility) {
         System.out.println("============================================================================================");
         System.out.println(facility.getCity().toUpperCase());
         System.out.print("Direct Links: ");
-        for (HashMap<Float, String> connectedFacility : facility.getConnectingCities()) {
+        for (HashMap<Integer, String> connectedFacility : facility.getConnectingCities()) {
             System.out.print(connectedFacility.values().toString().substring(1, connectedFacility.values().toString().length() - 1));
             graphManager.getShortestPath(facility.getCity(), connectedFacility.values().toString().substring(1, connectedFacility.values().toString().length() - 1));
             System.out.print(" (" + graphManager.getTotalTime(hoursDriving, avgMph) + " Days) ");
@@ -64,9 +59,9 @@ public class GenerateFacilityStatusOutput {
         System.out.println("Active Inventory");
 
         ArrayList<Item> depletedItems = new ArrayList<>();
-        itemManager.getItems().forEach(depletedItems::add);
+        ItemManager.getItems().forEach(depletedItems::add);
 
-        inventoryManager.inventories().forEach(currentInventory -> {
+        InventoryManager.inventories().forEach(currentInventory -> {
             if (currentInventory.getCity().equals(facility.getCity())) {
                 System.out.format("%-15s%-5s", "Item ID: ", "Quantity: ");
                 System.out.println();
@@ -122,9 +117,5 @@ public class GenerateFacilityStatusOutput {
         System.out.println(graphManager.getTotalTime(hoursDriving, avgMph) + " Days");
         System.out.println();
 
-    }
-
-    private String stringRemoveBrackets(String str) {
-        return str.substring(1, str.length() - 1);
     }
 }

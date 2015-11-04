@@ -1,33 +1,19 @@
 package com.coryginsberg.managers;
 
-import com.coryginsberg.Facility;
+import com.coryginsberg.factories.GraphFactory;
 import com.coryginsberg.graph.Graph;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 /**
- * Created by Cory Ginsberg on 10/26/2015.
- * Created for Logistics Application.
+ * @author Cory Ginsberg
+ * @version 1.0
+ * @since 10/26/2015
  */
 public class GraphManager {
 
-    Graph<String> graph = new Graph<>();
-    private FacilityManager facilityManager = FacilityManager.facilityManager;
+    private static Graph<String> graph = new Graph<>();
 
-    public void createGraph() {
-
-        for (int i = 0; i < facilityManager.getNumFacilities(); i++) {
-            Facility currentFacility = facilityManager.facilities().get(i);
-            ArrayList<HashMap<Float, String>> connectedCities = currentFacility.getConnectingCities();
-            graph.addVertex(currentFacility.getCity());
-            for (HashMap<Float, String> city : connectedCities) {
-                for (Float distance : city.keySet()) {
-                    graph.addVertex(city.get(distance));
-                    graph.addEdge(currentFacility.getCity(), city.get(distance), distance);
-                }
-            }
-        }
+    public static void createGraph() {
+        graph = GraphFactory.createGraph();
     }
 
     public String getShortestPath(String cityStart, String cityEnd) {

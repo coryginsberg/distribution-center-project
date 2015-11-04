@@ -9,24 +9,22 @@ import java.util.ArrayList;
  * Created for Object Oriented Programming.
  */
 public class ItemManager {
-    public static ItemManager itemManager = new ItemManager();
 
     static ArrayList<Item> items = new ArrayList<>();
 
-    public void addItem(String id, int price) {
-        Item item = new Item(id, price);
+    public static void addItem(Item item) {
         items.add(item);
     }
 
-    public int getNumItems() {
+    public static int getNumItems() {
         return items.size();
     }
 
-    public ArrayList<Item> getItems() {
+    public static ArrayList<Item> getItems() {
         return items;
     }
 
-    public Item getItemAtIndex(int index) {
+    public static Item getItemAtIndex(int index) {
         return items.get(index);
     }
 
