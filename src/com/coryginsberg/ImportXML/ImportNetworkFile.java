@@ -1,5 +1,6 @@
 package com.coryginsberg.importxml;
 
+import com.coryginsberg.managers.FacilityManager;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -9,6 +10,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Imports the requested XML file into the program.
@@ -60,11 +62,11 @@ public class ImportNetworkFile implements Import {
                 // Get a named nodes
                 Element elem = (Element) facilityEntries.item(i);
                 Node rateNode = elem.getElementsByTagName("Rate").item(0);
-                String facilityRate = rateNode.getTextContent();
-                String facilityCost = rateNode.getAttributes().item(0).getTextContent();
+                int facilityRate = Integer.parseInt(rateNode.getTextContent());
+                int facilityCost = Integer.parseInt(rateNode.getAttributes().item(0).getTextContent());
 
                 // Get all nodes named "Link" - there can be 0 or more
-                ArrayList<String> linkedCities = new ArrayList<>();
+                ArrayList<HashMap<Float, String>> linkedCities = new ArrayList<>();
                 NodeList linkedCityList = elem.getElementsByTagName("LinkedCity");
                 for (int j = 0; j < linkedCityList.getLength(); j++) {
                     if (linkedCityList.item(j).getNodeType() == Node.TEXT_NODE) {
@@ -80,15 +82,14 @@ public class ImportNetworkFile implements Import {
                     // Get some named nodes
                     elem = (Element) linkedCityList.item(j);
                     String linkedCity = elem.getTextContent();
-                    String linkedDistance = elem.getAttributes().item(0).getTextContent();
+                    int linkedDistance = Integer.parseInt(elem.getAttributes().item(0).getTextContent());
 
                     // Create a string summary of the book
-                    linkedCities.add("City: " + linkedCity + " @ Distance: " + linkedDistance + " Miles");
                 }
 
                 // TODO: Create a Facility object using the data loaded from the XML File
-
-                System.out.println("Facility: " + facilityCity + " | Rate: " + facilityRate + "\nAt Cost: $" + facilityCost + "\n" + linkedCities + "\n");
+                FacilityManager.facilityManager.addFacility(facilityCity, facilityRate, facilityCost, linkedCities);
+                //System.out.println("Facility: " + facilityCity + " | Rate: " + facilityRate + "\nAt Cost: $" + facilityCost + "\n" + linkedCities + "\n");
 
             }
 

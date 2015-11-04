@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * The Manager of the Facility class.
+ * The Manager of the Facility
  *
  * @author Cory Ginsberg
  * @version 1.0

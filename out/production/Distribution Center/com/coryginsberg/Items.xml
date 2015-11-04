@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Items>
+
+    <Item Price="550">ABC123</Item>
+
+    <Item Price="240">CR2032</Item>
+
+    <Item Price="910">CT1928</Item>
+
+    <Item Price="10400">E241i</Item>
+
+    <Item Price="180">JBL3100</Item>
+
+    <Item Price="1950">MM35P</Item>
+
+    <Item Price="440">PL132-C</Item>
+
+    <Item Price="2200">PU238</Item>
+
+    <Item Price="360">RL123A</Item>
+
+    <Item Price="715">RTF110</Item>
+
+    <Item Price="642">RX100-3</Item>
+
+    <Item Price="620">SN-241-L</Item>
+
+    <Item Price="1600">SR71-D</Item>
+
+    <Item Price="820">XLK200B</Item>
+
+    <Item Price="345">XTP202</Item>
+    
+    <Item Price="1100">ZTF109</Item>
+
+</Items>
