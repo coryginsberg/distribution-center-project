@@ -35,9 +35,8 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
         String s = "Chicago, IL";
         hoursDriving = 8;
         avgMph = 50;
-
         System.out.println("All times are calculated for driving 8 hours a day at 50 MPH");
-
+        System.out.println();
         FacilityManager.facilities().forEach(facility -> {
             if (facility.getCity().equals(s)) {
                 printStatusOutputForCity(facility);
@@ -45,27 +44,29 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
         });
     }
 
-    public void printStatusOutputForCity(Facility facility) {
+    public void printStatusOutputForCity(Network network) {
         System.out.println("============================================================================================");
-        System.out.println(facility.getCity().toUpperCase());
-        System.out.print("Direct Links: ");
-        for (HashMap<Integer, String> connectedFacility : facility.getConnectingCities()) {
+        System.out.println(network.getCity().toUpperCase());
+        System.out.println("‾‾‾‾‾‾‾‾‾‾‾‾");
+
+        System.out.print("DIRECT LINKS: ");
+        for (HashMap<Integer, String> connectedFacility : network.getConnectingCities()) {
             System.out.print(connectedFacility.values().toString().substring(1, connectedFacility.values().toString().length() - 1));
-            graphManager.getShortestPath(facility.getCity(), connectedFacility.values().toString().substring(1, connectedFacility.values().toString().length() - 1));
+            graphManager.getShortestPath(network.getCity(), connectedFacility.values().toString().substring(1, connectedFacility.values().toString().length() - 1));
             System.out.print(" (" + graphManager.getTotalTime(hoursDriving, avgMph) + " Days) ");
         }
         System.out.println();
         System.out.println();
-        System.out.println("Active Inventory");
+        System.out.println("ACTIVE INVENTORY:");
 
         ArrayList<Item> depletedItems = new ArrayList<>();
         ItemManager.getItems().forEach(depletedItems::add);
 
         InventoryManager.inventories().forEach(currentInventory -> {
-            if (currentInventory.getCity().equals(facility.getCity())) {
-                System.out.format("%-15s%-5s", "Item ID: ", "Quantity: ");
+            if (currentInventory.getCity().equals(network.getCity())) {
+                System.out.format("%-15s%-5s", "Item ID:", "Quantity:");
                 System.out.println();
-                System.out.format("%-15s%-5s", "-------- ", "--------- ");
+                System.out.format("%-15s%-5s", "‾‾‾‾‾‾‾‾", "‾‾‾‾‾‾‾‾‾");
                 System.out.println();
                 for (HashMap<Integer, String> inventory : currentInventory.getInventory()) {
                     System.out.format("%-15s%-5s", stringRemoveBrackets(inventory.values().toString()), stringRemoveBrackets(inventory.keySet().toString()));
@@ -83,39 +84,12 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
         });
 
         System.out.println();
-        System.out.println("Depleted Items: " + stringRemoveBrackets(depletedItems.toString()));
+        System.out.println("DEPLETED ITEMS: " + stringRemoveBrackets(depletedItems.toString()));
+        System.out.println();
+        System.out.println("SCHEDULE:");
+        System.out.println(); // TODO: Add the Schedule for each Facility
+        System.out.println();
         System.out.println("============================================================================================");
         System.out.println();
-        System.out.println("Shortest Path results: ");
-        System.out.println("----------------------");
-
-        String startCity = "Seattle, WA";
-        String endCity = "Nashville, TN";
-        System.out.println("City Start: " + startCity + " -> City End: " + endCity);
-        System.out.println(graphManager.getShortestPath(startCity, endCity));
-        System.out.println(graphManager.getTotalTime(hoursDriving, avgMph) + " Days");
-        System.out.println();
-
-        startCity = "New York City, NY";
-        endCity = "Phoenix, AZ";
-        System.out.println("City Start: " + startCity + " -> City End: " + endCity);
-        System.out.println(graphManager.getShortestPath(startCity, endCity));
-        System.out.println(graphManager.getTotalTime(hoursDriving, avgMph) + " Days");
-        System.out.println();
-
-        startCity = "Fargo, ND";
-        endCity = "Austin, TX";
-        System.out.println("City Start: " + startCity + " -> City End: " + endCity);
-        System.out.println(graphManager.getShortestPath(startCity, endCity));
-        System.out.println(graphManager.getTotalTime(hoursDriving, avgMph) + " Days");
-        System.out.println();
-
-        startCity = "Denver, CO";
-        endCity = "Miami, FL";
-        System.out.println("City Start: " + startCity + " -> City End: " + endCity);
-        System.out.println(graphManager.getShortestPath(startCity, endCity));
-        System.out.println(graphManager.getTotalTime(hoursDriving, avgMph) + " Days");
-        System.out.println();
-
     }
 }

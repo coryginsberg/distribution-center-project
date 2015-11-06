@@ -9,6 +9,6 @@ package com.coryginsberg;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        new GenerateFacilityStatusOutput();
+        new GenerateFinalOutput();
     }
 }

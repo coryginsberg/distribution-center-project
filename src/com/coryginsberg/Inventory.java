@@ -39,8 +39,8 @@ public class Inventory {
     }
 
     /**
-     * Returns the Facility and its inventory as a string.
-     * @return The Facility and its inventory as a string.
+     * Returns the Network and its inventory as a string.
+     * @return The Network and its inventory as a string.
      */
     @Override
     public String toString() {

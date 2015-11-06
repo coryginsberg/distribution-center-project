@@ -7,7 +7,7 @@ package com.coryginsberg;
 
 public interface OutputInterface {
 
-    void printStatusOutputForCity(Facility facility);
+    void printStatusOutputForCity(Network network);
 
     default String stringRemoveBrackets(String str) {
         return str.substring(1, str.length() - 1);
