@@ -16,7 +16,7 @@ public class GraphFactory {
     public static Graph<String> createGraph() {
         Graph<String> graph = new Graph<>();
         for (int i = 0; i < FacilityManager.getNumFacilities(); i++) {
-            Network currentNetwork = FacilityManager.facilities().get(i);
+            Network currentNetwork = FacilityManager.getFacilities().get(i);
             ArrayList<HashMap<Integer, String>> connectedCities = currentNetwork.getConnectingCities();
             graph.addVertex(currentNetwork.getCity());
             for (HashMap<Integer, String> city : connectedCities) {

@@ -24,7 +24,7 @@ public class FacilityManager {
         return facilities.size();
     }
 
-    public static ArrayList<Network> facilities() {
+    public static ArrayList<Network> getFacilities() {
         return facilities;
     }
 

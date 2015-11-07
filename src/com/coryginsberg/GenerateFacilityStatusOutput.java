@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
+ * Outputs Each Facility's initial status and prints it out to the terminal.
+ *
  * @author Cory Ginsberg
  * @version 1.0
  * @since 10/25/2015
@@ -32,16 +34,13 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
         importItemFile.importFile("src/com/coryginsberg/Items.xml");
         GraphManager.createGraph();
 
-        String s = "Chicago, IL";
         hoursDriving = 8;
         avgMph = 50;
-        System.out.println("All times are calculated for driving 8 hours a day at 50 MPH");
+        System.out.println("All times are calculated for driving an average of 8 hours a day at 50 MPH");
         System.out.println();
-        FacilityManager.facilities().forEach(facility -> {
-            if (facility.getCity().equals(s)) {
-                printStatusOutputForCity(facility);
-            }
-        });
+
+        // Print the status of all facilities.
+        FacilityManager.getFacilities().forEach(this::printStatusOutputForCity);
     }
 
     public void printStatusOutputForCity(Network network) {
