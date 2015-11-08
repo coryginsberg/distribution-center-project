@@ -6,8 +6,6 @@ import com.coryginsberg.managers.GraphManager;
 import com.coryginsberg.managers.InventoryManager;
 
 import java.nio.file.FileAlreadyExistsException;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Outputs Each Facility's initial status and prints it out to the terminal.
@@ -48,16 +46,15 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
         System.out.println("‾‾‾‾‾‾‾‾‾‾‾‾");
 
         System.out.print("DIRECT LINKS: ");
-        for (HashMap<Integer, String> connectedFacility : network.getConnectingCities()) {
-            System.out.print(connectedFacility.values().toString().substring(1, connectedFacility.values().toString().length() - 1));
-            graphManager.getShortestPath(network.getCity(), connectedFacility.values().toString().substring(1, connectedFacility.values().toString().length() - 1));
+        network.getConnectingCities().forEach((integer, s) -> {
+            System.out.print(s);
+            graphManager.getShortestPath(network.getCity(), s);
             System.out.print(" (" + graphManager.getTotalTime(hoursDriving, avgMph) + " Days) ");
-        }
+        });
+
         System.out.println();
         System.out.println();
         System.out.println("ACTIVE INVENTORY:");
-
-        ArrayList<HashMap<Integer, String>> depletedItems = new ArrayList<>();
 
         InventoryManager.inventories().forEach(currentInventory -> {
             if (currentInventory.getCity().equals(network.getCity())) {
@@ -65,15 +62,16 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
                 System.out.println();
                 System.out.format("%-15s%-5s", "‾‾‾‾‾‾‾‾", "‾‾‾‾‾‾‾‾‾");
                 System.out.println();
-                for (Item item : currentInventory.getNondepletedInventory()) {
-                    System.out.format("%-15s%-5s", stringRemoveBrackets(item.toString()), stringRemoveBrackets(item.toString()));
+                // TODO: 11/8/15 Get the 'Active Inventory' to print properly.
+                currentInventory.getNondepletedInventory().forEach((s, integer) -> {
+                    System.out.format("%-15s%-5s", s, integer);
                     System.out.println();
-                }
+                });
             }
         });
 
         System.out.println();
-        System.out.println("DEPLETED ITEMS: " + stringRemoveBrackets(depletedItems.toString()));
+        System.out.println("DEPLETED ITEMS: ");
         System.out.println();
         System.out.println("SCHEDULE:");
         System.out.println(); // TODO: Add the Schedule for each Facility

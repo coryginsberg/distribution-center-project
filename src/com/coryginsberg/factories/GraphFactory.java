@@ -4,8 +4,8 @@ import com.coryginsberg.Network;
 import com.coryginsberg.graph.Graph;
 import com.coryginsberg.managers.FacilityManager;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Cory Ginsberg
@@ -17,13 +17,11 @@ public class GraphFactory {
         Graph<String> graph = new Graph<>();
         for (int i = 0; i < FacilityManager.getNumFacilities(); i++) {
             Network currentNetwork = FacilityManager.getFacilities().get(i);
-            ArrayList<HashMap<Integer, String>> connectedCities = currentNetwork.getConnectingCities();
+            HashMap<Integer, String> connectedCities = currentNetwork.getConnectingCities();
             graph.addVertex(currentNetwork.getCity());
-            for (HashMap<Integer, String> city : connectedCities) {
-                for (Integer distance : city.keySet()) {
-                    graph.addVertex(city.get(distance));
-                    graph.addEdge(currentNetwork.getCity(), city.get(distance), distance);
-                }
+            for (Map.Entry<Integer, String> city : connectedCities.entrySet()) {
+                graph.addVertex(city.getValue());
+                graph.addEdge(currentNetwork.getCity(), city.getValue(), city.getKey());
             }
         }
 

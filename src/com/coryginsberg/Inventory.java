@@ -12,31 +12,27 @@ import java.util.HashMap;
 public class Inventory {
 
     private String city;
-    private HashMap<Item, Integer> inventory;
+    private HashMap<String, Integer> inventory;
 
-    public Inventory(String city, HashMap<Item, Integer> inventory) {
+    public Inventory(String city, HashMap<String, Integer> inventory) {
         if (city == null) throw new RuntimeException("City does not exist.");
         this.city = city;
         if (inventory == null) throw new RuntimeException("Inventory does not exist.");
         this.inventory = inventory;
     }
 
-    /**
-     * Returns the current inventory of the facility
-     *
-     * @return Current facility inventory.
-     */
-    public HashMap<Item, Integer> getInventory() {
+    public HashMap<String, Integer> getInventory() {
         return inventory;
     }
 
-    public void addInventoryAmount(Item itemToChange, int amount) {
+
+    public void addInventoryAmount(String itemToChange, int amount) {
         if (hasItem(itemToChange)) {
             inventory.merge(itemToChange, amount, Integer::sum);
         }
     }
 
-    public void subtractInventoryAmount(Item itemToChange, int amount) {
+    public void subtractInventoryAmount(String itemToChange, int amount) {
         if (hasItem(itemToChange)) {
             inventory.merge(itemToChange, amount, (integer, integer2) -> {
                 integer = inventory.get(itemToChange);
@@ -47,8 +43,8 @@ public class Inventory {
         }
     }
 
-    public ArrayList<Item> getDepletedInventory() {
-        ArrayList<Item> depletedItems = new ArrayList<>();
+    public ArrayList<String> getDepletedInventory() {
+        ArrayList<String> depletedItems = new ArrayList<>();
         inventory.forEach((item, amount) -> {
             if (amount == 0) {
                 depletedItems.add(item);
@@ -57,32 +53,20 @@ public class Inventory {
         return depletedItems;
     }
 
-    public ArrayList<Item> getNondepletedInventory() {
-        ArrayList<Item> nondepletedItems = new ArrayList<>();
-        inventory.forEach((item, amount) -> {
-            if (amount != 0) {
-                nondepletedItems.add(item);
-            }
-        });
-        return nondepletedItems;
+    public HashMap<String, Integer> getNondepletedInventory() {
+
+        return inventory;
     }
 
-    public boolean hasItem(Item item) {
+    public boolean hasItem(String item) {
         return inventory.containsKey(item);
     }
 
-    /**
-     * Returns the city requested.
-     * @return The city that was requested.
-     */
+
     public String getCity() {
         return this.city;
     }
 
-    /**
-     * Returns the Network and its inventory as a string.
-     * @return The Network and its inventory as a string.
-     */
     @Override
     public String toString() {
         return "City: " + getCity() + " | Inventory: " + getInventory().toString();

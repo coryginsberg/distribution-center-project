@@ -17,13 +17,11 @@
         <Time>1</Time>
         <Destination>Boston, MA</Destination>
         <Priority>Time</Priority>
-        <Items>
             <Item Quantity="5">PL132-C</Item>
             <Item Quantity="120">XLK200B</Item>
             <Item Quantity="220">JBL3100</Item>
             <Item Quantity="200">RX100-3</Item>
             <Item Quantity="100">RL123A</Item>
-        </Items>
     </Order>
 
     <Order id="TO-003">

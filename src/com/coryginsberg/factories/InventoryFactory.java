@@ -11,6 +11,9 @@ import java.util.HashMap;
  */
 public class InventoryFactory {
     public static Inventory addInventory(String city, HashMap<Integer, String> items) {
-        return new Inventory(city, items);
+
+        HashMap<String, Integer> reverseHash = new HashMap<>();
+        reverseHash.put(items.values().toString(), Integer.getInteger(items.keySet().toString()));
+        return new Inventory(city, reverseHash);
     }
 }
