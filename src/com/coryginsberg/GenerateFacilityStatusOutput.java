@@ -4,7 +4,6 @@ import com.coryginsberg.importxml.*;
 import com.coryginsberg.managers.FacilityManager;
 import com.coryginsberg.managers.GraphManager;
 import com.coryginsberg.managers.InventoryManager;
-import com.coryginsberg.managers.ItemManager;
 
 import java.nio.file.FileAlreadyExistsException;
 import java.util.ArrayList;
@@ -58,8 +57,7 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
         System.out.println();
         System.out.println("ACTIVE INVENTORY:");
 
-        ArrayList<Item> depletedItems = new ArrayList<>();
-        ItemManager.getItems().forEach(depletedItems::add);
+        ArrayList<HashMap<Integer, String>> depletedItems = new ArrayList<>();
 
         InventoryManager.inventories().forEach(currentInventory -> {
             if (currentInventory.getCity().equals(network.getCity())) {
@@ -67,17 +65,9 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
                 System.out.println();
                 System.out.format("%-15s%-5s", "‾‾‾‾‾‾‾‾", "‾‾‾‾‾‾‾‾‾");
                 System.out.println();
-                for (HashMap<Integer, String> inventory : currentInventory.getInventory()) {
-                    System.out.format("%-15s%-5s", stringRemoveBrackets(inventory.values().toString()), stringRemoveBrackets(inventory.keySet().toString()));
+                for (Item item : currentInventory.getNondepletedInventory()) {
+                    System.out.format("%-15s%-5s", stringRemoveBrackets(item.toString()), stringRemoveBrackets(item.toString()));
                     System.out.println();
-
-                    for (String value : inventory.values()) {
-                        for (int i = 0; i < depletedItems.size(); i++) {
-                            if (value.equals(depletedItems.get(i).getId())) {
-                                depletedItems.remove(i);
-                            }
-                        }
-                    }
                 }
             }
         });

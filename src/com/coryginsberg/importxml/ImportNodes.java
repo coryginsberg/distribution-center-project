@@ -1,10 +1,10 @@
 package com.coryginsberg.importxml;
 
+import com.coryginsberg.Item;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -13,10 +13,11 @@ import java.util.HashMap;
  */
 public abstract class ImportNodes {
 
-    public static ArrayList<HashMap<Integer, String>> importSubNodes(Element elem, String elementTagName) throws UnexpectedNodeException {
-        // Get all nodes named "Link" - there can be 0 or more
-        ArrayList<HashMap<Integer, String>> stockedItems = new ArrayList<>();
+    public static HashMap<Integer, Item> importSubNodes(Element elem, String elementTagName) throws UnexpectedNodeException {
+        // Get all nodes named "Link"
+        // there can be 0 or more
         NodeList linkedItemsList = elem.getElementsByTagName(elementTagName);
+        HashMap<Integer, String> item = new HashMap<>();
         for (int j = 0; j < linkedItemsList.getLength(); j++) {
             if (linkedItemsList.item(j).getNodeType() == Node.TEXT_NODE) {
                 continue;
@@ -34,11 +35,9 @@ public abstract class ImportNodes {
             String itemID = elem.getTextContent();
             int itemQuantity = Integer.parseInt(elem.getAttributes().item(0).getTextContent());
 
-            // Create a string summary of the Items
-            HashMap<Integer, String> item = new HashMap<>();
+            // Add the Items to the HashMap
             item.put(itemQuantity, itemID);
-            stockedItems.add(item);
         }
-        return stockedItems;
+        return item;
     }
 }

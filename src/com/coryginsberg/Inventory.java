@@ -12,9 +12,9 @@ import java.util.HashMap;
 public class Inventory {
 
     private String city;
-    private ArrayList<HashMap<Integer, String>> inventory;
+    private HashMap<Item, Integer> inventory;
 
-    public Inventory(String city, ArrayList<HashMap<Integer, String>> inventory) {
+    public Inventory(String city, HashMap<Item, Integer> inventory) {
         if (city == null) throw new RuntimeException("City does not exist.");
         this.city = city;
         if (inventory == null) throw new RuntimeException("Inventory does not exist.");
@@ -26,8 +26,49 @@ public class Inventory {
      *
      * @return Current facility inventory.
      */
-    public ArrayList<HashMap<Integer, String>> getInventory() {
+    public HashMap<Item, Integer> getInventory() {
         return inventory;
+    }
+
+    public void addInventoryAmount(Item itemToChange, int amount) {
+        if (hasItem(itemToChange)) {
+            inventory.merge(itemToChange, amount, Integer::sum);
+        }
+    }
+
+    public void subtractInventoryAmount(Item itemToChange, int amount) {
+        if (hasItem(itemToChange)) {
+            inventory.merge(itemToChange, amount, (integer, integer2) -> {
+                integer = inventory.get(itemToChange);
+                integer2 = amount;
+                if (integer > integer2) return integer - integer2;
+                return 0;
+            });
+        }
+    }
+
+    public ArrayList<Item> getDepletedInventory() {
+        ArrayList<Item> depletedItems = new ArrayList<>();
+        inventory.forEach((item, amount) -> {
+            if (amount == 0) {
+                depletedItems.add(item);
+            }
+        });
+        return depletedItems;
+    }
+
+    public ArrayList<Item> getNondepletedInventory() {
+        ArrayList<Item> nondepletedItems = new ArrayList<>();
+        inventory.forEach((item, amount) -> {
+            if (amount != 0) {
+                nondepletedItems.add(item);
+            }
+        });
+        return nondepletedItems;
+    }
+
+    public boolean hasItem(Item item) {
+        return inventory.containsKey(item);
     }
 
     /**

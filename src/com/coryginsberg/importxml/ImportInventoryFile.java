@@ -54,6 +54,7 @@ public class ImportInventoryFile implements Import {
                 Element elem = (Element) facilityEntries.item(i);
 
                 // Create a Network object using the data loaded from the XML File
+
                 Inventory inventory = InventoryFactory.addInventory(facilityCity, ImportNodes.importSubNodes(elem, "Item"));
                 InventoryManager.addInventory(inventory);
             }
