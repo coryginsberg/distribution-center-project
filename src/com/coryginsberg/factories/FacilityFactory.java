@@ -2,7 +2,6 @@ package com.coryginsberg.factories;
 
 import com.coryginsberg.Network;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -12,7 +11,7 @@ import java.util.HashMap;
  */
 public class FacilityFactory {
 
-    public static Network addFacility(String name, int rate, int cost, ArrayList<HashMap<Integer, String>> linkedCities) {
+    public static Network addFacility(String name, int rate, int cost, HashMap<Integer, String> linkedCities) {
         return new Network(name, rate, cost, linkedCities);
     }
 }
