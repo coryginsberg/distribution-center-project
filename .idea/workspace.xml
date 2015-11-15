@@ -1,34 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c10ad15d-10ce-4a3d-bca3-429a8525e60a" name="Default" comment="Finally got Active Inventory to print properly.&#10;After some digging, I found out that I was switching the key and value for every Inventory for some reason, which is completely unnecessary. I fixed that and ran the program again, and it worked.">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/FacilityInventory.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/FacilityNetwork.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/GenerateFacilityStatusOutput.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/GenerateFinalOutput.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/GenerateOrderOutput.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Items.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Orders.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/coryginsberg/managers/Manager.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/coryginsberg/FacilityInventory.xml" afterPath="$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityInventory.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/coryginsberg/FacilityNetwork.xml" afterPath="$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityNetwork.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/coryginsberg/GenerateFacilityStatusOutput.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/coryginsberg/GenerateFinalOutput.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFinalOutput.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/coryginsberg/GenerateOrderOutput.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/coryginsberg/Items.xml" afterPath="$PROJECT_DIR$/src/com/coryginsberg/xml/Items.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/coryginsberg/Orders.xml" afterPath="$PROJECT_DIR$/src/com/coryginsberg/xml/Orders.xml" />
+    <list default="true" id="c10ad15d-10ce-4a3d-bca3-429a8525e60a" name="Default" comment="Added Depleted Items and cleaned up code.&#10;Depleted Items now print in each Facility Status Output once the amount of the item is at 0. This is not checked, however, until getDepletedItems() is called. Also, changed the return value from ArrayList&lt;String&gt; to HashMap&lt;String, Integer&gt; to work better with getNondepletedItems().&#10;Changed getNondepletedItems() to check for all items that have at least 1 item at the facility. From my testing, it works properly. Without this, getNondepletedItems() was returning a HashMap of all the items of that facility, instead of just the ones that were actually in stock.&#10;All outputs were printing twice before, after investigating, it turns out that the issue was each Facility being added twice to the Manager. Removed one of the instances and resolved the issue.">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/allclasses-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/allclasses-noframe.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/Facility.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/GenerateFacilityStatusOutput.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/Inventory.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/Item.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/Main.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/OutputInterface.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/graph/Edge.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/graph/Graph.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/graph/Node.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/graph/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/graph/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/graph/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/importxml/ImportFacilityInventory.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/importxml/ImportFacilityNetwork.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/importxml/ImportInterface.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/importxml/ImportItems.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/importxml/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/importxml/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/importxml/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/managers/FacilityManager.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/managers/GraphManager.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/managers/InventoryManager.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/managers/ItemManager.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/managers/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/managers/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/managers/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/constant-values.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/deprecated-list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/help-doc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-10.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-11.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-12.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-13.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-14.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-6.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-7.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-8.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-9.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/overview-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/overview-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/overview-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/package-list" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Javadoc/stylesheet.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Inventory.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Inventory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Main.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/graph/Graph.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/graph/Graph.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/graph/Node.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/graph/Node.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/importxml/ImportNetworkFile.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/importxml/ImportNetworkFile.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/com/coryginsberg/GenerateFacilityStatusOutput.html" afterPath="$PROJECT_DIR$/Javadoc/com/coryginsberg/GenerateFacilityStatusOutput.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/distribution-project.iml" afterPath="$PROJECT_DIR$/distribution-project.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/Inventory.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/Inventory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/Main.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportNetworkFile.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportNetworkFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/managers/FacilityManager.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/managers/FacilityManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityInventory.xml" afterPath="$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityInventory.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityNetwork.xml" afterPath="$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityNetwork.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/xml/Orders.xml" afterPath="$PROJECT_DIR$/src/com/coryginsberg/xml/Orders.xml" />
     </list>
     <ignored path="distribution-project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,7 +99,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -93,11 +127,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FacilityInventory.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FacilityInventory.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityInventory.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.021714285">
-              <caret line="62" column="25" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+            <state vertical-scroll-proportion="-27.074074">
+              <caret line="140" column="15" selection-start-line="140" selection-start-column="15" selection-end-line="140" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FacilityNetwork.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityNetwork.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.555555">
+              <caret line="179" column="40" selection-start-line="163" selection-start-column="4" selection-end-line="179" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Orders.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/Orders.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.2483333">
+              <caret line="112" column="9" selection-start-line="112" selection-start-column="9" selection-end-line="112" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -114,8 +168,17 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Cory Ginsberg &lt;cory.ginsberg1@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -149,7 +212,9 @@
         <option value="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/FacilityManager.java" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityNetwork.xml" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityInventory.xml" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/xml/Orders.xml" />
       </list>
     </option>
   </component>
@@ -896,7 +961,7 @@
       <created>1447562871582</created>
       <option name="number" value="Default" />
       <updated>1447562871582</updated>
-      <workItem from="1447573362106" duration="2400000" />
+      <workItem from="1447573362106" duration="10056000" />
     </task>
     <task id="LOCAL-00001" summary="Finally got Active Inventory to print properly.&#10;After some digging, I found out that I was switching the key and value for every Inventory for some reason, which is completely unnecessary. I fixed that and ran the program again, and it worked.">
       <created>1447568058308</created>
@@ -904,11 +969,17 @@
       <option name="project" value="LOCAL" />
       <updated>1447568058308</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added Depleted Items and cleaned up code.&#10;Depleted Items now print in each Facility Status Output once the amount of the item is at 0. This is not checked, however, until getDepletedItems() is called. Also, changed the return value from ArrayList&lt;String&gt; to HashMap&lt;String, Integer&gt; to work better with getNondepletedItems().&#10;Changed getNondepletedItems() to check for all items that have at least 1 item at the facility. From my testing, it works properly. Without this, getNondepletedItems() was returning a HashMap of all the items of that facility, instead of just the ones that were actually in stock.&#10;All outputs were printing twice before, after investigating, it turns out that the issue was each Facility being added twice to the Manager. Removed one of the instances and resolved the issue.">
+      <created>1447576346114</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1447576346114</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2400000" />
+    <option name="totallyTimeSpent" value="10056000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -929,8 +1000,8 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32907662" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="WINDOWED" visible="true" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="46" y="21" width="1877" height="1062" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32832617" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2950644" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="1968" y="432" width="1877" height="1036" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32907662" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24986301" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -984,8 +1055,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Finally got Active Inventory to print properly.&#10;After some digging, I found out that I was switching the key and value for every Inventory for some reason, which is completely unnecessary. I fixed that and ran the program again, and it worked." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finally got Active Inventory to print properly.&#10;After some digging, I found out that I was switching the key and value for every Inventory for some reason, which is completely unnecessary. I fixed that and ran the program again, and it worked." />
+    <MESSAGE value="Added Depleted Items and cleaned up code.&#10;Depleted Items now print in each Facility Status Output once the amount of the item is at 0. This is not checked, however, until getDepletedItems() is called. Also, changed the return value from ArrayList&lt;String&gt; to HashMap&lt;String, Integer&gt; to work better with getNondepletedItems().&#10;Changed getNondepletedItems() to check for all items that have at least 1 item at the facility. From my testing, it works properly. Without this, getNondepletedItems() was returning a HashMap of all the items of that facility, instead of just the ones that were actually in stock.&#10;All outputs were printing twice before, after investigating, it turns out that the issue was each Facility being added twice to the Manager. Removed one of the instances and resolved the issue." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Depleted Items and cleaned up code.&#10;Depleted Items now print in each Facility Status Output once the amount of the item is at 0. This is not checked, however, until getDepletedItems() is called. Also, changed the return value from ArrayList&lt;String&gt; to HashMap&lt;String, Integer&gt; to work better with getNondepletedItems().&#10;Changed getNondepletedItems() to check for all items that have at least 1 item at the facility. From my testing, it works properly. Without this, getNondepletedItems() was returning a HashMap of all the items of that facility, instead of just the ones that were actually in stock.&#10;All outputs were printing twice before, after investigating, it turns out that the issue was each Facility being added twice to the Manager. Removed one of the instances and resolved the issue." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1249,30 +1322,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/Orders.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37257144">
-          <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1299,18 +1348,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityNetwork.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityNetwork.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.555555">
+          <caret line="179" column="40" selection-start-line="163" selection-start-column="4" selection-end-line="179" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityInventory.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.021714285">
-          <caret line="62" column="25" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+        <state vertical-scroll-proportion="-27.074074">
+          <caret line="140" column="15" selection-start-line="140" selection-start-column="15" selection-end-line="140" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/Orders.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2483333">
+          <caret line="112" column="9" selection-start-line="112" selection-start-column="9" selection-end-line="112" selection-end-column="9" />
           <folding />
         </state>
       </provider>

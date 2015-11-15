@@ -73,8 +73,41 @@
         </Items>
     </Order>
 
+    <Order id="TO-007">
+        <Time>8</Time>
+        <Destination>Salt Lake City, UT</Destination>
+        <Priority>Time</Priority>
+        <Items>
+            <Item Quantity="19">RL123A</Item>
+            <Item Quantity="45">CT1928</Item>
+            <Item Quantity="102">XPT202</Item>
+            <Item Quantity="107">ABC123</Item>
+            <Item Quantity="31">SN-241-L</Item>
+        </Items>
+    </Order>
+
+    <Order id="TO-008">
+        <Time>8</Time>
+        <Destination>Chicago, IL</Destination>
+        <Priority>Time</Priority>
+        <Items>
+            <Item Quantity="93">RL123A</Item>
+            <Item Quantity="80">CT1928</Item>
+            <Item Quantity="85">XPT202</Item>
+        </Items>
+    </Order>
+
+    <Order id="TO-009">
+        <Time>8</Time>
+        <Destination>New York City, NY</Destination>
+        <Priority>Time</Priority>
+        <Items>
+            <Item Quantity="98">RL123A</Item>
+            <Item Quantity="65">CT1928</Item>
+            <Item Quantity="10">XPT202</Item>
+            <Item Quantity="99">ABC123</Item>
+            <Item Quantity="63">SN-241-L</Item>
+        </Items>
+    </Order>
 
 </Orders>
-
-<!-- TODO: Add 3 more (custom) orders. -->
-

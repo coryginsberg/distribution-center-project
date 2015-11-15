@@ -119,4 +119,24 @@
         <Item Quantity="88">XTP202</Item>
     </Facility>
 
+    <Facility City="Los Vegas, NV">
+        <Item Quantity="17">MM35P</Item>
+        <Item Quantity="114">XTP202</Item>
+        <Item Quantity="72">ABC123</Item>
+        <Item Quantity="40">E241i</Item>
+    </Facility>
+
+    <Facility City="Columbus, OH">
+        <Item Quantity="36">JBL3100</Item>
+        <Item Quantity="59">XTP202</Item>
+        <Item Quantity="35">SN-241-L</Item>
+    </Facility>
+
+    <Facility City="Salt Lake City, UT">
+        <Item Quantity="12">PU238</Item>
+        <Item Quantity="67">SR71-D</Item>
+        <Item Quantity="113">MM35P</Item>
+        <Item Quantity="9">JBL3100</Item>
+        <Item Quantity="57">ABC123</Item>
+    </Facility>
 </FacilityInventory>

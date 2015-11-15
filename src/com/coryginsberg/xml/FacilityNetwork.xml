@@ -6,6 +6,7 @@
 
         <LinkedCity Dist="1426">Fargo, ND</LinkedCity>
         <LinkedCity Dist="808">San Francisco, CA</LinkedCity>
+        <LinkedCity Dist="832">Salt Lake City, UT</LinkedCity>
     </Facility>
 
     <Facility City="San Francisco, CA">
@@ -14,6 +15,7 @@
         <LinkedCity Dist="808">Seattle, WA</LinkedCity>
         <LinkedCity Dist="1249">Denver, CO</LinkedCity>
         <LinkedCity Dist="382">Los Angeles, CA</LinkedCity>
+        <LinkedCity Dist="735">Salt Lake City, UT</LinkedCity>
     </Facility>
 
     <Facility City="Los Angeles, CA">
@@ -21,6 +23,7 @@
 
         <LinkedCity Dist="382">San Francisco, CA</LinkedCity>
         <LinkedCity Dist="372">Phoenix, AZ</LinkedCity>
+        <LinkedCity Dist="270">Los Vegas, NV</LinkedCity>
     </Facility>
 
     <Facility City="Phoenix, AZ">
@@ -28,6 +31,7 @@
 
         <LinkedCity Dist="372">Los Angeles, CA</LinkedCity>
         <LinkedCity Dist="480">Santa Fe, NM</LinkedCity>
+        <LinkedCity Dist="298">Los Vegas, NV</LinkedCity>
     </Facility>
 
     <Facility City="Denver, CO">
@@ -37,6 +41,7 @@
         <LinkedCity Dist="392">Santa Fe, NM</LinkedCity>
         <LinkedCity Dist="889">Fargo, ND</LinkedCity>
         <LinkedCity Dist="851">St. Louis, MO</LinkedCity>
+        <LinkedCity Dist="535">Salt Lake City, UT</LinkedCity>
     </Facility>
 
     <Facility City="Santa Fe, NM">
@@ -46,6 +51,8 @@
         <LinkedCity Dist="392">Denver, CO</LinkedCity>
         <LinkedCity Dist="1032">St. Louis, MO</LinkedCity>
         <LinkedCity Dist="688">Austin, TX</LinkedCity>
+        <LinkedCity Dist="633">Los Vegas, NV</LinkedCity>
+
     </Facility>
 
     <Facility City="Fargo, ND">
@@ -54,6 +61,7 @@
         <LinkedCity Dist="1426">Seattle, WA</LinkedCity>
         <LinkedCity Dist="889">Denver, CO</LinkedCity>
         <LinkedCity Dist="643">Chicago, IL</LinkedCity>
+        <LinkedCity Dist="1120">Salt Lake City, UT</LinkedCity>
     </Facility>
 
     <Facility City="Austin, TX">
@@ -81,6 +89,8 @@
         <LinkedCity Dist="297">St. Louis, MO</LinkedCity>
         <LinkedCity Dist="790">New York City, NY</LinkedCity>
         <LinkedCity Dist="282">Detroit, MI</LinkedCity>
+        <LinkedCity Dist="324">Columbus, OH</LinkedCity>
+
     </Facility>
 
     <Facility City="New Orleans, LA">
@@ -98,6 +108,8 @@
         <LinkedCity Dist="309">St. Louis, MO</LinkedCity>
         <LinkedCity Dist="532">New Orleans, LA</LinkedCity>
         <LinkedCity Dist="706">Norfolk, VA</LinkedCity>
+        <LinkedCity Dist="378">Columbus, OH</LinkedCity>
+
     </Facility>
 
     <Facility City="Detroit, MI">
@@ -130,6 +142,8 @@
         <LinkedCity Dist="363">New York City, NY</LinkedCity>
         <LinkedCity Dist="706">Nashville, TN</LinkedCity>
         <LinkedCity Dist="566">Atlanta, GA</LinkedCity>
+        <LinkedCity Dist="570">Columbus, OH</LinkedCity>
+
     </Facility>
 
     <Facility City="Atlanta, GA">
@@ -145,6 +159,31 @@
 
         <LinkedCity Dist="663">Atlanta, GA</LinkedCity>
         <LinkedCity Dist="864">New Orleans, LA</LinkedCity>
+    </Facility>
+
+    <Facility City="Los Vegas, NV">
+        <Rate AtCost="300">10</Rate>
+
+        <LinkedCity Dist="270">Los Angeles, CA</LinkedCity>
+        <LinkedCity Dist="298">Phoenix, AZ</LinkedCity>
+        <LinkedCity Dist="633">Santa Fe, NM</LinkedCity>
+    </Facility>
+
+    <Facility City="Columbus, OH">
+        <Rate AtCost="300">8</Rate>
+
+        <LinkedCity Dist="324">Chicago, IL</LinkedCity>
+        <LinkedCity Dist="378">Nashville, TN</LinkedCity>
+        <LinkedCity Dist="570">Norfolk, VA</LinkedCity>
+    </Facility>
+
+    <Facility City="Salt Lake City, UT">
+        <Rate AtCost="300">11</Rate>
+
+        <LinkedCity Dist="832">Seattle, WA</LinkedCity>
+        <LinkedCity Dist="535">Denver, CO</LinkedCity>
+        <LinkedCity Dist="735">San Francisco, CA</LinkedCity>
+        <LinkedCity Dist="1120">Fargo, ND</LinkedCity>
     </Facility>
 
 </FacilityNetwork>
