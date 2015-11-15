@@ -37,6 +37,4 @@ public class FacilityManager {
     public static ArrayList<Item> getStorableItems() {
         return storableItems;
     }
-
-
 }

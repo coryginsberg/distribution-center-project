@@ -1,4 +1,4 @@
-package com.coryginsberg;
+package com.coryginsberg.output;
 
 import com.coryginsberg.importxml.ImportOrderFile;
 import com.coryginsberg.importxml.UnexpectedNodeException;
@@ -14,7 +14,7 @@ public class GenerateOrderOutput {
     private static ImportOrderFile importOrderFile = new ImportOrderFile();
 
     public GenerateOrderOutput() throws FileAlreadyExistsException, UnexpectedNodeException {
-        importOrderFile.importFile("src/com/coryginsberg/Orders.xml");
+        importOrderFile.importFile("src/com/coryginsberg/xml/Orders.xml");
 
     }
 }

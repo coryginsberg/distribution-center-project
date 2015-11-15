@@ -1,6 +1,5 @@
 package com.coryginsberg;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -43,19 +42,24 @@ public class Inventory {
         }
     }
 
-    public ArrayList<String> getDepletedInventory() {
-        ArrayList<String> depletedItems = new ArrayList<>();
+    public HashMap<String, Integer> getDepletedInventory() {
+        HashMap<String, Integer> depletedItems = new HashMap<>();
         inventory.forEach((item, amount) -> {
             if (amount == 0) {
-                depletedItems.add(item);
+                depletedItems.put(item, amount);
             }
         });
         return depletedItems;
     }
 
     public HashMap<String, Integer> getNondepletedInventory() {
-
-        return inventory;
+        HashMap<String, Integer> nondepletedItems = new HashMap<>();
+        inventory.forEach((item, amount) -> {
+            if (amount > 0) {
+                nondepletedItems.put(item, amount);
+            }
+        });
+        return nondepletedItems;
     }
 
     public boolean hasItem(String item) {

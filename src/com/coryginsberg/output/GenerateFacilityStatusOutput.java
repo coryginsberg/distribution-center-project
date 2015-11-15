@@ -1,5 +1,7 @@
-package com.coryginsberg;
+package com.coryginsberg.output;
 
+import com.coryginsberg.Network;
+import com.coryginsberg.OutputInterface;
 import com.coryginsberg.importxml.*;
 import com.coryginsberg.managers.FacilityManager;
 import com.coryginsberg.managers.GraphManager;
@@ -27,9 +29,9 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
     private static float avgMph;
 
     public GenerateFacilityStatusOutput() throws FileAlreadyExistsException, UnexpectedNodeException {
-        importNetworkFile.importFile("src/com/coryginsberg/FacilityNetwork.xml");
-        importInventoryFile.importFile("src/com/coryginsberg/FacilityInventory.xml");
-        importItemFile.importFile("src/com/coryginsberg/Items.xml");
+        importNetworkFile.importFile("src/com/coryginsberg/xml/FacilityNetwork.xml");
+        importInventoryFile.importFile("src/com/coryginsberg/xml/FacilityInventory.xml");
+        importItemFile.importFile("src/com/coryginsberg/xml/Items.xml");
         GraphManager.createGraph();
 
         hoursDriving = 8;
@@ -78,6 +80,15 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
 
         System.out.println();
         System.out.println("DEPLETED ITEMS: ");
+        InventoryManager.inventories().forEach(currentInventory -> {
+            if (currentInventory.getCity().equals(network.getCity())) {
+                Map<String, Integer> map = currentInventory.getDepletedInventory();
+                for (Map.Entry<String, Integer> entry : map.entrySet()) {
+                    String key = entry.getKey();
+                    System.out.println(key);
+                }
+            }
+        });
         System.out.println();
         System.out.println("SCHEDULE:");
         System.out.println(); // TODO: Add the Schedule for each Facility

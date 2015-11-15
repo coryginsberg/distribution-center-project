@@ -1,4 +1,4 @@
-package com.coryginsberg;
+package com.coryginsberg.output;
 
 import com.coryginsberg.importxml.UnexpectedNodeException;
 

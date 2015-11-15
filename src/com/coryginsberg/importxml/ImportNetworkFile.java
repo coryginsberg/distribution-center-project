@@ -1,8 +1,6 @@
 package com.coryginsberg.importxml;
 
-import com.coryginsberg.Network;
 import com.coryginsberg.factories.FacilityFactory;
-import com.coryginsberg.managers.FacilityManager;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -60,8 +58,7 @@ public class ImportNetworkFile implements Import {
                 int facilityCost = Integer.parseInt(rateNode.getAttributes().item(0).getTextContent());
 
                 // Create a Network object using the data loaded from the XML File
-                Network network = FacilityFactory.addFacility(facilityCity, facilityRate, facilityCost, ImportNodes.importSubNodes(elem, "LinkedCity"));
-                FacilityManager.addFacility(network);
+                FacilityFactory.addFacility(facilityCity, facilityRate, facilityCost, ImportNodes.importSubNodes(elem, "LinkedCity"));
             }
 
         } catch (ParserConfigurationException | SAXException | IOException | DOMException e) {
