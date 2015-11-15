@@ -6,6 +6,7 @@ import com.coryginsberg.managers.GraphManager;
 import com.coryginsberg.managers.InventoryManager;
 
 import java.nio.file.FileAlreadyExistsException;
+import java.util.Map;
 
 /**
  * Outputs Each Facility's initial status and prints it out to the terminal.
@@ -60,13 +61,18 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
             if (currentInventory.getCity().equals(network.getCity())) {
                 System.out.format("%-15s%-5s", "Item ID:", "Quantity:");
                 System.out.println();
-                System.out.format("%-15s%-5s", "‾‾‾‾‾‾‾‾", "‾‾‾‾‾‾‾‾‾");
+                System.out.format("%-15s%-5s", "‾‾‾‾‾‾‾‾‾", "‾‾‾‾‾‾‾‾‾");
                 System.out.println();
-                // TODO: 11/8/15 Get the 'Active Inventory' to print properly.
                 currentInventory.getNondepletedInventory().forEach((s, integer) -> {
-                    System.out.format("%-15s%-5s", s, integer);
-                    System.out.println();
+
                 });
+                Map<String, Integer> map = currentInventory.getNondepletedInventory();
+                for (Map.Entry<String, Integer> entry : map.entrySet()) {
+                    String key = entry.getKey();
+                    Integer value = entry.getValue();
+                    System.out.format("%-15s%-5s", key, value);
+                    System.out.println();
+                }
             }
         });
 

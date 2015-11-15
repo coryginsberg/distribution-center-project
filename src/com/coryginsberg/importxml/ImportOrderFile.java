@@ -18,6 +18,8 @@ import java.io.IOException;
  */
 public class ImportOrderFile {
 
+    OrderManager orderManager = new OrderManager();
+
     public void importFile(String fileName) throws UnexpectedNodeException {
 
         try {
@@ -54,6 +56,10 @@ public class ImportOrderFile {
                 Node nodeTime = elem.getElementsByTagName("Time").item(0);
                 int orderTime = Integer.parseInt(nodeTime.getTextContent());
 
+                // Get Destination nodes
+                Node nodeDest = elem.getElementsByTagName("Destination").item(0);
+                String orderDestination = nodeDest.getTextContent();
+
                 // Get Priority nodes
                 Node nodePri = elem.getElementsByTagName("Priority").item(0);
                 String orderPriority = nodePri.getTextContent();
@@ -62,8 +68,7 @@ public class ImportOrderFile {
 
 
                 // Create a Network object using the data loaded from the XML File
-                Order order = OrderFactory.newOrder(orderTime, orderId, orderPriority, ImportNodes.importSubNodes(""));
-                OrderManager.add(order);
+                OrderFactory.newOrder(orderTime, orderId, orderDestination, orderPriority, ImportNodes.importSubNodes(elem, "Item"));
             }
 
         } catch (ParserConfigurationException | SAXException | IOException | DOMException e) {

@@ -55,8 +55,7 @@ public class ImportItemFile implements Import {
                 // Create a Item object using the data loaded from the XML File
                 Item item = ItemFactory.addItem(itemID, itemPrice);
 
-                ItemManager itemManager = new ItemManager();
-                ItemManager.add(item);
+                ItemManager.addItem(item);
             }
 
         } catch (ParserConfigurationException | SAXException | IOException | DOMException e) {

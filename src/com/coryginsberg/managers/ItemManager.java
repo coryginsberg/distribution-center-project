@@ -8,11 +8,11 @@ import java.util.ArrayList;
  * Created by Cory Ginsberg on 10/25/2015.
  * Created for Object Oriented Programming.
  */
-public class ItemManager implements Manager<Item> {
+public class ItemManager {
 
-    static ArrayList<Item> items = new ArrayList<>();
+    private static ArrayList<Item> items = new ArrayList<>();
 
-    public static void add(Item item) {
+    public static void addItem(Item item) {
         items.add(item);
     }
 

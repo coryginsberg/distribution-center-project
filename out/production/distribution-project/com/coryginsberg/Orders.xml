@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Orders>
+
+    <Order id="TO-001">
+        <Time>1</Time> <!-- Day number the order was placed on -->
+        <Destination>Miami, FL</Destination>
+        <Priority>Time</Priority>
+        <Items>
+            <Item Quantity="180">ABC123</Item>
+            <Item Quantity="320">CR2032</Item>
+            <Item Quantity="50">SN-241-L</Item>
+            <Item Quantity="120">MM35P</Item>
+        </Items>
+    </Order>
+
+    <Order id="TO-002">
+        <Time>1</Time>
+        <Destination>Boston, MA</Destination>
+        <Priority>Time</Priority>
+            <Item Quantity="5">PL132-C</Item>
+            <Item Quantity="120">XLK200B</Item>
+            <Item Quantity="220">JBL3100</Item>
+            <Item Quantity="200">RX100-3</Item>
+            <Item Quantity="100">RL123A</Item>
+    </Order>
+
+    <Order id="TO-003">
+        <Time>4</Time>
+        <Destination>Seattle, WA</Destination>
+        <Priority>Time</Priority>
+        <Items>
+            <Item Quantity="100">XTP202</Item>
+            <Item Quantity="105">E241i</Item>
+            <Item Quantity="50">CT1928</Item>
+        </Items>
+    </Order>
+
+    <Order id="TO-004">
+        <Time>10</Time>
+        <Destination>Phoenix, AZ</Destination>
+        <Priority>Time</Priority>
+        <Items>
+            <Item Quantity="200">CR2032</Item>
+            <Item Quantity="145">PU238</Item>
+            <Item Quantity="55">JBL3100</Item>
+            <Item Quantity="85">SR71-D</Item>
+        </Items>
+    </Order>
+
+    <Order id="TO-005">
+        <Time>7</Time>
+        <Destination>Chicago, IL</Destination>
+        <Priority>Time</Priority>
+        <Items>
+            <Item Quantity="5">PL132-C</Item>
+            <Item Quantity="120">XLK200B</Item>
+            <Item Quantity="220">JBL3100</Item>
+            <Item Quantity="200">RX100-3</Item>
+            <Item Quantity="100">RL123A</Item>
+        </Items>
+    </Order>
+
+    <Order id="TO-006">
+        <Time>8</Time>
+        <Destination>Denver, CO</Destination>
+        <Priority>Time</Priority>
+        <Items>
+            <Item Quantity="50">RL123A</Item>
+            <Item Quantity="120">CT1928</Item>
+            <Item Quantity="85">XPT202</Item>
+            <Item Quantity="90">ABC123</Item>
+            <Item Quantity="100">SN-241-L</Item>
+        </Items>
+    </Order>
+
+
+</Orders>
+        <!-- TODO: Add 3 more (custom) orders. -->
+

@@ -2,8 +2,10 @@ package com.coryginsberg.factories;
 
 import com.coryginsberg.Item;
 import com.coryginsberg.Order;
+import com.coryginsberg.managers.OrderManager;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Cory Ginsberg on 11/14/15.
@@ -11,7 +13,9 @@ import java.util.ArrayList;
  */
 public class OrderFactory {
 
-    public static Order newOrder(int time, String id, String destination, String priority, ArrayList<Item> items) {
-        return new Order(time, id, destination, priority, items);
+    public static Order newOrder(int time, String id, String destination, String priority, HashMap<Integer, String> items) {
+        Order newOrder = new Order(time, id, destination, priority, items);
+        OrderManager.addOrder(newOrder);
+        return newOrder;
     }
 }

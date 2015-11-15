@@ -13,27 +13,28 @@ import java.util.ArrayList;
  * @since 10/25/2015
  */
 
-public class FacilityManager implements Manager<Network> {
+// TODO: 11/14/2015 Change FacilityManager to NetworkManager
+public class FacilityManager {
     private static ArrayList<Network> facilities = new ArrayList<>();
     private static ArrayList<Item> storableItems = new ArrayList<>();
 
-    public void add(Network network) {
+    public static void addFacility(Network network) {
         facilities.add(network);
     }
 
-    public int getNumFacilities() {
+    public static int getNumFacilities() {
         return facilities.size();
     }
 
-    public ArrayList<Network> get() {
+    public static ArrayList<Network> getFacilities() {
         return facilities;
     }
 
-    public void addStorableItem(Item item) {
+    public static void addStorableItem(Item item) {
         storableItems.add(item);
     }
 
-    public ArrayList<Item> getStorableItems() {
+    public static ArrayList<Item> getStorableItems() {
         return storableItems;
     }
 
