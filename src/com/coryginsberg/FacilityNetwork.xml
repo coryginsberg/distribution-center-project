@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<FacilityNetwork>
+
+    <Facility City="Seattle, WA">
+        <Rate AtCost="300">8</Rate>
+
+        <LinkedCity Dist="1426">Fargo, ND</LinkedCity>
+        <LinkedCity Dist="808">San Francisco, CA</LinkedCity>
+    </Facility>
+
+    <Facility City="San Francisco, CA">
+        <Rate AtCost="300">12</Rate>
+
+        <LinkedCity Dist="808">Seattle, WA</LinkedCity>
+        <LinkedCity Dist="1249">Denver, CO</LinkedCity>
+        <LinkedCity Dist="382">Los Angeles, CA</LinkedCity>
+    </Facility>
+
+    <Facility City="Los Angeles, CA">
+        <Rate AtCost="300">10</Rate>
+
+        <LinkedCity Dist="382">San Francisco, CA</LinkedCity>
+        <LinkedCity Dist="372">Phoenix, AZ</LinkedCity>
+    </Facility>
+
+    <Facility City="Phoenix, AZ">
+        <Rate AtCost="300">8</Rate>
+
+        <LinkedCity Dist="372">Los Angeles, CA</LinkedCity>
+        <LinkedCity Dist="480">Santa Fe, NM</LinkedCity>
+    </Facility>
+
+    <Facility City="Denver, CO">
+        <Rate AtCost="300">10</Rate>
+
+        <LinkedCity Dist="1249">San Francisco, CA</LinkedCity>
+        <LinkedCity Dist="392">Santa Fe, NM</LinkedCity>
+        <LinkedCity Dist="889">Fargo, ND</LinkedCity>
+        <LinkedCity Dist="851">St. Louis, MO</LinkedCity>
+    </Facility>
+
+    <Facility City="Santa Fe, NM">
+        <Rate AtCost="300">8</Rate>
+
+        <LinkedCity Dist="480">Phoenix, AZ</LinkedCity>
+        <LinkedCity Dist="392">Denver, CO</LinkedCity>
+        <LinkedCity Dist="1032">St. Louis, MO</LinkedCity>
+        <LinkedCity Dist="688">Austin, TX</LinkedCity>
+    </Facility>
+
+    <Facility City="Fargo, ND">
+        <Rate AtCost="300">8</Rate>
+
+        <LinkedCity Dist="1426">Seattle, WA</LinkedCity>
+        <LinkedCity Dist="889">Denver, CO</LinkedCity>
+        <LinkedCity Dist="643">Chicago, IL</LinkedCity>
+    </Facility>
+
+    <Facility City="Austin, TX">
+        <Rate AtCost="300">10</Rate>
+
+        <LinkedCity Dist="688">Santa Fe, NM</LinkedCity>
+        <LinkedCity Dist="825">St. Louis, MO</LinkedCity>
+        <LinkedCity Dist="512">New Orleans, LA</LinkedCity>
+    </Facility>
+
+    <Facility City="St. Louis, MO">
+        <Rate AtCost="300">12</Rate>
+
+        <LinkedCity Dist="297">Chicago, IL</LinkedCity>
+        <LinkedCity Dist="309">Nashville, TN</LinkedCity>
+        <LinkedCity Dist="825">Austin, TX</LinkedCity>
+        <LinkedCity Dist="1032">Santa Fe, NM</LinkedCity>
+        <LinkedCity Dist="851">Denver, CO</LinkedCity>
+    </Facility>
+
+    <Facility City="Chicago, IL">
+        <Rate AtCost="300">10</Rate>
+
+        <LinkedCity Dist="642">Fargo, ND</LinkedCity>
+        <LinkedCity Dist="297">St. Louis, MO</LinkedCity>
+        <LinkedCity Dist="790">New York City, NY</LinkedCity>
+        <LinkedCity Dist="282">Detroit, MI</LinkedCity>
+    </Facility>
+
+    <Facility City="New Orleans, LA">
+        <Rate AtCost="300">10</Rate>
+
+        <LinkedCity Dist="512">Austin, TX</LinkedCity>
+        <LinkedCity Dist="532">Nashville, TN</LinkedCity>
+        <LinkedCity Dist="469">Atlanta, GA</LinkedCity>
+        <LinkedCity Dist="864">Miami, FL</LinkedCity>
+    </Facility>
+
+    <Facility City="Nashville, TN">
+        <Rate AtCost="300">8</Rate>
+
+        <LinkedCity Dist="309">St. Louis, MO</LinkedCity>
+        <LinkedCity Dist="532">New Orleans, LA</LinkedCity>
+        <LinkedCity Dist="706">Norfolk, VA</LinkedCity>
+    </Facility>
+
+    <Facility City="Detroit, MI">
+        <Rate AtCost="300">10</Rate>
+
+        <LinkedCity Dist="282">Chicago, IL</LinkedCity>
+        <LinkedCity Dist="614">New York City, NY</LinkedCity>
+        <LinkedCity Dist="719">Boston, MA</LinkedCity>
+    </Facility>
+
+    <Facility City="Boston, MA">
+        <Rate AtCost="300">10</Rate>
+
+        <LinkedCity Dist="719">Detroit, MI</LinkedCity>
+        <LinkedCity Dist="215">New York City, NY</LinkedCity>
+    </Facility>
+
+    <Facility City="New York City, NY">
+        <Rate AtCost="300">14</Rate>
+
+        <LinkedCity Dist="215">Boston, MA</LinkedCity>
+        <LinkedCity Dist="614">Detroit, MI</LinkedCity>
+        <LinkedCity Dist="790">Chicago, IL</LinkedCity>
+        <LinkedCity Dist="363">Norfolk, VA</LinkedCity>
+    </Facility>
+
+    <Facility City="Norfolk, VA">
+        <Rate AtCost="300">10</Rate>
+
+        <LinkedCity Dist="363">New York City, NY</LinkedCity>
+        <LinkedCity Dist="706">Nashville, TN</LinkedCity>
+        <LinkedCity Dist="566">Atlanta, GA</LinkedCity>
+    </Facility>
+
+    <Facility City="Atlanta, GA">
+        <Rate AtCost="300">10</Rate>
+
+        <LinkedCity Dist="566">Norfolk, VA</LinkedCity>
+        <LinkedCity Dist="469">New Orleans, LA</LinkedCity>
+        <LinkedCity Dist="663">Miami, FL</LinkedCity>
+    </Facility>
+
+    <Facility City="Miami, FL">
+        <Rate AtCost="300">12</Rate>
+
+        <LinkedCity Dist="663">Atlanta, GA</LinkedCity>
+        <LinkedCity Dist="864">New Orleans, LA</LinkedCity>
+    </Facility>
+
+</FacilityNetwork>
