@@ -67,7 +67,7 @@ public class GenerateOrderOutput implements OutputInterface<Order> {
             System.out.println();
         });
         System.out.println("============================================================================================");
-        System.out.println();
+        System.out.println("\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/");
 
     }
 

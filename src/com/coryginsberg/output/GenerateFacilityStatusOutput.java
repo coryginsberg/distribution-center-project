@@ -35,19 +35,23 @@ public class GenerateFacilityStatusOutput implements OutputInterface<Network> {
 
         hoursDriving = 8;
         avgMph = 50;
-        System.out.println("All times are calculated for driving an average of 8 hours a day at 50 MPH");
+        System.out.println(" _____________________________________________________________________________________");
+        System.out.println("| *** All times are calculated for driving an average of 8 hours a day at 50 MPH. *** |");
+        System.out.println(" ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
         System.out.println();
-
+        System.out.println(" --------------------------");
+        System.out.println("| FACILITY STATUS OUTPUTS: |");
+        System.out.println(" --------------------------");
         // Print the status of all facilities.
         FacilityManager.getFacilities().forEach(this::printStatusOutput);
     }
 
     public void printStatusOutput(Network network) {
         System.out.println("============================================================================================");
-        System.out.println(network.getCity().toUpperCase());
-        System.out.println("‾‾‾‾‾‾‾‾‾‾‾‾");
+        System.out.println("| " + network.getCity().toUpperCase());
+        System.out.println("| ‾‾‾‾‾‾‾‾‾‾‾‾");
 
-        System.out.print("DIRECT LINKS: ");
+        System.out.print("| DIRECT LINKS: ");
         network.getConnectingCities().forEach((integer, s) -> {
             System.out.print(s);
             graphManager.getShortestPath(network.getCity(), s);
@@ -55,14 +59,14 @@ public class GenerateFacilityStatusOutput implements OutputInterface<Network> {
         });
 
         System.out.println();
-        System.out.println();
-        System.out.println("ACTIVE INVENTORY:");
+        System.out.println("| ");
+        System.out.println("| ACTIVE INVENTORY:");
 
         InventoryManager.getInventories().forEach(currentInventory -> {
             if (currentInventory.getCity().equals(network.getCity())) {
-                System.out.format("%-15s%-5s", "Item ID:", "Quantity:");
+                System.out.format("%-5s%-15s%-5s", "| ", "Item ID:", "Quantity:");
                 System.out.println();
-                System.out.format("%-15s%-5s", "‾‾‾‾‾‾‾‾‾", "‾‾‾‾‾‾‾‾‾");
+                System.out.format("%-5s%-15s%-5s", "| ", "‾‾‾‾‾‾‾‾‾", "‾‾‾‾‾‾‾‾‾");
                 System.out.println();
                 currentInventory.getNondepletedInventory().forEach((s, integer) -> {
 
@@ -71,14 +75,14 @@ public class GenerateFacilityStatusOutput implements OutputInterface<Network> {
                 for (Map.Entry<String, Integer> entry : map.entrySet()) {
                     String key = entry.getKey();
                     Integer value = entry.getValue();
-                    System.out.format("%-15s%-5s", key, value);
+                    System.out.format("%-5s%-15s%-5s", "| ", key, value);
                     System.out.println();
                 }
             }
         });
 
-        System.out.println();
-        System.out.println("DEPLETED ITEMS: ");
+        System.out.println("| ");
+        System.out.println("| DEPLETED ITEMS: ");
         InventoryManager.getInventories().forEach(currentInventory -> {
             if (currentInventory.getCity().equals(network.getCity())) {
                 Map<String, Integer> map = currentInventory.getDepletedInventory();
@@ -88,11 +92,11 @@ public class GenerateFacilityStatusOutput implements OutputInterface<Network> {
                 }
             }
         });
-        System.out.println();
-        System.out.println("SCHEDULE:");
-        System.out.println(); // TODO: Add the Schedule for each Facility
-        System.out.println();
+        System.out.println("| ");
+        System.out.println("| SCHEDULE:");
+        System.out.println("| "); // TODO: Add the Schedule for each Facility
+        System.out.println("| ");
         System.out.println("============================================================================================");
-        System.out.println();
+        System.out.println("/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\");
     }
 }

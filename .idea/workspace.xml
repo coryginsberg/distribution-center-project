@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c10ad15d-10ce-4a3d-bca3-429a8525e60a" name="Default" comment="Added and Printed the Order Output without any calculations done on the ordering process.">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/OutputInterface.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Order.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Order.class" />
+    <list default="true" id="c10ad15d-10ce-4a3d-bca3-429a8525e60a" name="Default" comment="Moved the middle line down one to make it look better.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java" />
     </list>
     <ignored path="distribution-project.iws" />
@@ -49,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="64" column="73" selection-start-line="62" selection-start-column="16" selection-end-line="64" selection-end-column="73" />
+              <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -104,8 +103,8 @@
       <file leaf-file-name="GenerateOrderOutput.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42128602">
-              <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.062084258">
+              <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -188,9 +187,9 @@
         <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/OrderManager.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/ItemManager.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/InventoryManager.java" />
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/output/OutputInterface.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/Order.java" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java" />
       </list>
     </option>
@@ -948,7 +947,7 @@
       <created>1447562871582</created>
       <option name="number" value="Default" />
       <updated>1447562871582</updated>
-      <workItem from="1447573362106" duration="14812000" />
+      <workItem from="1447573362106" duration="15789000" />
     </task>
     <task id="LOCAL-00001" summary="Finally got Active Inventory to print properly.&#10;After some digging, I found out that I was switching the key and value for every Inventory for some reason, which is completely unnecessary. I fixed that and ran the program again, and it worked.">
       <created>1447568058308</created>
@@ -974,11 +973,17 @@
       <option name="project" value="LOCAL" />
       <updated>1447632033130</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Moved the middle line down one to make it look better.">
+      <created>1447632136124</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1447632136124</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14812000" />
+    <option name="totallyTimeSpent" value="15789000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1059,7 +1064,8 @@
     <MESSAGE value="Added Depleted Items and cleaned up code.&#10;Depleted Items now print in each Facility Status Output once the amount of the item is at 0. This is not checked, however, until getDepletedItems() is called. Also, changed the return value from ArrayList&lt;String&gt; to HashMap&lt;String, Integer&gt; to work better with getNondepletedItems().&#10;Changed getNondepletedItems() to check for all items that have at least 1 item at the facility. From my testing, it works properly. Without this, getNondepletedItems() was returning a HashMap of all the items of that facility, instead of just the ones that were actually in stock.&#10;All outputs were printing twice before, after investigating, it turns out that the issue was each Facility being added twice to the Manager. Removed one of the instances and resolved the issue." />
     <MESSAGE value="Added 3 more custom orders as per the instructions, and added 3 more facilities as per the second extra credit option" />
     <MESSAGE value="Added and Printed the Order Output without any calculations done on the ordering process." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added and Printed the Order Output without any calculations done on the ordering process." />
+    <MESSAGE value="Moved the middle line down one to make it look better." />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved the middle line down one to make it look better." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1396,14 +1402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="73" selection-start-line="62" selection-start-column="16" selection-end-line="64" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/function/BiConsumer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42128602">
@@ -1412,10 +1410,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42128602">
-          <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.062084258">
+          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
