@@ -1,6 +1,6 @@
 package com.coryginsberg.factories;
 
-import com.coryginsberg.Network;
+import com.coryginsberg.Facility;
 import com.coryginsberg.graph.Graph;
 import com.coryginsberg.managers.NetworkManager;
 
@@ -13,18 +13,16 @@ import java.util.Map;
  * @since 11/4/2015
  */
 public class GraphFactory {
-    private GraphFactory() {
-    }
 
-    public static Graph<String> createGraph() {
-        Graph<String> graph = new Graph<>();
+    public static Graph<Facility> createGraph() {
+        Graph<Facility> graph = new Graph<>();
         for (int i = 0; i < NetworkManager.getNumFacilities(); i++) {
-            Network currentNetwork = NetworkManager.getFacilities().get(i);
-            HashMap<Integer, String> connectedCities = currentNetwork.getConnectingCities();
-            graph.addVertex(currentNetwork.getCity());
-            for (Map.Entry<Integer, String> city : connectedCities.entrySet()) {
-                graph.addVertex(city.getValue());
-                graph.addEdge(currentNetwork.getCity(), city.getValue(), city.getKey());
+            Facility currentFacility = NetworkManager.getFacilities().get(i);
+            HashMap<Facility, Integer> connectedCities = currentFacility.getConnectingCities();
+            graph.addVertex(currentFacility);
+            for (Map.Entry<Facility, Integer> city : connectedCities.entrySet()) {
+                graph.addVertex(city.getKey());
+                graph.addEdge(currentFacility, city.getKey(), city.getValue());
             }
         }
 

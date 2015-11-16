@@ -1,6 +1,5 @@
 package com.coryginsberg.importxml;
 
-import com.coryginsberg.Order;
 import com.coryginsberg.factories.OrderFactory;
 import com.coryginsberg.managers.OrderManager;
 import org.w3c.dom.*;
@@ -11,6 +10,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 
 /**
  * Created by Cory Ginsberg on 11/14/15.
@@ -19,6 +19,31 @@ import java.io.IOException;
 public class ImportOrderFile {
 
     OrderManager orderManager = new OrderManager();
+
+    public static HashMap<Integer, String> importSubNodes(Element elem, String elementTagName) throws UnexpectedNodeException {
+        // Get all nodes named "Link" - there can be 0 or more
+        HashMap<Integer, String> stockedItems = new HashMap<>();
+        NodeList linkedItemsList = elem.getElementsByTagName(elementTagName);
+        for (int j = 0; j < linkedItemsList.getLength(); j++) {
+            if (linkedItemsList.item(j).getNodeType() == Node.TEXT_NODE) {
+                continue;
+            }
+
+            String entryName = linkedItemsList.item(j).getNodeName();
+
+            if (!entryName.equals(elementTagName)) {
+                throw new UnexpectedNodeException("Unexpected Node: " + entryName);
+            }
+
+            // Get some named nodes
+            elem = (Element) linkedItemsList.item(j);
+            String itemID = elem.getTextContent();
+            int itemQuantity = Integer.parseInt(elem.getAttributes().item(0).getTextContent());
+
+            stockedItems.put(itemQuantity, itemID);
+        }
+        return stockedItems;
+    }
 
     public void importFile(String fileName) throws UnexpectedNodeException {
 
@@ -64,11 +89,8 @@ public class ImportOrderFile {
                 Node nodePri = elem.getElementsByTagName("Priority").item(0);
                 String orderPriority = nodePri.getTextContent();
 
-                // Get Items nodes
-
-
                 // Create a Network object using the data loaded from the XML File
-                OrderFactory.newOrder(orderTime, orderId, orderDestination, orderPriority, ImportNodes.importSubNodes(elem, "Item"));
+                OrderFactory.newOrder(orderTime, orderId, orderDestination, orderPriority, importSubNodes(elem, "Item"));
             }
 
         } catch (ParserConfigurationException | SAXException | IOException | DOMException e) {

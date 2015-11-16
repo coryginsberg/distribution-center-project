@@ -7,11 +7,11 @@ import java.util.HashMap;
  * Created for Logistics Application.
  */
 public class Order {
-    int time;
-    String id;
-    String destination;
-    String priority;
-    HashMap<Integer, String> items;
+    private int time;
+    private String id;
+    private String destination;
+    private String priority;
+    private HashMap<Integer, String> items;
 
     public Order(int time, String id, String destination, String priority, HashMap<Integer, String> items) {
         this.time = time;

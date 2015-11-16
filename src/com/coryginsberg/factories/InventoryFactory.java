@@ -11,7 +11,15 @@ import java.util.HashMap;
  * @since 11/4/2015
  */
 public class InventoryFactory {
+
+    private static FacilityFactory inventoryFactory;
+
     private InventoryFactory() {
+
+    }
+
+    public static FacilityFactory getInstance() {
+        return inventoryFactory;
     }
 
     public static Inventory addInventory(String city, HashMap<String, Integer> items) {

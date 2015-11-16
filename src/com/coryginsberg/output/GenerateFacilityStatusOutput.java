@@ -1,6 +1,6 @@
 package com.coryginsberg.output;
 
-import com.coryginsberg.Network;
+import com.coryginsberg.Facility;
 import com.coryginsberg.importxml.*;
 import com.coryginsberg.managers.GraphManager;
 import com.coryginsberg.managers.InventoryManager;
@@ -17,21 +17,21 @@ import java.util.Map;
  * @since 10/25/2015
  */
 
-public class GenerateFacilityStatusOutput implements OutputInterface<Network> {
+public class GenerateFacilityStatusOutput implements OutputInterface<Facility> {
     private static Import importNetworkFile = new ImportNetworkFile();
+    private static Import importFacilitiesFile = new ImportFacilitiesFile();
     private static Import importItemFile = new ImportItemFile();
     private static Import importInventoryFile = new ImportInventoryFile();
-
-    private static GraphManager graphManager = new GraphManager();
 
     private static float hoursDriving;
     private static float avgMph;
 
     public GenerateFacilityStatusOutput() throws FileAlreadyExistsException, UnexpectedNodeException {
-        importNetworkFile.importFile("src/com/coryginsberg/xml/FacilityNetwork.xml");
         importInventoryFile.importFile("src/com/coryginsberg/xml/FacilityInventory.xml");
+        importNetworkFile.importFile("src/com/coryginsberg/xml/FacilityNetwork.xml");
         importItemFile.importFile("src/com/coryginsberg/xml/Items.xml");
-        GraphManager.createGraph();
+        importFacilitiesFile.importFile("src/com/coryginsberg/xml/Facilities.xml");
+        //GraphManager.createGraph();
 
         hoursDriving = 8;
         avgMph = 50;
@@ -46,16 +46,17 @@ public class GenerateFacilityStatusOutput implements OutputInterface<Network> {
         NetworkManager.getFacilities().forEach(this::printStatusOutput);
     }
 
-    public void printStatusOutput(Network network) {
+    @Override
+    public void printStatusOutput(Facility facility) {
         System.out.println("============================================================================================");
-        System.out.println("| " + network.getCity().toUpperCase());
+        System.out.println("| " + facility.getCity().toUpperCase());
         System.out.println("| ‾‾‾‾‾‾‾‾‾‾‾‾");
 
         System.out.print("| DIRECT LINKS: ");
-        network.getConnectingCities().forEach((integer, s) -> {
-            System.out.print(s);
-            graphManager.getShortestPath(network.getCity(), s);
-            System.out.print(" (" + graphManager.getTotalTime(hoursDriving, avgMph) + " Days) ");
+        facility.getConnectingCities().forEach((s, integer) -> {
+            System.out.print(integer);
+            GraphManager.getShortestPath(facility, s);
+            System.out.print(" (" + GraphManager.getTotalTime(hoursDriving, avgMph) + " Days) ");
         });
 
         System.out.println();
@@ -63,7 +64,7 @@ public class GenerateFacilityStatusOutput implements OutputInterface<Network> {
         System.out.println("| ACTIVE INVENTORY:");
 
         InventoryManager.getInventories().forEach(currentInventory -> {
-            if (currentInventory.getCity().equals(network.getCity())) {
+            if (currentInventory.getCity().equals(facility.getCity())) {
                 System.out.format("%-5s%-15s%-5s", "| ", "Item ID:", "Quantity:");
                 System.out.println();
                 System.out.format("%-5s%-15s%-5s", "| ", "‾‾‾‾‾‾‾‾‾", "‾‾‾‾‾‾‾‾‾");
@@ -84,7 +85,7 @@ public class GenerateFacilityStatusOutput implements OutputInterface<Network> {
         System.out.println("| ");
         System.out.println("| DEPLETED ITEMS: ");
         InventoryManager.getInventories().forEach(currentInventory -> {
-            if (currentInventory.getCity().equals(network.getCity())) {
+            if (currentInventory.getCity().equals(facility.getCity())) {
                 Map<String, Integer> map = currentInventory.getDepletedInventory();
                 for (Map.Entry<String, Integer> entry : map.entrySet()) {
                     String key = entry.getKey();

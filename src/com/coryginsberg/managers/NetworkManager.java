@@ -1,7 +1,7 @@
 package com.coryginsberg.managers;
 
+import com.coryginsberg.Facility;
 import com.coryginsberg.Item;
-import com.coryginsberg.Network;
 
 import java.util.ArrayList;
 
@@ -14,18 +14,22 @@ import java.util.ArrayList;
  */
 
 public class NetworkManager {
-    private static ArrayList<Network> facilities = new ArrayList<>();
+    private static ArrayList<Facility> facilities = new ArrayList<>();
     private static ArrayList<Item> storableItems = new ArrayList<>();
 
-    public static void addFacility(Network network) {
-        facilities.add(network);
+    public static void addFacility(Facility facility) {
+
+        if (!facilities.contains(facility)) {
+            facilities.add(facility);
+        }
+
     }
 
     public static int getNumFacilities() {
         return facilities.size();
     }
 
-    public static ArrayList<Network> getFacilities() {
+    public static ArrayList<Facility> getFacilities() {
         return facilities;
     }
 
