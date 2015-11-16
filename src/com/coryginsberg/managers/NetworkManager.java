@@ -13,8 +13,7 @@ import java.util.ArrayList;
  * @since 10/25/2015
  */
 
-// TODO: 11/14/2015 Change FacilityManager to NetworkManager
-public class FacilityManager {
+public class NetworkManager {
     private static ArrayList<Network> facilities = new ArrayList<>();
     private static ArrayList<Item> storableItems = new ArrayList<>();
 

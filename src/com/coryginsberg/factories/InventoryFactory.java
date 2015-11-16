@@ -11,6 +11,9 @@ import java.util.HashMap;
  * @since 11/4/2015
  */
 public class InventoryFactory {
+    private InventoryFactory() {
+    }
+
     public static Inventory addInventory(String city, HashMap<String, Integer> items) {
 
         Inventory newInventory = new Inventory(city, items);

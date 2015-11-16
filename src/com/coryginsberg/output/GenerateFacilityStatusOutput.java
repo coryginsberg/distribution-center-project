@@ -2,9 +2,9 @@ package com.coryginsberg.output;
 
 import com.coryginsberg.Network;
 import com.coryginsberg.importxml.*;
-import com.coryginsberg.managers.FacilityManager;
 import com.coryginsberg.managers.GraphManager;
 import com.coryginsberg.managers.InventoryManager;
+import com.coryginsberg.managers.NetworkManager;
 
 import java.nio.file.FileAlreadyExistsException;
 import java.util.Map;
@@ -43,7 +43,7 @@ public class GenerateFacilityStatusOutput implements OutputInterface<Network> {
         System.out.println("| FACILITY STATUS OUTPUTS: |");
         System.out.println(" --------------------------");
         // Print the status of all facilities.
-        FacilityManager.getFacilities().forEach(this::printStatusOutput);
+        NetworkManager.getFacilities().forEach(this::printStatusOutput);
     }
 
     public void printStatusOutput(Network network) {

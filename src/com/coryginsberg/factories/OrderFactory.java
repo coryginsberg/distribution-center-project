@@ -1,10 +1,8 @@
 package com.coryginsberg.factories;
 
-import com.coryginsberg.Item;
 import com.coryginsberg.Order;
 import com.coryginsberg.managers.OrderManager;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -12,6 +10,8 @@ import java.util.HashMap;
  * Created for Logistics Application.
  */
 public class OrderFactory {
+    private OrderFactory() {
+    }
 
     public static Order newOrder(int time, String id, String destination, String priority, HashMap<Integer, String> items) {
         Order newOrder = new Order(time, id, destination, priority, items);
