@@ -47,10 +47,9 @@ public class GenerateOrderOutput implements OutputInterface<Order> {
         order.getItems().forEach((amt, id) -> {
             System.out.format("%-5s%-15s%-5s", "| ", id, amt);
             System.out.println();
-
         });
-        System.out.println("|-------------------------------------------------------------------------------------------");
         System.out.println("| ");
+        System.out.println("|-------------------------------------------------------------------------------------------");
         System.out.println("| PROCESSING SOLUTION:");
         System.out.println("| ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
         System.out.println("| * Destination: " + order.getDestination());
@@ -66,7 +65,6 @@ public class GenerateOrderOutput implements OutputInterface<Order> {
         order.getItems().forEach((amt, id) -> { // TODO: 11/15/15 Switch this out with the properly calculated one.
             System.out.format("%-5s%-15s%-15s%-10s%-15s%-15s%-15s", "| ", id, amt, "", "", "", "");
             System.out.println();
-
         });
         System.out.println("============================================================================================");
         System.out.println();

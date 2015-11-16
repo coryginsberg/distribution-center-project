@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c10ad15d-10ce-4a3d-bca3-429a8525e60a" name="Default" comment="Added 3 more custom orders as per the instructions, and added 3 more facilities as per the second extra credit option">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/coryginsberg/GraphSingleton.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/coryginsberg/OutputInterface.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/output/OutputInterface.java" />
+    <list default="true" id="c10ad15d-10ce-4a3d-bca3-429a8525e60a" name="Default" comment="Added and Printed the Order Output without any calculations done on the ordering process.">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/OutputInterface.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Order.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Order.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/managers/InventoryManager.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/managers/InventoryManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/managers/ItemManager.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/managers/ItemManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/managers/OrderManager.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/managers/OrderManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/Order.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/Order.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/managers/InventoryManager.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/managers/InventoryManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/managers/ItemManager.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/managers/ItemManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/managers/OrderManager.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/managers/OrderManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java" />
     </list>
     <ignored path="distribution-project.iws" />
@@ -101,11 +92,10 @@
         <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Order.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#646#647#0" expanded="true" />
-                <element signature="e#673#674#0" expanded="true" />
+                <element signature="e#618#619#0" expanded="true" />
+                <element signature="e#645#646#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,8 +104,8 @@
       <file leaf-file-name="GenerateOrderOutput.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48115298">
-              <caret line="51" column="29" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.42128602">
+              <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,7 +117,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/OutputInterface.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -138,16 +128,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/managers/OrderManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -968,7 +948,7 @@
       <created>1447562871582</created>
       <option name="number" value="Default" />
       <updated>1447562871582</updated>
-      <workItem from="1447573362106" duration="14691000" />
+      <workItem from="1447573362106" duration="14812000" />
     </task>
     <task id="LOCAL-00001" summary="Finally got Active Inventory to print properly.&#10;After some digging, I found out that I was switching the key and value for every Inventory for some reason, which is completely unnecessary. I fixed that and ran the program again, and it worked.">
       <created>1447568058308</created>
@@ -988,11 +968,17 @@
       <option name="project" value="LOCAL" />
       <updated>1447627142217</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added and Printed the Order Output without any calculations done on the ordering process.">
+      <created>1447632033130</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1447632033130</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14691000" />
+    <option name="totallyTimeSpent" value="14812000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1072,7 +1058,8 @@
     <MESSAGE value="Finally got Active Inventory to print properly.&#10;After some digging, I found out that I was switching the key and value for every Inventory for some reason, which is completely unnecessary. I fixed that and ran the program again, and it worked." />
     <MESSAGE value="Added Depleted Items and cleaned up code.&#10;Depleted Items now print in each Facility Status Output once the amount of the item is at 0. This is not checked, however, until getDepletedItems() is called. Also, changed the return value from ArrayList&lt;String&gt; to HashMap&lt;String, Integer&gt; to work better with getNondepletedItems().&#10;Changed getNondepletedItems() to check for all items that have at least 1 item at the facility. From my testing, it works properly. Without this, getNondepletedItems() was returning a HashMap of all the items of that facility, instead of just the ones that were actually in stock.&#10;All outputs were printing twice before, after investigating, it turns out that the issue was each Facility being added twice to the Manager. Removed one of the instances and resolved the issue." />
     <MESSAGE value="Added 3 more custom orders as per the instructions, and added 3 more facilities as per the second extra credit option" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added 3 more custom orders as per the instructions, and added 3 more facilities as per the second extra credit option" />
+    <MESSAGE value="Added and Printed the Order Output without any calculations done on the ordering process." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added and Printed the Order Output without any calculations done on the ordering process." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1137,7 +1124,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1393,7 +1380,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/OutputInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1401,11 +1388,10 @@
     <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Order.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#646#647#0" expanded="true" />
-            <element signature="e#673#674#0" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+            <element signature="e#645#646#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1418,10 +1404,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/function/BiConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42128602">
+          <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48115298">
-          <caret line="51" column="29" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.42128602">
+          <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
