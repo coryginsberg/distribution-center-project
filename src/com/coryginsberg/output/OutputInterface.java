@@ -1,13 +1,13 @@
-package com.coryginsberg;
+package com.coryginsberg.output;
 
 /**
  * @author Cory Ginsberg
  * @since 11/3/2015
  */
 
-public interface OutputInterface {
+public interface OutputInterface<T> {
 
-    void printStatusOutputForCity(Network network);
+    void printStatusOutput(T t);
 
     default String stringRemoveBrackets(String str) {
         return str.substring(1, str.length() - 1);

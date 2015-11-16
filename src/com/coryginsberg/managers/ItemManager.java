@@ -20,7 +20,7 @@ public class ItemManager {
         return items.size();
     }
 
-    public static ArrayList<Item> get() {
+    public static ArrayList<Item> getItems() {
         return items;
     }
 

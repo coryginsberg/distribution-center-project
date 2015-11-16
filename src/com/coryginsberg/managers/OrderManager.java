@@ -16,7 +16,7 @@ public class OrderManager {
         orders.add(order);
     }
 
-    public static ArrayList<Order> get() {
+    public static ArrayList<Order> getOrders() {
         return orders;
     }
 }

@@ -1,7 +1,6 @@
 package com.coryginsberg.output;
 
 import com.coryginsberg.Network;
-import com.coryginsberg.OutputInterface;
 import com.coryginsberg.importxml.*;
 import com.coryginsberg.managers.FacilityManager;
 import com.coryginsberg.managers.GraphManager;
@@ -18,7 +17,7 @@ import java.util.Map;
  * @since 10/25/2015
  */
 
-public class GenerateFacilityStatusOutput implements OutputInterface {
+public class GenerateFacilityStatusOutput implements OutputInterface<Network> {
     private static Import importNetworkFile = new ImportNetworkFile();
     private static Import importItemFile = new ImportItemFile();
     private static Import importInventoryFile = new ImportInventoryFile();
@@ -40,10 +39,10 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
         System.out.println();
 
         // Print the status of all facilities.
-        FacilityManager.getFacilities().forEach(this::printStatusOutputForCity);
+        FacilityManager.getFacilities().forEach(this::printStatusOutput);
     }
 
-    public void printStatusOutputForCity(Network network) {
+    public void printStatusOutput(Network network) {
         System.out.println("============================================================================================");
         System.out.println(network.getCity().toUpperCase());
         System.out.println("‾‾‾‾‾‾‾‾‾‾‾‾");
@@ -59,7 +58,7 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
         System.out.println();
         System.out.println("ACTIVE INVENTORY:");
 
-        InventoryManager.inventories().forEach(currentInventory -> {
+        InventoryManager.getInventories().forEach(currentInventory -> {
             if (currentInventory.getCity().equals(network.getCity())) {
                 System.out.format("%-15s%-5s", "Item ID:", "Quantity:");
                 System.out.println();
@@ -80,7 +79,7 @@ public class GenerateFacilityStatusOutput implements OutputInterface {
 
         System.out.println();
         System.out.println("DEPLETED ITEMS: ");
-        InventoryManager.inventories().forEach(currentInventory -> {
+        InventoryManager.getInventories().forEach(currentInventory -> {
             if (currentInventory.getCity().equals(network.getCity())) {
                 Map<String, Integer> map = currentInventory.getDepletedInventory();
                 for (Map.Entry<String, Integer> entry : map.entrySet()) {

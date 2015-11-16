@@ -1,6 +1,5 @@
 package com.coryginsberg;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -20,5 +19,25 @@ public class Order {
         this.destination = destination;
         this.priority = priority;
         this.items = items;
+    }
+
+    public String getID() {
+        return id;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public String getPriority() {
+        return priority;
+    }
+
+    public HashMap<Integer, String> getItems() {
+        return items;
     }
 }
