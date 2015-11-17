@@ -11,6 +11,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Imports the requested XML file into the program.
@@ -57,7 +58,6 @@ public class ImportNetworkFile implements Import {
 
                 ArrayList<Facility> facilities = NetworkManager.getFacilities();
                 Element elem = (Element) facilityEntries.item(i);
-                System.out.println(facilities.toString());
                 for (Facility facility : facilities) {
                     if (facility.getCity().equals(facilityCity)) {
                         // Get all nodes named "Link" - there can be 0 or more
@@ -79,7 +79,16 @@ public class ImportNetworkFile implements Import {
                             String city = elem.getTextContent();
                             int distance = Integer.parseInt(elem.getAttributes().item(0).getTextContent());
 
-                            // TODO: Set the Element (city) to each Facility.
+                            HashMap<Facility, Integer> connectedFacility = new HashMap<>();
+                            connectedFacility.put(facility, distance);
+                            System.out.println(city + " @ " + distance);
+
+                            NetworkManager.getFacilities().forEach(addedFacility -> {
+                                if (addedFacility.getCity().equals(city)) {
+                                    connectedFacility.put(addedFacility, distance);
+                                    facility.addConnectingCity(connectedFacility);
+                                }
+                            });
                         }
                     }
                 }
