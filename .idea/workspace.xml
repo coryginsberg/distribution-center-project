@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c10ad15d-10ce-4a3d-bca3-429a8525e60a" name="Default" comment="Got to the point where I'm feeling more comfortable about finishing this thing.&#10;Got all Facilities with the item, and set the ShortestPath to 5.">
+    <list default="true" id="c10ad15d-10ce-4a3d-bca3-429a8525e60a" name="Default" comment="Finished Project to the point where (while not happy), I am contempt with it.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Facility.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Facility.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Inventory.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Inventory.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/ProcessOrder.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/ProcessOrder.class" />
@@ -16,17 +16,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/output/GenerateFinalOutput.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/output/GenerateFinalOutput.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/output/GenerateOrderOutput.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/output/GenerateOrderOutput.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/Facility.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/Facility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/Inventory.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/Inventory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/ProcessOrder.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/ProcessOrder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/graph/Edge.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/graph/Edge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/graph/Graph.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/graph/Graph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportItemFile.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportItemFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/managers/InventoryManager.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/managers/InventoryManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/managers/ItemManager.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/managers/ItemManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/managers/NetworkManager.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/managers/NetworkManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFinalOutput.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFinalOutput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java" />
     </list>
     <ignored path="distribution-project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -107,8 +96,8 @@
       <file leaf-file-name="ProcessOrder.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/ProcessOrder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.73224854">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state vertical-scroll-proportion="1.1098654">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -240,7 +229,6 @@
         <option value="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/InventoryManager.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/Inventory.java" />
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/ProcessOrder.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/Network.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/Facility.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/ItemManager.java" />
@@ -249,6 +237,7 @@
         <option value="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportItemFile.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/graph/Edge.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/graph/Graph.java" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/ProcessOrder.java" />
       </list>
     </option>
   </component>
@@ -1091,7 +1080,7 @@
       <workItem from="1447746678546" duration="15673000" />
       <workItem from="1447762423875" duration="5000" />
       <workItem from="1447789536672" duration="172000" />
-      <workItem from="1447795696678" duration="6824000" />
+      <workItem from="1447795696678" duration="6880000" />
     </task>
     <task id="LOCAL-00001" summary="Finally got Active Inventory to print properly.&#10;After some digging, I found out that I was switching the key and value for every Inventory for some reason, which is completely unnecessary. I fixed that and ran the program again, and it worked.">
       <created>1447568058308</created>
@@ -1165,11 +1154,17 @@
       <option name="project" value="LOCAL" />
       <updated>1447756668736</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Finished Project to the point where (while not happy), I am contempt with it.">
+      <created>1447802622467</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1447802622467</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81221000" />
+    <option name="totallyTimeSpent" value="81277000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1182,7 +1177,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32670453" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1190,7 +1185,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32721713" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32670453" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3309659" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="406" y="507" width="571" height="120" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32832617" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1261,7 +1256,8 @@
     <MESSAGE value="Got to where I was supposed to be when turning in Part II." />
     <MESSAGE value="Did many things" />
     <MESSAGE value="Got to the point where I'm feeling more comfortable about finishing this thing.&#10;Got all Facilities with the item, and set the ShortestPath to 5." />
-    <option name="LAST_COMMIT_MESSAGE" value="Got to the point where I'm feeling more comfortable about finishing this thing.&#10;Got all Facilities with the item, and set the ShortestPath to 5." />
+    <MESSAGE value="Finished Project to the point where (while not happy), I am contempt with it." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Project to the point where (while not happy), I am contempt with it." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1340,11 +1336,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1114#1115#0" expanded="true" />
-            <element signature="e#1453#1454#0" expanded="true" />
-            <element signature="e#1541#1542#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1055#1056#0" expanded="true" />
+            <element signature="e#1082#1083#0" expanded="true" />
+            <element signature="e#1421#1422#0" expanded="true" />
+            <element signature="e#1509#1510#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1475,11 +1471,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#655#656#0" expanded="true" />
-            <element signature="e#1329#1330#0" expanded="true" />
-            <element signature="e#1361#1362#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#601#602#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
+            <element signature="e#1307#1308#0" expanded="true" />
+            <element signature="e#1339#1340#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1489,9 +1485,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1114#1115#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1055#1056#0" expanded="true" />
+            <element signature="e#1082#1083#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1509,10 +1505,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#399#400#0" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#377#378#0" expanded="true" />
+            <element signature="e#436#437#0" expanded="true" />
+            <element signature="e#470#471#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1715,8 +1711,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/ProcessOrder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73224854">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state vertical-scroll-proportion="1.1098654">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
