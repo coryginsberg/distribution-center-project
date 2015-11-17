@@ -17,13 +17,13 @@
     <Facility City="Los Angeles, CA">
         <LinkedCity Dist="382">San Francisco, CA</LinkedCity>
         <LinkedCity Dist="372">Phoenix, AZ</LinkedCity>
-        <LinkedCity Dist="270">Los Vegas, NV</LinkedCity>
+        <LinkedCity Dist="270">Las Vegas, NV</LinkedCity>
     </Facility>
 
     <Facility City="Phoenix, AZ">
         <LinkedCity Dist="372">Los Angeles, CA</LinkedCity>
         <LinkedCity Dist="480">Santa Fe, NM</LinkedCity>
-        <LinkedCity Dist="298">Los Vegas, NV</LinkedCity>
+        <LinkedCity Dist="298">Las Vegas, NV</LinkedCity>
     </Facility>
 
     <Facility City="Denver, CO">
@@ -39,7 +39,7 @@
         <LinkedCity Dist="392">Denver, CO</LinkedCity>
         <LinkedCity Dist="1032">St. Louis, MO</LinkedCity>
         <LinkedCity Dist="688">Austin, TX</LinkedCity>
-        <LinkedCity Dist="633">Los Vegas, NV</LinkedCity>
+        <LinkedCity Dist="633">Las Vegas, NV</LinkedCity>
 
     </Facility>
 
@@ -125,7 +125,7 @@
         <LinkedCity Dist="864">New Orleans, LA</LinkedCity>
     </Facility>
 
-    <Facility City="Los Vegas, NV">
+    <Facility City="Las Vegas, NV">
         <LinkedCity Dist="270">Los Angeles, CA</LinkedCity>
         <LinkedCity Dist="298">Phoenix, AZ</LinkedCity>
         <LinkedCity Dist="633">Santa Fe, NM</LinkedCity>

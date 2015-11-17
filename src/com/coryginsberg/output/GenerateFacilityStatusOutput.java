@@ -31,7 +31,7 @@ public class GenerateFacilityStatusOutput implements OutputInterface<Facility> {
         importNetworkFile.importFile("src/com/coryginsberg/xml/FacilityNetwork.xml");
         importItemFile.importFile("src/com/coryginsberg/xml/Items.xml");
         importFacilitiesFile.importFile("src/com/coryginsberg/xml/Facilities.xml");
-        //GraphManager.createGraph();
+        GraphManager.createGraph();
 
         hoursDriving = 8;
         avgMph = 50;
@@ -96,6 +96,7 @@ public class GenerateFacilityStatusOutput implements OutputInterface<Facility> {
         System.out.println("| ");
         System.out.println("| SCHEDULE:");
         System.out.println("| "); // TODO: Add the Schedule for each Facility
+        System.out.println("| ");
         System.out.println("| ");
         System.out.println("============================================================================================");
         System.out.println("/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\");
