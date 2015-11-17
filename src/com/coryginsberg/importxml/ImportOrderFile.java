@@ -1,6 +1,8 @@
 package com.coryginsberg.importxml;
 
+import com.coryginsberg.Item;
 import com.coryginsberg.factories.OrderFactory;
+import com.coryginsberg.managers.ItemManager;
 import com.coryginsberg.managers.OrderManager;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
@@ -20,9 +22,9 @@ public class ImportOrderFile {
 
     OrderManager orderManager = new OrderManager();
 
-    public static HashMap<Integer, String> importSubNodes(Element elem, String elementTagName) throws UnexpectedNodeException {
+    public static HashMap<Item, Integer> importSubNodes(Element elem, String elementTagName) throws UnexpectedNodeException {
         // Get all nodes named "Link" - there can be 0 or more
-        HashMap<Integer, String> stockedItems = new HashMap<>();
+        HashMap<Item, Integer> stockedItems = new HashMap<>();
         NodeList linkedItemsList = elem.getElementsByTagName(elementTagName);
         for (int j = 0; j < linkedItemsList.getLength(); j++) {
             if (linkedItemsList.item(j).getNodeType() == Node.TEXT_NODE) {
@@ -40,7 +42,11 @@ public class ImportOrderFile {
             String itemID = elem.getTextContent();
             int itemQuantity = Integer.parseInt(elem.getAttributes().item(0).getTextContent());
 
-            stockedItems.put(itemQuantity, itemID);
+            ItemManager.getItems().forEach(item -> {
+                if (item.getId().equals(itemID)) stockedItems.put(item, itemQuantity);
+
+            });
+
         }
         return stockedItems;
     }

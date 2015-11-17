@@ -27,11 +27,11 @@ public class GenerateFacilityStatusOutput implements OutputInterface<Facility> {
     private static float avgMph;
 
     public GenerateFacilityStatusOutput() throws FileAlreadyExistsException, UnexpectedNodeException {
-        importInventoryFile.importFile("src/com/coryginsberg/xml/FacilityInventory.xml");
-        importNetworkFile.importFile("src/com/coryginsberg/xml/FacilityNetwork.xml");
-        importItemFile.importFile("src/com/coryginsberg/xml/Items.xml");
         importFacilitiesFile.importFile("src/com/coryginsberg/xml/Facilities.xml");
-        //GraphManager.createGraph();
+        importInventoryFile.importFile("src/com/coryginsberg/xml/FacilityInventory.xml");
+        importItemFile.importFile("src/com/coryginsberg/xml/Items.xml");
+        importNetworkFile.importFile("src/com/coryginsberg/xml/FacilityNetwork.xml");
+        GraphManager.createGraph();
 
         hoursDriving = 8;
         avgMph = 50;
@@ -96,6 +96,7 @@ public class GenerateFacilityStatusOutput implements OutputInterface<Facility> {
         System.out.println("| ");
         System.out.println("| SCHEDULE:");
         System.out.println("| "); // TODO: Add the Schedule for each Facility
+        System.out.println("| ");
         System.out.println("| ");
         System.out.println("============================================================================================");
         System.out.println("/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\");

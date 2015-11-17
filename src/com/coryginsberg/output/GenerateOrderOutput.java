@@ -1,9 +1,7 @@
 package com.coryginsberg.output;
 
 import com.coryginsberg.Order;
-import com.coryginsberg.ProcessOrder;
-import com.coryginsberg.importxml.ImportOrderFile;
-import com.coryginsberg.importxml.UnexpectedNodeException;
+import com.coryginsberg.importxml.*;
 import com.coryginsberg.managers.OrderManager;
 
 import java.nio.file.FileAlreadyExistsException;
@@ -14,9 +12,17 @@ import java.nio.file.FileAlreadyExistsException;
  * @since 11/5/2015
  */
 public class GenerateOrderOutput implements OutputInterface<Order> {
+    private static Import importNetworkFile = new ImportNetworkFile();
+    private static Import importFacilitiesFile = new ImportFacilitiesFile();
+    private static Import importItemFile = new ImportItemFile();
+    private static Import importInventoryFile = new ImportInventoryFile();
     private static ImportOrderFile importOrderFile = new ImportOrderFile();
     private static int orderNum = 0;
     public GenerateOrderOutput() throws FileAlreadyExistsException, UnexpectedNodeException {
+        importFacilitiesFile.importFile("src/com/coryginsberg/xml/Facilities.xml");
+        importInventoryFile.importFile("src/com/coryginsberg/xml/FacilityInventory.xml");
+        importItemFile.importFile("src/com/coryginsberg/xml/Items.xml");
+        importNetworkFile.importFile("src/com/coryginsberg/xml/FacilityNetwork.xml");
         importOrderFile.importFile("src/com/coryginsberg/xml/Orders.xml");
 
         // These extra println's are here to give a break between the Facility Status Output and the Order Output.
@@ -28,7 +34,6 @@ public class GenerateOrderOutput implements OutputInterface<Order> {
         System.out.println("| ORDER OUTPUTS: |");
         System.out.println(" ---------------- ");
         OrderManager.getOrders().forEach(this::printStatusOutput);
-        OrderManager.getOrders().forEach(ProcessOrder::new);
     }
 
     @Override
@@ -47,8 +52,8 @@ public class GenerateOrderOutput implements OutputInterface<Order> {
         System.out.println();
         System.out.format("%-5s%-15s%-5s", "| ", "‾‾‾‾‾‾‾‾", "‾‾‾‾‾‾‾");
         System.out.println();
-        order.getItems().forEach((amt, id) -> {
-            System.out.format("%-5s%-15s%-5s", "| ", id, amt);
+        order.getItems().forEach((item, amt) -> {
+            System.out.format("%-5s%-15s%-5s", "| ", item.getId(), amt);
             System.out.println();
         });
         System.out.println("| ");
@@ -65,8 +70,8 @@ public class GenerateOrderOutput implements OutputInterface<Order> {
         System.out.println();
         System.out.format("%-5s%-15s%-15s%-10s%-15s%-15s%-15s", "| ", "‾‾‾‾‾‾‾‾", "‾‾‾‾‾‾‾‾‾", "‾‾‾‾", "‾‾‾‾‾‾‾‾‾‾‾‾", "‾‾‾‾‾‾‾‾‾", "‾‾‾‾‾‾‾‾");
         System.out.println();
-        order.getItems().forEach((amt, id) -> { // TODO: 11/15/15 Switch this out with the properly calculated one.
-            System.out.format("%-5s%-15s%-15s%-10s%-15s%-15s%-15s", "| ", id, amt, "", "", "", "");
+        order.getItems().forEach((item, amt) -> { // TODO: 11/15/15 Switch this out with the properly calculated one.
+            System.out.format("%-5s%-15s%-15s%-10s%-15s%-15s%-15s", "| ", item.getId(), amt, "", "", "", "");
             System.out.println();
         });
         System.out.println("============================================================================================");

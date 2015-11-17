@@ -2,7 +2,7 @@ package com.coryginsberg;
 
 import com.coryginsberg.factories.GraphFactory;
 import com.coryginsberg.graph.Graph;
-import com.coryginsberg.managers.GraphManager;
+import com.coryginsberg.managers.NetworkManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,7 +18,7 @@ public class ProcessOrder {
     private String id;
     private String destination;
     private String priority;
-    private HashMap<Integer, String> items;
+    private HashMap<Item, Integer> items;
 
     public ProcessOrder(Order order) {
         this.time = order.getTime();
@@ -26,23 +26,17 @@ public class ProcessOrder {
         this.destination = order.getDestination();
         this.priority = order.getPriority();
         this.items = order.getItems();
-        System.out.println(graph.toString());
-//        items.forEach((amt, id) -> {
-//            HashMap<Integer, String> item = new HashMap<>();
-//            item.put(amt, id);
-//            facilitiesWithItem(item);
-//            System.out.println(item.toString());
-//        });
-        facilitiesWithItem(items);
+        items.forEach((item, amt) -> getFacilitiesWithItem(item));
     }
 
-    private ArrayList<Network> facilitiesWithItem(HashMap<Integer, String> item) {
+    private ArrayList<Facility> getFacilitiesWithItem(Item item) {
         ArrayList<Facility> facilitiesWithItem = new ArrayList<>();
 
-        GraphManager.getAllFacilities();
+        NetworkManager.getFacilities().forEach((facility) -> {
+            if (facility.hasItem(item)) facilitiesWithItem.add(facility);
+        });
 
-        return null;
+        return facilitiesWithItem;
     }
-
 
 }

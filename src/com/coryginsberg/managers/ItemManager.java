@@ -13,7 +13,9 @@ public class ItemManager {
     private static ArrayList<Item> items = new ArrayList<>();
 
     public static void addItem(Item item) {
-        items.add(item);
+        if (!items.contains(item)) {
+            items.add(item);
+        }
     }
 
     public static int getNumItems() {
