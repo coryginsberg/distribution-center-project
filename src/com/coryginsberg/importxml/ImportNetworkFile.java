@@ -9,6 +9,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,8 +32,8 @@ public class ImportNetworkFile implements Import {
 
             File xml = new File(fileName);
             if (!xml.exists()) {
-                System.err.println("**** XML File '" + fileName + "' cannot be found");
-                System.exit(-1);
+                throw new FileNotFoundException("XML File '" + fileName + "' cannot be found");
+
             }
 
             Document doc = db.parse(xml);
@@ -93,6 +94,8 @@ public class ImportNetworkFile implements Import {
             }
         } catch (ParserConfigurationException | SAXException | IOException | DOMException e) {
             e.printStackTrace();
+            System.exit(1);
+
         }
     }
 }

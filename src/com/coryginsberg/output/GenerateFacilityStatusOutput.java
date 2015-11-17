@@ -1,7 +1,6 @@
 package com.coryginsberg.output;
 
 import com.coryginsberg.Facility;
-import com.coryginsberg.importxml.ImportFiles;
 import com.coryginsberg.importxml.UnexpectedNodeException;
 import com.coryginsberg.managers.GraphManager;
 import com.coryginsberg.managers.InventoryManager;
@@ -24,8 +23,6 @@ public class GenerateFacilityStatusOutput implements OutputInterface<Facility> {
     private static float avgMph;
 
     public GenerateFacilityStatusOutput() throws FileAlreadyExistsException, UnexpectedNodeException {
-
-        ImportFiles.getInstance();
 
         hoursDriving = 8;
         avgMph = 50;

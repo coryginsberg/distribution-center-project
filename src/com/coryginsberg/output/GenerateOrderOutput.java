@@ -1,10 +1,10 @@
 package com.coryginsberg.output;
 
 import com.coryginsberg.Order;
-import com.coryginsberg.importxml.ImportFiles;
 import com.coryginsberg.importxml.UnexpectedNodeException;
 import com.coryginsberg.managers.OrderManager;
 
+import java.io.FileNotFoundException;
 import java.nio.file.FileAlreadyExistsException;
 
 /**
@@ -12,13 +12,12 @@ import java.nio.file.FileAlreadyExistsException;
  * @version 1.0
  * @since 11/5/2015
  */
+
 public class GenerateOrderOutput implements OutputInterface<Order> {
 
     private static int orderNum = 0;
 
-    public GenerateOrderOutput() throws FileAlreadyExistsException, UnexpectedNodeException {
-
-        ImportFiles.getInstance();
+    public GenerateOrderOutput() throws FileAlreadyExistsException, UnexpectedNodeException, FileNotFoundException {
 
         // These extra println's are here to give a break between the Facility Status Output and the Order Output.
         // Since the Order Output comes after the Facility Status Output, it is placed here.
@@ -28,6 +27,7 @@ public class GenerateOrderOutput implements OutputInterface<Order> {
         System.out.println(" ---------------- ");
         System.out.println("| ORDER OUTPUTS: |");
         System.out.println(" ---------------- ");
+
         OrderManager.getOrders().forEach(this::printStatusOutput);
     }
 
