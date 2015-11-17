@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c10ad15d-10ce-4a3d-bca3-429a8525e60a" name="Default" comment="Made Factory methods more like Singletons, Changed FacilityManager and FacilityFactory to NetworkManager and NetworkFactory respectively.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="c10ad15d-10ce-4a3d-bca3-429a8525e60a" name="Default" comment="Started adding Items to Facilities&#10;">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/factories/Network.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/coryginsberg/factories/Network.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Facility.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Facility.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Item.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Item.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Order.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/Order.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/ProcessOrder.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/ProcessOrder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/factories/OrderFactory.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/factories/OrderFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/importxml/ImportItemFile.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/importxml/ImportItemFile.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/importxml/ImportNetworkFile.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/importxml/ImportNetworkFile.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/importxml/ImportOrderFile.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/importxml/ImportOrderFile.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/managers/GraphManager.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/managers/GraphManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/managers/ItemManager.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/managers/ItemManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/output/GenerateFacilityStatusOutput.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/output/GenerateFacilityStatusOutput.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/output/GenerateOrderOutput.class" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/output/GenerateOrderOutput.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/xml/Facilities.xml" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/xml/Facilities.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/xml/FacilityInventory.xml" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/xml/FacilityInventory.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/xml/FacilityNetwork.xml" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/xml/FacilityNetwork.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/xml/Items.xml" afterPath="$PROJECT_DIR$/out/production/distribution-project/com/coryginsberg/xml/Items.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/Facility.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/Facility.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/Item.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/Item.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/Order.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/Order.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/ProcessOrder.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/ProcessOrder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/factories/OrderFactory.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/factories/OrderFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportItemFile.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportItemFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportNetworkFile.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportNetworkFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportOrderFile.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportOrderFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/managers/ItemManager.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/managers/ItemManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/xml/Facilities.xml" afterPath="$PROJECT_DIR$/src/com/coryginsberg/xml/Facilities.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityInventory.xml" afterPath="$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityInventory.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityNetwork.xml" afterPath="$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityNetwork.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java" afterPath="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java" />
     </list>
     <ignored path="distribution-project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,6 +45,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Logistics Application$Main.coverage" NAME="Main Coverage Results" MODIFIED="1447726236669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -38,62 +64,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FacilityFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/factories/FacilityFactory.java">
+      <file leaf-file-name="Network.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Network.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImportNetworkFile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportNetworkFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="59" column="63" selection-start-line="59" selection-start-column="63" selection-end-line="59" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GraphFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/factories/GraphFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state vertical-scroll-proportion="-5.5555553">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/graph/Node.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GenerateFacilityStatusOutput.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="99" column="33" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/managers/OrderManager.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
@@ -102,41 +84,88 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FacilityNetwork.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityNetwork.xml">
+      <file leaf-file-name="Item.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Item.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5844157">
-              <caret line="41" column="40" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="40" />
+            <state vertical-scroll-proportion="-13.333333">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FacilityInventory.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityInventory.xml">
+      <file leaf-file-name="Facility.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Facility.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32387313">
-              <caret line="121" column="22" selection-start-line="121" selection-start-column="22" selection-end-line="121" selection-end-column="22" />
+            <state vertical-scroll-proportion="-22.925926">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1425#1426#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GenerateFacilityStatusOutput.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Facilities.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/Facilities.xml">
+      <file leaf-file-name="ImportNetworkFile.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportNetworkFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.291667">
-              <caret line="75" column="22" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.8427673">
+              <caret line="84" column="77" selection-start-line="84" selection-start-column="77" selection-end-line="84" selection-end-column="77" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Import.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/Import.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Orders.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/Orders.xml">
+      <file leaf-file-name="OutputInterface.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/OutputInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="23" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="23" />
+            <state vertical-scroll-proportion="-5.5555553">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GenerateOrderOutput.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="32" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Inventory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Inventory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.777778">
+              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -148,8 +177,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Singleton" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -174,9 +203,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/factories/Factorys.java" />
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/factories/Factory.java" />
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportItemFile.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/GenerateOrderOutput.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/Orders.xml" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/FacilityInventory.xml" />
@@ -185,7 +211,6 @@
         <option value="$PROJECT_DIR$/src/com/coryginsberg/xml/Orders.xml" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/Manager.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/OrderManager.java" />
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/ItemManager.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/InventoryManager.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/GraphSingleton.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/NetworkSingleton.java" />
@@ -193,38 +218,42 @@
         <option value="$PROJECT_DIR$/src/com/coryginsberg/singletons/InventorySingleton.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/singletons/GraphSingleton.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/singletons/NetworkSingleton.java" />
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/output/OutputInterface.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/output/AbstractGenerateOutput.java" />
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/Order.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/Inventory.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/NodeManager.java" />
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/FacilityManager.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/Network.java" />
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java" />
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportOrderFile.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportNodes.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/importxml/PositionalXMLReader.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/importxml/XmlTest.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/graph/Node.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/graph/Graph.java" />
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/ProcessOrder.java" />
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/GraphManager.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFinalOutput.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/factories/NetworkFactory.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/factories/ItemFactory.java" />
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/factories/OrderFactory.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportInventoryFile.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/factories/InventoryFactory.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportFacilitiesFile.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/NetworkManager.java" />
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/Facility.java" />
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportNetworkFile.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/factories/FacilityFactory.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/factories/GraphFactory.java" />
-        <option value="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityNetwork.xml" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityInventory.xml" />
         <option value="$PROJECT_DIR$/src/com/coryginsberg/xml/Facilities.xml" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/GraphManager.java" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/FacilityManager.java" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/factories/OrderFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportOrderFile.java" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/Facility.java" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/ProcessOrder.java" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/Item.java" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/Order.java" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/xml/Items.xml" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/managers/ItemManager.java" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportItemFile.java" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/output/OutputInterface.java" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java" />
+        <option value="$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportNetworkFile.java" />
       </list>
     </option>
   </component>
@@ -390,6 +419,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -423,28 +455,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="coryginsberg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Logistics Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Distribution Center" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="coryginsberg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xml" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -574,20 +584,19 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="C:/Program Files (x86)/Git/cmd/git.exe" />
+    <property name="last_opened_file_path" value="/usr/local/bin/git" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -1029,7 +1038,7 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -1055,7 +1064,8 @@
       <option name="number" value="Default" />
       <updated>1447562871582</updated>
       <workItem from="1447573362106" duration="47704000" />
-      <workItem from="1447720030015" duration="394000" />
+      <workItem from="1447720030015" duration="3868000" />
+      <workItem from="1447724308165" duration="1561000" />
     </task>
     <task id="LOCAL-00001" summary="Finally got Active Inventory to print properly.&#10;After some digging, I found out that I was switching the key and value for every Inventory for some reason, which is completely unnecessary. I fixed that and ran the program again, and it worked.">
       <created>1447568058308</created>
@@ -1099,11 +1109,17 @@
       <option name="project" value="LOCAL" />
       <updated>1447642259733</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fixed a typo in Las Vegas (Was Los Vegas).">
+      <created>1447720443584</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1447720443584</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48098000" />
+    <option name="totallyTimeSpent" value="53133000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1125,17 +1141,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329863" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28267047" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="316" y="338" width="647" height="124" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28267047" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="316" y="338" width="647" height="124" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32832617" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2536349" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2463651" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329863" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32832617" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986301" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39914164" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39772728" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1188,14 +1205,16 @@
     <MESSAGE value="Moved the middle line down one to make it look better." />
     <MESSAGE value="Added more 'stuff' to make the output look cleaner and easier to read." />
     <MESSAGE value="Made Factory methods more like Singletons, Changed FacilityManager and FacilityFactory to NetworkManager and NetworkFactory respectively." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made Factory methods more like Singletons, Changed FacilityManager and FacilityFactory to NetworkManager and NetworkFactory respectively." />
+    <MESSAGE value="Fixed a typo in Las Vegas (Was Los Vegas)." />
+    <MESSAGE value="Started adding Items to Facilities&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started adding Items to Facilities&#10;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="48" />
+      <option name="time" value="50" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1204,6 +1223,30 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportItemFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/factories/ItemFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/managers/ItemManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/factories/InventoryFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1224,14 +1267,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/factories/Network.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1280,6 +1315,7 @@
           <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1425#1426#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1300,98 +1336,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportItemFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.22680412">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Inventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/managers/InventoryManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33924612">
-          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-          <folding>
-            <element signature="e#522#523#0" expanded="false" />
-            <element signature="e#556#557#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Network.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/managers/ItemManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding>
-            <element signature="e#324#325#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/UnexpectedNodeException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11973392">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/Import.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/OutputInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33962265">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/distribution-project.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1403,58 +1347,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/ProcessOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFinalOutput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/factories/OrderFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/factories/ItemFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportOrderFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.019955654">
-          <caret line="56" column="74" selection-start-line="56" selection-start-column="74" selection-end-line="56" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1477,114 +1369,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportInventoryFile.java">
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityNetwork.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2594235">
-          <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/Items.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/factories/InventoryFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/managers/GraphManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportFacilitiesFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/factories/Network.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/managers/NetworkManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Facility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportNetworkFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="63" selection-start-line="59" selection-start-column="63" selection-end-line="59" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/factories/FacilityFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/factories/GraphFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6238245">
+          <caret line="41" column="40" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/graph/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.5031447">
           <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="99" column="33" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1597,18 +1393,203 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityNetwork.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/managers/GraphManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5844157">
-          <caret line="41" column="40" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/Facilities.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.291667">
+        <state vertical-scroll-proportion="0.59969324">
           <caret line="75" column="22" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/managers/InventoryManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+          <folding>
+            <element signature="e#522#523#0" expanded="true" />
+            <element signature="e#556#557#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/managers/NetworkManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityInventory.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9907975">
+          <caret line="117" column="43" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/Items.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7350993">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFinalOutput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/managers/ItemManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33284023">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportItemFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.0">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportOrderFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33281973">
+          <caret line="61" column="32" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/factories/OrderFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28846154">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportInventoryFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33281973">
+          <caret line="30" column="32" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportFacilitiesFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79198766">
+          <caret line="64" column="19" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/factories/ItemFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28846154">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/factories/InventoryFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35502958">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/factories/GraphFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19970414">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/factories/FacilityFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33284023">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/UnexpectedNodeException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1331361">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/ProcessOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.666667">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.444445">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Network.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.5555553">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.333333">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Inventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.777778">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1621,11 +1602,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/xml/FacilityInventory.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/Facility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32387313">
-          <caret line="121" column="22" selection-start-line="121" selection-start-column="22" selection-end-line="121" selection-end-column="22" />
+        <state vertical-scroll-proportion="-22.925926">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1425#1426#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/OutputInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.5555553">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateOrderOutput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/Import.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/output/GenerateFacilityStatusOutput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/coryginsberg/importxml/ImportNetworkFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8427673">
+          <caret line="84" column="77" selection-start-line="84" selection-start-column="77" selection-end-line="84" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -23,13 +23,11 @@ public class Facility {
     }
 
     public void addConnectingCity(HashMap<Facility, Integer> connectedFacility) {
-        connectedFacility.forEach((city, distance) -> {
-            NetworkManager.getFacilities().forEach(facility -> {
-                if (facility.equals(city)) {
-                    this.connectingCities.put(facility, distance);
-                }
-            });
-        });
+        connectedFacility.forEach((city, distance) -> NetworkManager.getFacilities().forEach(facility -> {
+            if (facility.equals(city)) {
+                this.connectingCities.put(facility, distance);
+            }
+        }));
     }
 
     public void addInventory(Item item) {
@@ -56,8 +54,11 @@ public class Facility {
         return itemsInStock;
     }
 
+    public boolean hasItem(Item item) {
+        return itemsInStock.contains(item);
+    }
     @Override
     public String toString() {
-        return getCity() + ", At Rate: " + getRate() + ", At Cost: " + getCost() + ", connected to: " + getConnectingCities();
+        return getCity() + ", At Rate: " + getRate() + ", At Cost: " + getCost() + ", Connected To: " + getConnectingCities() + ", Has Items: " + getItemsInStock();
     }
 }
