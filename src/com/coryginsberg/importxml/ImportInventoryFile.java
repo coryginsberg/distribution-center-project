@@ -11,6 +11,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 
 /**
  * @author Cory Ginsberg
@@ -54,9 +55,31 @@ public class ImportInventoryFile implements Import {
                 Element elem = (Element) facilityEntries.item(i);
 
                 // Create a Network object using the data loaded from the XML File
+// Get all nodes named "Link" - there can be 0 or more
+                HashMap<String, Integer> stockedItems = new HashMap<>();
+                NodeList linkedItemsList = elem.getElementsByTagName("Item");
+                for (int j = 0; j < linkedItemsList.getLength(); j++) {
+                    if (linkedItemsList.item(j).getNodeType() == Node.TEXT_NODE) {
+                        continue;
+                    }
 
-                Inventory inventory = InventoryFactory.addInventory(facilityCity, ImportNodes.importSubNodes(elem, "Item"));
-                InventoryManager.addInventory(inventory);
+                    entryName = linkedItemsList.item(j).getNodeName();
+
+                    if (!entryName.equals("Item")) {
+                        throw new UnexpectedNodeException("Unexpected Node: " + entryName);
+                    }
+
+
+                    // Get some named nodes
+                    elem = (Element) linkedItemsList.item(j);
+                    String itemID = elem.getTextContent();
+                    int itemQuantity = Integer.parseInt(elem.getAttributes().item(0).getTextContent());
+
+                    // Create a string summary of the Items
+                    stockedItems.put(itemID, itemQuantity);
+                }
+
+                InventoryFactory.addInventory(facilityCity, stockedItems);
             }
 
         } catch (ParserConfigurationException | SAXException | IOException | DOMException e) {

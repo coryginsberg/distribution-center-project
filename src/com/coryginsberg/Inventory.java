@@ -1,6 +1,5 @@
 package com.coryginsberg;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -21,11 +20,6 @@ public class Inventory {
         this.inventory = inventory;
     }
 
-    /**
-     * Returns the current inventory of the facility
-     *
-     * @return Current facility inventory.
-     */
     public HashMap<String, Integer> getInventory() {
         return inventory;
     }
@@ -48,19 +42,23 @@ public class Inventory {
         }
     }
 
-    public ArrayList<String> getDepletedInventory() {
-        ArrayList<String> depletedItems = new ArrayList<>();
+    public HashMap<String, Integer> getDepletedInventory() {
+        HashMap<String, Integer> depletedItems = new HashMap<>();
         inventory.forEach((item, amount) -> {
             if (amount == 0) {
-                depletedItems.add(item);
+                depletedItems.put(item, amount);
             }
         });
         return depletedItems;
     }
 
-    public ArrayList<String> getNondepletedInventory() {
-        ArrayList<String> nondepletedItems = new ArrayList<>();
-        inventory.forEach((item, amount) -> nondepletedItems.add(item));
+    public HashMap<String, Integer> getNondepletedInventory() {
+        HashMap<String, Integer> nondepletedItems = new HashMap<>();
+        inventory.forEach((item, amount) -> {
+            if (amount > 0) {
+                nondepletedItems.put(item, amount);
+            }
+        });
         return nondepletedItems;
     }
 
@@ -68,18 +66,11 @@ public class Inventory {
         return inventory.containsKey(item);
     }
 
-    /**
-     * Returns the city requested.
-     * @return The city that was requested.
-     */
+
     public String getCity() {
         return this.city;
     }
 
-    /**
-     * Returns the Network and its inventory as a string.
-     * @return The Network and its inventory as a string.
-     */
     @Override
     public String toString() {
         return "City: " + getCity() + " | Inventory: " + getInventory().toString();

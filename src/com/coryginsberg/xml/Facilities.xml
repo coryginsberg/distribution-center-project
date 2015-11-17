@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Facilities>
+
+    <Facility City="Seattle, WA">
+        <Rate AtCost="300">8</Rate>
+    </Facility>
+
+    <Facility City="San Francisco, CA">
+        <Rate AtCost="300">12</Rate>
+    </Facility>
+
+    <Facility City="Los Angeles, CA">
+        <Rate AtCost="300">10</Rate>
+    </Facility>
+
+    <Facility City="Phoenix, AZ">
+        <Rate AtCost="300">8</Rate>
+    </Facility>
+
+    <Facility City="Denver, CO">
+        <Rate AtCost="300">10</Rate>
+    </Facility>
+
+    <Facility City="Santa Fe, NM">
+        <Rate AtCost="300">8</Rate>
+    </Facility>
+
+    <Facility City="Fargo, ND">
+        <Rate AtCost="300">8</Rate>
+    </Facility>
+
+    <Facility City="Austin, TX">
+        <Rate AtCost="300">10</Rate>
+    </Facility>
+
+    <Facility City="St. Louis, MO">
+        <Rate AtCost="300">12</Rate>
+    </Facility>
+
+    <Facility City="Chicago, IL">
+        <Rate AtCost="300">10</Rate>
+    </Facility>
+
+    <Facility City="New Orleans, LA">
+        <Rate AtCost="300">10</Rate>
+    </Facility>
+
+    <Facility City="Nashville, TN">
+        <Rate AtCost="300">8</Rate>
+    </Facility>
+
+    <Facility City="Detroit, MI">
+        <Rate AtCost="300">10</Rate>
+    </Facility>
+
+    <Facility City="Boston, MA">
+        <Rate AtCost="300">10</Rate>
+    </Facility>
+
+    <Facility City="New York City, NY">
+        <Rate AtCost="300">14</Rate>
+    </Facility>
+
+    <Facility City="Norfolk, VA">
+        <Rate AtCost="300">14</Rate>
+    </Facility>
+
+    <Facility City="Atlanta, GA">
+        <Rate AtCost="300">10</Rate>
+    </Facility>
+
+    <Facility City="Miami, FL">
+        <Rate AtCost="300">12</Rate>
+    </Facility>
+
+    <Facility City="Los Vegas, NV">
+        <Rate AtCost="300">10</Rate>
+    </Facility>
+
+    <Facility City="Columbus, OH">
+        <Rate AtCost="300">8</Rate>
+    </Facility>
+
+    <Facility City="Salt Lake City, UT">
+        <Rate AtCost="300">11</Rate>
+    </Facility>
+
+</Facilities>

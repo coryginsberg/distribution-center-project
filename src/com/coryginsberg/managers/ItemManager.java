@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class ItemManager {
 
-    static ArrayList<Item> items = new ArrayList<>();
+    private static ArrayList<Item> items = new ArrayList<>();
 
     public static void addItem(Item item) {
         items.add(item);

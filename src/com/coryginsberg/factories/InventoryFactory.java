@@ -1,6 +1,7 @@
 package com.coryginsberg.factories;
 
 import com.coryginsberg.Inventory;
+import com.coryginsberg.managers.InventoryManager;
 
 import java.util.HashMap;
 
@@ -10,10 +11,21 @@ import java.util.HashMap;
  * @since 11/4/2015
  */
 public class InventoryFactory {
-    public static Inventory addInventory(String city, HashMap<Integer, String> items) {
 
-        HashMap<String, Integer> reverseHash = new HashMap<>();
-        reverseHash.put(items.values().toString(), Integer.getInteger(items.keySet().toString()));
-        return new Inventory(city, reverseHash);
+    private static FacilityFactory inventoryFactory;
+
+    private InventoryFactory() {
+
+    }
+
+    public static FacilityFactory getInstance() {
+        return inventoryFactory;
+    }
+
+    public static Inventory addInventory(String city, HashMap<String, Integer> items) {
+
+        Inventory newInventory = new Inventory(city, items);
+        InventoryManager.addInventory(newInventory);
+        return newInventory;
     }
 }

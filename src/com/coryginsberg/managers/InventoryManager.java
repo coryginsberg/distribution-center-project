@@ -21,7 +21,7 @@ public class InventoryManager {
         return inventories.size();
     }
 
-    public static ArrayList<Inventory> inventories() {
+    public static ArrayList<Inventory> getInventories() {
         return inventories;
     }
 

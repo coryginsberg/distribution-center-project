@@ -1,46 +1,63 @@
 package com.coryginsberg;
 
+import com.coryginsberg.managers.NetworkManager;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * @author Cory Ginsberg
- * @version 1.0
- * @since 10/25/2015
+ * Created by Cory Ginsberg on 11/15/15.
+ * Created for Logistics Application.
  */
-
 public class Facility {
-    private String name;
+    private String city;
     private float rate;
-    private int cost; // While cost is the same for all facilities currently, it is possible for cost to change in the future.
-    private ArrayList<HashMap<Integer, String>> network;
+    private int cost;
+    private HashMap<Facility, Integer> connectingCities = new HashMap<>();
+    private ArrayList<Item> itemsInStock;
 
-    public Facility(String name, float rate, int cost, ArrayList<HashMap<Integer, String>> connectingCities) {
-        this.name = name;
+    public Facility(String name, float rate, int cost) {
+        this.city = name;
         this.rate = rate;
         this.cost = cost;
-        this.network = connectingCities;
+    }
+
+    public void addConnectingCity(HashMap<Facility, Integer> connectedFacility) {
+        connectedFacility.forEach((city, distance) -> {
+            NetworkManager.getFacilities().forEach(facility -> {
+                if (facility.equals(city)) {
+                    this.connectingCities.put(facility, distance);
+                }
+            });
+        });
+    }
+
+    public void addInventory(Item item) {
+        itemsInStock.add(item);
     }
 
     public String getCity() {
-        return this.name;
+        return city;
     }
 
     public float getRate() {
-        return this.rate;
+        return rate;
     }
 
     public int getCost() {
-        return this.cost;
+        return cost;
     }
 
-    public ArrayList<HashMap<Integer, String>> getConnectingCities() {
-        return this.network;
+    public HashMap<Facility, Integer> getConnectingCities() {
+        return connectingCities;
+    }
+
+    public ArrayList<Item> getItemsInStock() {
+        return itemsInStock;
     }
 
     @Override
     public String toString() {
-        return "City: " + getCity() + ", Rate: " + getRate() + ", Cost:" + getCost() + ", Connected Cities: " + getConnectingCities() + ".";
+        return getCity() + ", At Rate: " + getRate() + ", At Cost: " + getCost() + ", connected to: " + getConnectingCities();
     }
-
 }

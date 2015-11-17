@@ -1,18 +1,17 @@
 package com.coryginsberg.factories;
 
-import com.coryginsberg.Network;
-
-import java.util.HashMap;
+import com.coryginsberg.Facility;
+import com.coryginsberg.managers.NetworkManager;
 
 /**
- * @author Cory Ginsberg
- * @version 1.0
- * @since 11/4/2015
+ * Created by Cory Ginsberg on 11/15/15.
+ * Created for Logistics Application.
  */
 public class FacilityFactory {
 
-    public static Network addFacility(String name, int rate, int cost, HashMap<Integer, String> linkedCities) {
-        return new Network(name, rate, cost, linkedCities);
+    public static Facility addFacility(String name, int rate, int cost) {
+        Facility newFacility = new Facility(name, rate, cost);
+        NetworkManager.addFacility(newFacility);
+        return newFacility;
     }
 }
-

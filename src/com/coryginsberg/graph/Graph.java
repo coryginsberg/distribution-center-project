@@ -16,6 +16,8 @@ public class Graph<T> {
 
     private float totalWeight = 0;
 
+    private ArrayList<T> vertexes = new ArrayList<>();
+
     public Graph() {
         adjacencyList = new HashMap<>();
     }
@@ -29,6 +31,7 @@ public class Graph<T> {
             return false;
         }
         getAdjacencyList().put(vertex, new Node<>(vertex));
+        vertexes.add(vertex);
         return true;
     }
 
@@ -41,6 +44,10 @@ public class Graph<T> {
         Node<T> node1 = getNode(vertex1);
         Node<T> node2 = getNode(vertex2);
         return node1.addEdge(node2, weight);
+    }
+
+    public ArrayList<T> getVertexes() {
+        return vertexes;
     }
 
     public boolean containsVertex(T vertex) {

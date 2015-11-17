@@ -1,5 +1,7 @@
 package com.coryginsberg;
 
+import com.coryginsberg.output.GenerateFinalOutput;
+
 /**
  * @author Cory Ginsberg
  * @version 1.0

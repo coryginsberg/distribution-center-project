@@ -1,6 +1,7 @@
 package com.coryginsberg.factories;
 
 import com.coryginsberg.Item;
+import com.coryginsberg.managers.ItemManager;
 
 /**
  * @author Cory Ginsberg
@@ -10,6 +11,8 @@ import com.coryginsberg.Item;
 public class ItemFactory {
 
     public static Item addItem(String id, int price) {
+        Item newItem = new Item(id, price);
+        ItemManager.addItem(newItem);
         return new Item(id, price);
     }
 

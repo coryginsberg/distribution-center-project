@@ -1,6 +1,6 @@
 package com.coryginsberg;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 /**
  * @author Cory Ginsberg
@@ -12,9 +12,9 @@ public class Network {
     private String name;
     private float rate;
     private int cost; // While cost is the same for all facilities currently, it is possible for cost to change in the future.
-    private HashMap<Integer, String> network;
+    private ArrayList<Facility> network;
 
-    public Network(String name, float rate, int cost, HashMap<Integer, String> connectingCities) {
+    public Network(String name, float rate, int cost, ArrayList<Facility> connectingCities) {
         this.name = name;
         this.rate = rate;
         this.cost = cost;
@@ -33,7 +33,7 @@ public class Network {
         return this.cost;
     }
 
-    public HashMap<Integer, String> getConnectingCities() {
+    public ArrayList<Facility> getConnectingCities() {
         return this.network;
     }
 

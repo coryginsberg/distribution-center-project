@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<FacilityInventory>
+
+    <Facility City="Seattle, WA">
+        <Item Quantity="45">ABC123</Item>
+        <Item Quantity="52">JBL3100</Item>
+        <Item Quantity="4">PL132-C</Item>
+        <Item Quantity="60">PU238</Item>
+    </Facility>
+
+    <Facility City="San Francisco, CA">
+        <Item Quantity="40">RL123A</Item>
+        <Item Quantity="8">XLK200B</Item>
+        <Item Quantity="81">SR71-D</Item>
+        <Item Quantity="46">CT1928</Item>
+    </Facility>
+
+    <Facility City="Los Angeles, CA">
+        <Item Quantity="57">RX100-3</Item>
+        <Item Quantity="60">JBL3100</Item>
+        <Item Quantity="44">E241i</Item>
+        <Item Quantity="32">XTP202</Item>
+    </Facility>
+
+    <Facility City="Phoenix, AZ">
+        <Item Quantity="18">RX100-3</Item>
+        <Item Quantity="55">SR71-D</Item>
+        <Item Quantity="22">SN-241-L</Item>
+        <Item Quantity="54">ZTF109</Item>
+    </Facility>
+
+    <Facility City="Denver, CO">
+        <Item Quantity="80">ABC123</Item>
+        <Item Quantity="110">RL123A</Item>
+        <Item Quantity="100">RTF110</Item>
+    </Facility>
+
+    <Facility City="Santa Fe, NM">
+        <Item Quantity="144">RX100-3</Item>
+        <Item Quantity="280">CR2032</Item>
+    </Facility>
+
+    <Facility City="Fargo, ND">
+        <Item Quantity="25">ABC123</Item>
+        <Item Quantity="32">JBL3100</Item>
+        <Item Quantity="82">XLK200B</Item>
+    </Facility>
+
+    <Facility City="Austin, TX">
+        <Item Quantity="66">RL123A</Item>
+        <Item Quantity="35">RX100-3</Item>
+        <Item Quantity="35">SN-241-L</Item>
+    </Facility>
+
+    <Facility City="St. Louis, MO">
+        <Item Quantity="70">ABC123</Item>
+        <Item Quantity="45">SR71-D</Item>
+        <Item Quantity="82">PU238</Item>
+    </Facility>
+
+    <Facility City="Chicago, IL">
+        <Item Quantity="60">ABC123</Item>
+        <Item Quantity="64">E241i</Item>
+        <Item Quantity="20">CT1928</Item>
+        <Item Quantity="110">RTF110</Item>
+        <Item Quantity="20">XTP202</Item>
+    </Facility>
+
+    <Facility City="New Orleans, LA">
+        <Item Quantity="100">MM35P</Item>
+        <Item Quantity="49">PU238</Item>
+        <Item Quantity="120">ZTF109</Item>
+    </Facility>
+
+    <Facility City="Nashville, TN">
+        <Item Quantity="78">RX100-3</Item>
+        <Item Quantity="28">XLK200B</Item>
+        <Item Quantity="366">CR2032</Item>
+        <Item Quantity="16">SN-241-L</Item>
+    </Facility>
+
+    <Facility City="Detroit, MI">
+        <Item Quantity="117">JBL3100</Item>
+        <Item Quantity="8">SR71-D</Item>
+        <Item Quantity="72">CT1928</Item>
+    </Facility>
+
+    <Facility City="Boston, MA">
+        <Item Quantity="47">MM35P</Item>
+        <Item Quantity="3">PL132-C</Item>
+        <Item Quantity="65">CT1928</Item>
+    </Facility>
+
+    <Facility City="New York City, NY">
+        <Item Quantity="12">RL123A</Item>
+        <Item Quantity="132">CR2032</Item>
+        <Item Quantity="72">E241i</Item>
+        <Item Quantity="28">ZTF109</Item>
+    </Facility>
+
+    <Facility City="Norfolk, VA">
+        <Item Quantity="66">MM35P</Item>
+        <Item Quantity="50">RL123A</Item>
+        <Item Quantity="14">XLK200B</Item>
+    </Facility>
+
+    <Facility City="Atlanta, GA">
+        <Item Quantity="90">RX100-3</Item>
+        <Item Quantity="32">E241i</Item>
+        <Item Quantity="120">PU238</Item>
+    </Facility>
+
+    <Facility City="Miami, FL">
+        <Item Quantity="16">MM35P</Item>
+        <Item Quantity="44">JBL3100</Item>
+        <Item Quantity="15">SR71-D</Item>
+        <Item Quantity="28">SN-241-L</Item>
+        <Item Quantity="88">XTP202</Item>
+    </Facility>
+
+    <Facility City="Los Vegas, NV">
+        <Item Quantity="17">MM35P</Item>
+        <Item Quantity="114">XTP202</Item>
+        <Item Quantity="72">ABC123</Item>
+        <Item Quantity="40">E241i</Item>
+    </Facility>
+
+    <Facility City="Columbus, OH">
+        <Item Quantity="36">JBL3100</Item>
+        <Item Quantity="59">XTP202</Item>
+        <Item Quantity="35">SN-241-L</Item>
+    </Facility>
+
+    <Facility City="Salt Lake City, UT">
+        <Item Quantity="12">PU238</Item>
+        <Item Quantity="67">SR71-D</Item>
+        <Item Quantity="113">MM35P</Item>
+        <Item Quantity="9">JBL3100</Item>
+        <Item Quantity="57">ABC123</Item>
+    </Facility>
+</FacilityInventory>
