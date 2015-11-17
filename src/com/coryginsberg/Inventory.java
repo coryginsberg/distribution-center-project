@@ -11,7 +11,7 @@ import java.util.HashMap;
 public class Inventory {
 
     private String city;
-    private HashMap<String, Integer> inventory;
+    private HashMap<String, Integer> inventory = new HashMap<>();
 
     public Inventory(String city, HashMap<String, Integer> inventory) {
         if (city == null) throw new RuntimeException("City does not exist.");

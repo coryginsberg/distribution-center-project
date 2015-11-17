@@ -12,16 +12,6 @@ import java.util.HashMap;
  */
 public class InventoryFactory {
 
-    private static FacilityFactory inventoryFactory;
-
-    private InventoryFactory() {
-
-    }
-
-    public static FacilityFactory getInstance() {
-        return inventoryFactory;
-    }
-
     public static Inventory addInventory(String city, HashMap<String, Integer> items) {
 
         Inventory newInventory = new Inventory(city, items);

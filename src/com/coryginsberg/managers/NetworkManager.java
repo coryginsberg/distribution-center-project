@@ -18,11 +18,7 @@ public class NetworkManager {
     private static ArrayList<Item> storableItems = new ArrayList<>();
 
     public static void addFacility(Facility facility) {
-
-        if (!facilities.contains(facility)) {
-            facilities.add(facility);
-        }
-
+        if (!facilities.contains(facility)) facilities.add(facility);
     }
 
     public static int getNumFacilities() {

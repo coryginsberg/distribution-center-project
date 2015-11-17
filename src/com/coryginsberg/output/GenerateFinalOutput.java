@@ -13,5 +13,7 @@ public class GenerateFinalOutput {
     public GenerateFinalOutput() throws FileAlreadyExistsException, UnexpectedNodeException {
         new GenerateFacilityStatusOutput();
         new GenerateOrderOutput();
+        new GenerateFacilityStatusOutput();
+
     }
 }

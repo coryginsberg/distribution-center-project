@@ -11,15 +11,19 @@ import java.util.HashMap;
  */
 public class Facility {
     private String city;
-    private float rate;
+    private int rate;
     private int cost;
     private HashMap<Facility, Integer> connectingCities = new HashMap<>();
-    private ArrayList<Item> itemsInStock;
+    private ArrayList<Item> itemsInStock = new ArrayList<>();
+    private ArrayList<Integer> dailyRate = new ArrayList<>();
 
-    public Facility(String name, float rate, int cost) {
+    public Facility(String name, int rate, int cost) {
         this.city = name;
         this.rate = rate;
         this.cost = cost;
+        for (int i = 0; i <= 12; i++) { // Start off with 12 days.
+            dailyRate.add(rate);
+        }
     }
 
     public void addConnectingCity(HashMap<Facility, Integer> connectedFacility) {
@@ -38,7 +42,7 @@ public class Facility {
         return city;
     }
 
-    public float getRate() {
+    public int getRate() {
         return rate;
     }
 
@@ -54,11 +58,20 @@ public class Facility {
         return itemsInStock;
     }
 
+    public ArrayList<Integer> getDailyRate() {
+        return dailyRate;
+    }
+
+    public void processItem(int numItems) {
+
+
+    }
+
     public boolean hasItem(Item item) {
         return itemsInStock.contains(item);
     }
     @Override
     public String toString() {
-        return getCity() + ", At Rate: " + getRate() + ", At Cost: " + getCost() + ", Connected To: " + getConnectingCities() + ", Has Items: " + getItemsInStock();
+        return getCity() + ", At Rate: " + getRate() + ", At Cost: " + getCost() + " Has Items: " + getItemsInStock().toString() + ".";
     }
 }

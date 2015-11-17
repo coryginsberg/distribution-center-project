@@ -12,7 +12,7 @@ public class Network {
     private String name;
     private float rate;
     private int cost; // While cost is the same for all facilities currently, it is possible for cost to change in the future.
-    private ArrayList<Facility> network;
+    private ArrayList<Facility> network = new ArrayList<>();
 
     public Network(String name, float rate, int cost, ArrayList<Facility> connectingCities) {
         this.name = name;

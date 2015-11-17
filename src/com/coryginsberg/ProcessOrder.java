@@ -1,7 +1,5 @@
 package com.coryginsberg;
 
-import com.coryginsberg.factories.GraphFactory;
-import com.coryginsberg.graph.Graph;
 import com.coryginsberg.managers.NetworkManager;
 
 import java.util.ArrayList;
@@ -13,12 +11,11 @@ import java.util.HashMap;
  * @since 11/5/2015
  */
 public class ProcessOrder {
-    Graph graph = GraphFactory.createGraph();
     private int time;
     private String id;
     private String destination;
     private String priority;
-    private HashMap<Item, Integer> items;
+    private HashMap<Item, Integer> items = new HashMap<>();
 
     public ProcessOrder(Order order) {
         this.time = order.getTime();

@@ -21,8 +21,6 @@ import java.util.HashMap;
  * @since 11/3/2015
  */
 
-// TODO: 11/16/15 Check to make sure the the Facility has been added in through the Facilities.xml file.
-
 public class ImportNetworkFile implements Import {
 
     public void importFile(String fileName) throws UnexpectedNodeException {
@@ -80,20 +78,19 @@ public class ImportNetworkFile implements Import {
                             int distance = Integer.parseInt(elem.getAttributes().item(0).getTextContent());
 
                             HashMap<Facility, Integer> connectedFacility = new HashMap<>();
-                            connectedFacility.put(facility, distance);
-                            System.out.println(city + " @ " + distance);
-
-                            NetworkManager.getFacilities().forEach(addedFacility -> {
+                            for (Facility addedFacility : NetworkManager.getFacilities()) {
                                 if (addedFacility.getCity().equals(city)) {
                                     connectedFacility.put(addedFacility, distance);
                                     facility.addConnectingCity(connectedFacility);
+                                    break;
                                 }
-                            });
+                            }
+
                         }
                     }
                 }
-            }
 
+            }
         } catch (ParserConfigurationException | SAXException | IOException | DOMException e) {
             e.printStackTrace();
         }

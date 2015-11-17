@@ -1,7 +1,8 @@
 package com.coryginsberg.output;
 
 import com.coryginsberg.Order;
-import com.coryginsberg.importxml.*;
+import com.coryginsberg.importxml.ImportFiles;
+import com.coryginsberg.importxml.UnexpectedNodeException;
 import com.coryginsberg.managers.OrderManager;
 
 import java.nio.file.FileAlreadyExistsException;
@@ -12,18 +13,12 @@ import java.nio.file.FileAlreadyExistsException;
  * @since 11/5/2015
  */
 public class GenerateOrderOutput implements OutputInterface<Order> {
-    private static Import importNetworkFile = new ImportNetworkFile();
-    private static Import importFacilitiesFile = new ImportFacilitiesFile();
-    private static Import importItemFile = new ImportItemFile();
-    private static Import importInventoryFile = new ImportInventoryFile();
-    private static ImportOrderFile importOrderFile = new ImportOrderFile();
+
     private static int orderNum = 0;
+
     public GenerateOrderOutput() throws FileAlreadyExistsException, UnexpectedNodeException {
-        importFacilitiesFile.importFile("src/com/coryginsberg/xml/Facilities.xml");
-        importInventoryFile.importFile("src/com/coryginsberg/xml/FacilityInventory.xml");
-        importItemFile.importFile("src/com/coryginsberg/xml/Items.xml");
-        importNetworkFile.importFile("src/com/coryginsberg/xml/FacilityNetwork.xml");
-        importOrderFile.importFile("src/com/coryginsberg/xml/Orders.xml");
+
+        ImportFiles.getInstance();
 
         // These extra println's are here to give a break between the Facility Status Output and the Order Output.
         // Since the Order Output comes after the Facility Status Output, it is placed here.

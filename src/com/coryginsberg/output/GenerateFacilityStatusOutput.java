@@ -1,7 +1,8 @@
 package com.coryginsberg.output;
 
 import com.coryginsberg.Facility;
-import com.coryginsberg.importxml.*;
+import com.coryginsberg.importxml.ImportFiles;
+import com.coryginsberg.importxml.UnexpectedNodeException;
 import com.coryginsberg.managers.GraphManager;
 import com.coryginsberg.managers.InventoryManager;
 import com.coryginsberg.managers.NetworkManager;
@@ -18,20 +19,13 @@ import java.util.Map;
  */
 
 public class GenerateFacilityStatusOutput implements OutputInterface<Facility> {
-    private static Import importNetworkFile = new ImportNetworkFile();
-    private static Import importFacilitiesFile = new ImportFacilitiesFile();
-    private static Import importItemFile = new ImportItemFile();
-    private static Import importInventoryFile = new ImportInventoryFile();
 
     private static float hoursDriving;
     private static float avgMph;
 
     public GenerateFacilityStatusOutput() throws FileAlreadyExistsException, UnexpectedNodeException {
-        importFacilitiesFile.importFile("src/com/coryginsberg/xml/Facilities.xml");
-        importInventoryFile.importFile("src/com/coryginsberg/xml/FacilityInventory.xml");
-        importItemFile.importFile("src/com/coryginsberg/xml/Items.xml");
-        importNetworkFile.importFile("src/com/coryginsberg/xml/FacilityNetwork.xml");
-        GraphManager.createGraph();
+
+        ImportFiles.getInstance();
 
         hoursDriving = 8;
         avgMph = 50;
@@ -54,7 +48,7 @@ public class GenerateFacilityStatusOutput implements OutputInterface<Facility> {
 
         System.out.print("| DIRECT LINKS: ");
         facility.getConnectingCities().forEach((s, integer) -> {
-            System.out.print(integer);
+            System.out.print(s.getCity());
             GraphManager.getShortestPath(facility, s);
             System.out.print(" (" + GraphManager.getTotalTime(hoursDriving, avgMph) + " Days) ");
         });
@@ -95,7 +89,20 @@ public class GenerateFacilityStatusOutput implements OutputInterface<Facility> {
         });
         System.out.println("| ");
         System.out.println("| SCHEDULE:");
-        System.out.println("| "); // TODO: Add the Schedule for each Facility
+        System.out.print("| ");
+        System.out.format("%15s", "Day: ");
+        for (int i = 0; i < facility.getDailyRate().size(); i++) {
+            System.out.format("%-5s", i);
+        }
+        System.out.format("%-5s", "...");
+        System.out.println();
+        System.out.print("| ");
+        System.out.format("%15s", "Available: ");
+        for (int i = 0; i < facility.getDailyRate().size(); i++) {
+            System.out.format("%-5s", facility.getRate());
+        }
+        System.out.format("%-5s", "...");
+        System.out.println();
         System.out.println("| ");
         System.out.println("| ");
         System.out.println("============================================================================================");

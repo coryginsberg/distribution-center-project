@@ -11,7 +11,7 @@ public class Order {
     private String id;
     private String destination;
     private String priority;
-    private HashMap<Item, Integer> items;
+    private HashMap<Item, Integer> items = new HashMap<>();
 
     public Order(int time, String id, String destination, String priority, HashMap<Item, Integer> items) {
         this.time = time;

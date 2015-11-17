@@ -3,7 +3,6 @@ package com.coryginsberg.importxml;
 import com.coryginsberg.Item;
 import com.coryginsberg.factories.OrderFactory;
 import com.coryginsberg.managers.ItemManager;
-import com.coryginsberg.managers.OrderManager;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -19,8 +18,6 @@ import java.util.HashMap;
  * Created for Logistics Application.
  */
 public class ImportOrderFile {
-
-    OrderManager orderManager = new OrderManager();
 
     public static HashMap<Item, Integer> importSubNodes(Element elem, String elementTagName) throws UnexpectedNodeException {
         // Get all nodes named "Link" - there can be 0 or more
