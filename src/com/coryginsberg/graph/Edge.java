@@ -20,10 +20,6 @@ public class Edge<T> {
         this.weight = weight;
     }
 
-    public Node<T> fromNode() {
-        return node1;
-    }
-
     public Node<T> toNode() {
         return node2;
     }

@@ -1,10 +1,13 @@
 package com.coryginsberg;
 
+import com.coryginsberg.managers.GraphManager;
 import com.coryginsberg.managers.InventoryManager;
 import com.coryginsberg.managers.NetworkManager;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Cory Ginsberg
@@ -13,22 +16,23 @@ import java.util.HashMap;
  */
 public class ProcessOrder {
     private int time;
-    private String id;
     private String destination;
-    private String priority;
     private HashMap<Item, Integer> items = new HashMap<>();
-
-    private ArrayList<Integer> arrivalDays = new ArrayList<>();
 
     public ProcessOrder(Order order) {
         this.time = order.getTime();
-        this.id = order.getID();
         this.destination = order.getDestination();
-        this.priority = order.getPriority();
         this.items = order.getItems();
-        items.forEach((item, amt) -> {
-            getFacilitiesWithItem(item);
-        });
+        items.forEach((item, amt) -> getFacilitiesWithItem(item));
+    }
+
+    private Facility getDestinationFacility() {
+        for (Facility facility : NetworkManager.getFacilities()) {
+            if (facility.getCity().equals(destination)) {
+                return facility;
+            }
+        }
+        return null;
     }
 
     private ArrayList<Facility> getFacilitiesWithItem(Item item) {
@@ -47,55 +51,107 @@ public class ProcessOrder {
         return facilitiesWithItem;
     }
 
-    public HashMap<Facility, Integer> getNumItemsFromFacility(ArrayList<Facility> facilities) {
-        facilities.forEach(facility -> {
-            InventoryManager.getInventories().forEach(inventory -> {
-                if (inventory.getCity().equals(facility.getCity())) {
-                    //items.forEach();
-                    //inventory.itemInStock()
-                }
-            });
+    public float getTravelTimeForItem(int hoursDriving, int avgMph, Item item) {
 
-        });
-        return null;
-    }
-//    public ArrayList<String> getShortestPathFromFacilities(ArrayList<Facility> facilitiesWithItem) {
-//
-//        ArrayList<String> shortestPaths = new ArrayList<>();
-//        facilitiesWithItem.forEach(facility -> {
-//            NetworkManager.getFacilities().forEach(facility1 -> {
-//                if (facility1.getCity().equals(destination)) {
-//                    shortestPaths.add(GraphManager.getShortestPath(facility, facility1));
-//                }
-//            });
-//        });
-//
-//        return shortestPaths;
-//    }
-
-    public float getTravelTime(int hoursDriving, int avgMph) {
-//        HashMap<String, Float> travelTime = new HashMap<>();
-//        items.forEach((item, integer) -> {
-//            getShortestPathFromFacilities(getFacilitiesWithItem(item)).forEach(s -> {
-//                travelTime.put(s, GraphManager.getTotalTime(hoursDriving, avgMph));
-//            });
-//        });
-
-        return 5;
+        GraphManager.getShortestPath(getFacilitiesWithItem(item).get(0), getDestinationFacility());
+        return GraphManager.getTotalTime(hoursDriving, avgMph);
     }
 
-    public ArrayList<Integer> getAllCosts() {
-        ArrayList<Integer> costs = new ArrayList<>();
-
-        items.forEach((item, integer) -> costs.add((item.getPrice() * integer)));
-        return costs;
-    }
-
-    public int getTotalCost(ArrayList<Integer> allCosts) {
-        int totalCost = 0;
-        for (Integer allCost : allCosts) {
-            totalCost += allCost;
+    private int getCost(Item item) {
+        for (Map.Entry<Item, Integer> entry : items.entrySet()) {
+            if (entry.getKey().equals(item)) {
+                return item.getPrice();
+            }
         }
+        return 0;
+    }
+
+    public int getTotalCostOfItem(Item item) {
+        int totalCost = getCost(item);
+        for (Map.Entry<Item, Integer> entry : items.entrySet()) {
+            if (item.equals(entry.getKey())) {
+                totalCost *= entry.getValue();
+            }
+        }
+
         return totalCost;
+    }
+
+    public int getFirstDeliveryDate() {
+        int dayLeavingFacility = 0;
+
+        float travelTime;
+        ArrayList<Float> allTravelTimes = new ArrayList<>();
+        for (Map.Entry<Item, Integer> itemEntry : items.entrySet()) {
+            travelTime = getTravelTimeForItem(8, 50, itemEntry.getKey());
+            allTravelTimes.add(travelTime);
+        }
+        travelTime = Collections.min(allTravelTimes);
+
+        return time + dayLeavingFacility + (int) travelTime;
+    }
+
+    public int getLastDeliveryDate() {
+        int dayLeavingFacility = 0;
+
+        float travelTime;
+        ArrayList<Float> allTravelTimes = new ArrayList<>();
+        for (Map.Entry<Item, Integer> itemEntry : items.entrySet()) {
+            travelTime = getTravelTimeForItem(8, 50, itemEntry.getKey());
+            allTravelTimes.add(travelTime);
+        }
+        travelTime = Collections.max(allTravelTimes);
+
+        return time + dayLeavingFacility + (int) travelTime;
+    }
+
+    public int getFirstDayForItem(Item item) {
+
+        float travelTime;
+        ArrayList<Float> allTravelTimes = new ArrayList<>();
+        for (Map.Entry<Item, Integer> itemEntry : items.entrySet()) {
+            if (itemEntry.getKey().equals(item)) {
+                travelTime = getTravelTimeForItem(8, 50, itemEntry.getKey());
+                allTravelTimes.add(travelTime);
+            }
+        }
+        travelTime = Collections.min(allTravelTimes);
+
+        return time + getDayLeavingFacility(item) + (int) travelTime;
+    }
+
+    public int getDayLeavingFacility(Item item) {
+        int dayLeavingFacility = 0;
+
+        for (Map.Entry<Item, Integer> itemEntry : items.entrySet()) {
+            for (Facility facility : getFacilitiesWithItem(item)) {
+                float facilityRate = facility.getRate();
+                if (facilityRate < itemEntry.getValue()) {
+                    facilityRate += facilityRate;
+                }
+                dayLeavingFacility = (int) facilityRate / facility.getRate();
+            }
+        }
+        return dayLeavingFacility;
+    }
+
+    public int getLastDayForItem(Item item) {
+
+
+        float travelTime;
+        ArrayList<Float> allTravelTimes = new ArrayList<>();
+        ArrayList<Integer> allLastDays = new ArrayList<>();
+        int lastDayLeaving = getDayLeavingFacility(item);
+        for (Map.Entry<Item, Integer> itemEntry : items.entrySet()) {
+            if (itemEntry.getKey().equals(item)) {
+                travelTime = getTravelTimeForItem(8, 50, itemEntry.getKey());
+                allTravelTimes.add(travelTime);
+                allLastDays.add(lastDayLeaving);
+            }
+        }
+        travelTime = Collections.max(allTravelTimes);
+        lastDayLeaving = Collections.max(allLastDays);
+
+        return time + lastDayLeaving + (int) travelTime;
     }
 }

@@ -1,6 +1,5 @@
 package com.coryginsberg.importxml;
 
-import com.coryginsberg.Item;
 import com.coryginsberg.factories.ItemFactory;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
@@ -53,7 +52,7 @@ public class ImportItemFile implements Import {
                 int itemPrice = Integer.parseInt(aMap.getNamedItem("Price").getNodeValue());
 
                 // Create a Item object using the data loaded from the XML File
-                Item item = ItemFactory.addItem(itemID, itemPrice);
+                ItemFactory.addItem(itemID, itemPrice);
 
             }
 

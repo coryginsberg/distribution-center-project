@@ -28,12 +28,4 @@ public class NetworkManager {
     public static ArrayList<Facility> getFacilities() {
         return facilities;
     }
-
-    public static void addStorableItem(Item item) {
-        storableItems.add(item);
-    }
-
-    public static ArrayList<Item> getStorableItems() {
-        return storableItems;
-    }
 }

@@ -1,7 +1,6 @@
 package com.coryginsberg;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author Cory Ginsberg
@@ -25,24 +24,6 @@ public class Inventory {
         return inventory;
     }
 
-
-    public void addInventoryAmount(String itemToChange, int amount) {
-        if (hasItem(itemToChange)) {
-            inventory.merge(itemToChange, amount, Integer::sum);
-        }
-    }
-
-    public void subtractInventoryAmount(String itemToChange, int amount) {
-        if (hasItem(itemToChange)) {
-            inventory.merge(itemToChange, amount, (integer, integer2) -> {
-                integer = inventory.get(itemToChange);
-                integer2 = amount;
-                if (integer > integer2) return integer - integer2;
-                return 0;
-            });
-        }
-    }
-
     public HashMap<String, Integer> getDepletedInventory() {
         HashMap<String, Integer> depletedItems = new HashMap<>();
         inventory.forEach((item, amount) -> {
@@ -62,20 +43,6 @@ public class Inventory {
         });
         return nondepletedItems;
     }
-
-    public int itemInStock(Item item) {
-        int stock = 0;
-        for (Map.Entry<String, Integer> entry : inventory.entrySet()) {
-            if (entry.getKey().equals(item.getId())) stock = entry.getValue();
-        }
-
-        return stock;
-    } 
-
-    public boolean hasItem(String item) {
-        return inventory.containsKey(item);
-    }
-
 
     public String getCity() {
         return this.city;

@@ -46,10 +46,6 @@ public class Graph<T> {
         return node1.addEdge(node2, weight);
     }
 
-    public ArrayList<T> getVertexes() {
-        return vertexes;
-    }
-
     public boolean containsVertex(T vertex) {
         return getAdjacencyList().containsKey(vertex);
     }

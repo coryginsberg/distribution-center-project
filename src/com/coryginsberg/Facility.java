@@ -14,7 +14,6 @@ public class Facility {
     private int rate;
     private int cost;
     private HashMap<Facility, Integer> connectingCities = new HashMap<>();
-    private ArrayList<Item> itemsInStock = new ArrayList<>();
     private ArrayList<Integer> dailyRate = new ArrayList<>();
 
     public Facility(String name, int rate, int cost) {
@@ -32,10 +31,6 @@ public class Facility {
                 this.connectingCities.put(facility, distance);
             }
         }));
-    }
-
-    public void addInventory(Item item) {
-        itemsInStock.add(item);
     }
 
     public String getCity() {
@@ -57,6 +52,7 @@ public class Facility {
     public ArrayList<Integer> getDailyRate() {
         return dailyRate;
     }
+
 
     @Override
     public String toString() {

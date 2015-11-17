@@ -18,16 +18,8 @@ public class ItemManager {
         }
     }
 
-    public static int getNumItems() {
-        return items.size();
-    }
-
     public static ArrayList<Item> getItems() {
         return items;
-    }
-
-    public static Item getItemAtIndex(int index) {
-        return items.get(index);
     }
 
 
