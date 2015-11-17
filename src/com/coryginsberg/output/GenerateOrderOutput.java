@@ -34,8 +34,11 @@ public class GenerateOrderOutput implements OutputInterface<Order> {
 
     @Override
     public void printStatusOutput(Order order) {
-        new ProcessOrder(order);
+        ProcessOrder processedOrder = new ProcessOrder(order);
         orderNum++;
+
+        System.out.println(processedOrder.getTravelTime(8, 50));
+
         // Place all outputs for the order between these two lines.
         System.out.println("============================================================================================");
         System.out.println("| ORDER #" + orderNum);
@@ -59,7 +62,7 @@ public class GenerateOrderOutput implements OutputInterface<Order> {
         System.out.println("| ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
         System.out.println("| * Destination: " + order.getDestination());
         System.out.println("| * Priority: " + order.getPriority());
-        System.out.println("| * Total Cost: "); // TODO: 11/15/15 Get the Total Cost of the order.
+        System.out.println("| * Total Cost: $" + processedOrder.getTotalCost(processedOrder.getAllCosts())); // TODO: 11/15/15 Get the Total Cost of the order.
         System.out.println("| * First Delivery Day: "); // TODO: 11/15/15 Get the day that the first shipment comes into the facility.
         System.out.println("| * Last Delivery Day: "); // TODO: 11/15/15 Get the day that the last shipment comes into the facility.
         System.out.println("| * Ordered Items: ");
@@ -68,7 +71,11 @@ public class GenerateOrderOutput implements OutputInterface<Order> {
         System.out.format("%-5s%-15s%-15s%-10s%-15s%-15s%-15s", "| ", "‾‾‾‾‾‾‾‾", "‾‾‾‾‾‾‾‾‾", "‾‾‾‾", "‾‾‾‾‾‾‾‾‾‾‾‾", "‾‾‾‾‾‾‾‾‾", "‾‾‾‾‾‾‾‾");
         System.out.println();
         order.getItems().forEach((item, amt) -> { // TODO: 11/15/15 Switch this out with the properly calculated one.
-            System.out.format("%-5s%-15s%-15s%-10s%-15s%-15s%-15s", "| ", item.getId(), amt, "", "", "", "");
+
+            for (Integer integer : processedOrder.getAllCosts()) {
+                System.out.format("%-5s%-15s%-15s%-10s%-15s%-15s%-15s", "| ", item.getId(), amt, "$" + integer, "", "", "");
+                break;
+            }
             System.out.println();
         });
         System.out.println("============================================================================================");

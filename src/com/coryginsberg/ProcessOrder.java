@@ -18,13 +18,17 @@ public class ProcessOrder {
     private String priority;
     private HashMap<Item, Integer> items = new HashMap<>();
 
+    private ArrayList<Integer> arrivalDays = new ArrayList<>();
+
     public ProcessOrder(Order order) {
         this.time = order.getTime();
         this.id = order.getID();
         this.destination = order.getDestination();
         this.priority = order.getPriority();
         this.items = order.getItems();
-        items.forEach((item, amt) -> getFacilitiesWithItem(item));
+        items.forEach((item, amt) -> {
+            getFacilitiesWithItem(item);
+        });
     }
 
     private ArrayList<Facility> getFacilitiesWithItem(Item item) {
@@ -35,25 +39,63 @@ public class ProcessOrder {
                 NetworkManager.getFacilities().forEach(facility -> {
                     if (facility.getCity().equals(currentInventory.getCity())) {
                         facilitiesWithItem.add(facility);
-                        System.out.println(facility);
                     }
                 });
             }
         }));
-        System.out.println();
 
         return facilitiesWithItem;
     }
 
-    private int getShortestPathFromFacilities(/*ArrayList<Facility> facilitiesWithItem*/) {
+    public HashMap<Facility, Integer> getNumItemsFromFacility(ArrayList<Facility> facilities) {
+        facilities.forEach(facility -> {
+            InventoryManager.getInventories().forEach(inventory -> {
+                if (inventory.getCity().equals(facility.getCity())) {
+                    //items.forEach();
+                    //inventory.itemInStock()
+                }
+            });
+
+        });
+        return null;
+    }
+//    public ArrayList<String> getShortestPathFromFacilities(ArrayList<Facility> facilitiesWithItem) {
+//
+//        ArrayList<String> shortestPaths = new ArrayList<>();
 //        facilitiesWithItem.forEach(facility -> {
-//            NetworkManager.getFacilities().forEach(destinationFacility -> {
-//                if (destinationFacility.getCity().equals(destination)) {
-//                    GraphManager.getShortestPath(facility, destinationFacility);
+//            NetworkManager.getFacilities().forEach(facility1 -> {
+//                if (facility1.getCity().equals(destination)) {
+//                    shortestPaths.add(GraphManager.getShortestPath(facility, facility1));
 //                }
 //            });
 //        });
-        return 5; // FIXME: 11/17/15 Once the application is done, get to this (if there is time).
+//
+//        return shortestPaths;
+//    }
+
+    public float getTravelTime(int hoursDriving, int avgMph) {
+//        HashMap<String, Float> travelTime = new HashMap<>();
+//        items.forEach((item, integer) -> {
+//            getShortestPathFromFacilities(getFacilitiesWithItem(item)).forEach(s -> {
+//                travelTime.put(s, GraphManager.getTotalTime(hoursDriving, avgMph));
+//            });
+//        });
+
+        return 5;
     }
 
+    public ArrayList<Integer> getAllCosts() {
+        ArrayList<Integer> costs = new ArrayList<>();
+
+        items.forEach((item, integer) -> costs.add((item.getPrice() * integer)));
+        return costs;
+    }
+
+    public int getTotalCost(ArrayList<Integer> allCosts) {
+        int totalCost = 0;
+        for (Integer allCost : allCosts) {
+            totalCost += allCost;
+        }
+        return totalCost;
+    }
 }

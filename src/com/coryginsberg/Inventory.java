@@ -1,6 +1,7 @@
 package com.coryginsberg;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Cory Ginsberg
@@ -61,6 +62,15 @@ public class Inventory {
         });
         return nondepletedItems;
     }
+
+    public int itemInStock(Item item) {
+        int stock = 0;
+        for (Map.Entry<String, Integer> entry : inventory.entrySet()) {
+            if (entry.getKey().equals(item.getId())) stock = entry.getValue();
+        }
+
+        return stock;
+    } 
 
     public boolean hasItem(String item) {
         return inventory.containsKey(item);
