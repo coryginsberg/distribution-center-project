@@ -1,6 +1,7 @@
 package com.coryginsberg.output;
 
 import com.coryginsberg.Order;
+import com.coryginsberg.ProcessOrder;
 import com.coryginsberg.importxml.UnexpectedNodeException;
 import com.coryginsberg.managers.OrderManager;
 
@@ -33,6 +34,7 @@ public class GenerateOrderOutput implements OutputInterface<Order> {
 
     @Override
     public void printStatusOutput(Order order) {
+        new ProcessOrder(order);
         orderNum++;
         // Place all outputs for the order between these two lines.
         System.out.println("============================================================================================");

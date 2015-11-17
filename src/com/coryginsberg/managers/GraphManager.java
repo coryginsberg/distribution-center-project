@@ -1,11 +1,8 @@
 package com.coryginsberg.managers;
 
 import com.coryginsberg.Facility;
-import com.coryginsberg.Network;
 import com.coryginsberg.factories.GraphFactory;
 import com.coryginsberg.graph.Graph;
-
-import java.util.ArrayList;
 
 /**
  * @author Cory Ginsberg
@@ -28,15 +25,6 @@ public class GraphManager {
         float totalTime = graph.getTotalWeight();
 
         return totalTime / (hoursDriving * avgMph);
-    }
-
-    // Converts the Vertexes (which are currently just a String for simplification) to their respective Facility
-    // Throws an exception if a vertex does not match a facility on the XML (Should never happen but its just in case)
-    public static ArrayList<Network> getAllFacilities() {
-        graph.getVertexes().forEach(vertex -> {
-
-        });
-        return null;
     }
 
     @Override

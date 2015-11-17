@@ -54,24 +54,12 @@ public class Facility {
         return connectingCities;
     }
 
-    public ArrayList<Item> getItemsInStock() {
-        return itemsInStock;
-    }
-
     public ArrayList<Integer> getDailyRate() {
         return dailyRate;
     }
 
-    public void processItem(int numItems) {
-
-
-    }
-
-    public boolean hasItem(Item item) {
-        return itemsInStock.contains(item);
-    }
     @Override
     public String toString() {
-        return getCity() + ", At Rate: " + getRate() + ", At Cost: " + getCost() + " Has Items: " + getItemsInStock().toString() + ".";
+        return getCity() + ", At Rate: " + getRate() + ", At Cost: " + getCost();
     }
 }

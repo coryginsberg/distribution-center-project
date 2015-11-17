@@ -1,5 +1,6 @@
 package com.coryginsberg;
 
+import com.coryginsberg.managers.InventoryManager;
 import com.coryginsberg.managers.NetworkManager;
 
 import java.util.ArrayList;
@@ -29,11 +30,30 @@ public class ProcessOrder {
     private ArrayList<Facility> getFacilitiesWithItem(Item item) {
         ArrayList<Facility> facilitiesWithItem = new ArrayList<>();
 
-        NetworkManager.getFacilities().forEach((facility) -> {
-            if (facility.hasItem(item)) facilitiesWithItem.add(facility);
-        });
+        InventoryManager.getInventories().forEach(currentInventory -> currentInventory.getNondepletedInventory().forEach((itemID, amt) -> {
+            if (itemID.equals(item.getId())) {
+                NetworkManager.getFacilities().forEach(facility -> {
+                    if (facility.getCity().equals(currentInventory.getCity())) {
+                        facilitiesWithItem.add(facility);
+                        System.out.println(facility);
+                    }
+                });
+            }
+        }));
+        System.out.println();
 
         return facilitiesWithItem;
+    }
+
+    private int getShortestPathFromFacilities(/*ArrayList<Facility> facilitiesWithItem*/) {
+//        facilitiesWithItem.forEach(facility -> {
+//            NetworkManager.getFacilities().forEach(destinationFacility -> {
+//                if (destinationFacility.getCity().equals(destination)) {
+//                    GraphManager.getShortestPath(facility, destinationFacility);
+//                }
+//            });
+//        });
+        return 5; // FIXME: 11/17/15 Once the application is done, get to this (if there is time).
     }
 
 }

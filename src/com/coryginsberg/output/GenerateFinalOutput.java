@@ -17,7 +17,7 @@ public class GenerateFinalOutput {
 
         new GenerateFacilityStatusOutput();
         new GenerateOrderOutput();
-        new GenerateFacilityStatusOutput();
+        //new GenerateFacilityStatusOutput();
 
     }
 }
